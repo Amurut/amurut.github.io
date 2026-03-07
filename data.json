@@ -1,0 +1,98 @@
+{
+  "name": "Amurut Mathew Koshy",
+  "headline": "Senior Product Manager",
+  "summary": "Senior Product Manager with 7+ years of cross-functional experience spanning software engineering, business analytics, and product leadership. Currently driving client onboarding and M&A automation products at ADP for the US market. Dual post-graduate background in AI/ML (BITS Pilani M.Tech, 2025) and Business Strategy (IIM Nagpur MBA), with hands-on expertise in LLM integrations, RAG pipelines, and Agile product delivery. Proven track record of generating measurable revenue growth, driving adoption at scale, and translating complex technical capabilities into market-ready products.",
+  "phone": "",
+  "email": "",
+  "social": {
+    "linkedin": "https://linkedin.com/in/amurut",
+    "github": "https://github.com/Amurut"
+  },
+  "experience": [
+    {
+      "company": "ADP",
+      "title": "Senior Product Manager – II",
+      "period": "April 2025 – Present",
+      "achievements": [
+        "Product Leadership: Serve as Product Lead for 'Launchpad' — the Client Onboarding & Implementation module of Workforce Now, managing a cross-functional squad and full product lifecycle.",
+        "M&A Automation: Building an internal product for automated data movement for clients undergoing Mergers & Acquisitions, covering Payroll, Time & Tax domains; projected to reduce manual migration effort by over 50%.",
+        "System Integration: Sole PM for a Resource & Backlog Management module interfacing with CRM and billing systems, streamlining capacity planning across delivery teams."
+      ]
+    },
+    {
+      "company": "ADP",
+      "title": "Senior Product Manager",
+      "period": "April 2022 – March 2025",
+      "achievements": [
+        "Revenue Growth: Created a new sales channel for Open Enrollment support, generating $2M in new recurring annual revenue.",
+        "Product Adoption: Led the Employee Communications channel of the Benefits Module; implemented enhancements that drove ADP Mobile adoption up by 80%+ YoY, adding 500K+ active sessions monthly.",
+        "AI & Automation: Spearheaded a Digitization Initiative leveraging AI-based OCR & data extraction algorithms, reducing inbound support call volumes by 15%.",
+        "Strategic AI Partnership: Integrated an AI-enabled Benefits Decision Support Platform for the US market in collaboration with an external AI vendor, expanding product value proposition for 20K+ clients."
+      ]
+    },
+    {
+      "company": "Fidelity Investments",
+      "title": "Software Engineer",
+      "period": "July 2017 – July 2020",
+      "achievements": [
+        "Full-Stack Development: Built two Self-Service Automation frameworks and data analysis tools adopted by 8 teams, saving 20+ hours/week in manual effort.",
+        "Cloud Transformation: Core team member for migrating clients from legacy on-premise platforms to cloud-enabled architecture.",
+        "Data Engineering: Automated data pipelines, configuration loading, and validation processes, reducing pipeline errors by 30%.",
+        "Quality Assurance: Defined Benefit Squad: delivered QA coverage through Process, Batch, and Test Automation frameworks."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Birla Institute of Technology & Science, Pilani",
+      "degree": "M.Tech – Artificial Intelligence & Machine Learning",
+      "period": "Oct 2023 – Oct 2025",
+      "highlights": [
+        "Work Integrated Learning Programme (WILP)",
+        "Dissertation: Retrieval Augmented Generation (RAG) with GPT-4 & Llama3 for Healthcare Taxation",
+        "github.com/Amurut/Healthcare-Taxation-Assistant"
+      ]
+    },
+    {
+      "institution": "Indian Institute of Management, Nagpur",
+      "degree": "MBA – Decision Sciences & Information Systems | Strategy",
+      "period": "July 2020 – March 2022",
+      "highlights": [
+        "Positions of Responsibility: Co-ordinator E-Cell · Executive Member Indo-Japan Research Centre · Student Affairs Council Representative · Executive Member Events Committee"
+      ]
+    },
+    {
+      "institution": "Ramaiah Institute of Technology, Bangalore",
+      "degree": "B.E. – Electronics & Communication Engineering",
+      "period": "Aug 2013 – June 2017",
+      "highlights": [
+        "Presented a research paper on Fall Detection Sensor at ICIoTCT 2017 (MNIT Jaipur) — Grant awarded by IISc Bangalore & KSCST",
+        "1st Place, Hackatronics (IEEE-RIT): Autonomous Heat Sensing Robot 'Heat Sink'"
+      ]
+    }
+  ],
+  "skills": {
+    "Product": [
+      "Agile/Scrum",
+      "Roadmap Planning",
+      "GTM Strategy",
+      "Stakeholder Management",
+      "Business Requirements",
+      "OKRs",
+      "Product Strategy"
+    ],
+    "AI/ML": [
+      "LLM Integrations (GPT-4, Llama3)",
+      "Retrieval Augmented Generation (RAG)",
+      "Prompt Engineering"
+    ],
+    "Engineering": [
+      "AWS",
+      "Python",
+      "Java",
+      "Spring Boot",
+      "Selenium",
+      "R"
+    ]
+  }
+}

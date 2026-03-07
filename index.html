@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amurut Mathew Koshy | Senior Product Manager</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
+                    colors: { primary: '#6366f1', accent: '#10b981', dark: '#0f172a' }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        [x-cloak] { display: none !important; }
+        .glass { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .card-gradient { background: linear-gradient(145deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 1) 100%); }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-dark text-slate-200 selection:bg-primary selection:text-white">
+
+    <div x-data="app()" x-init="fetchData()" class="min-h-screen">
+        
+        <div x-show="loading" class="fixed inset-0 z-[100] bg-dark flex items-center justify-center text-white">
+            <div class="flex flex-col items-center gap-4">
+                <div class="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+                <p class="text-sm font-bold tracking-widest uppercase opacity-50">Loading Portfolio...</p>
+            </div>
+        </div>
+
+        <nav class="fixed top-0 w-full z-50 glass" x-show="!loading" x-transition>
+            <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <span class="text-xl font-extrabold tracking-tighter text-white">AMK<span class="text-primary">.</span></span>
+                <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest text-slate-400">
+                    <a href="#experience" class="hover:text-primary transition">Experience</a>
+                    <a href="#education" class="hover:text-primary transition">Education</a>
+                    <a href="#skills" class="hover:text-primary transition">Skills</a>
+                    <a href="#contact" class="hover:text-primary transition">Contact</a>
+                </div>
+            </div>
+        </nav>
+
+        <main x-show="!loading" x-transition x-cloak>
+            
+            <section class="pt-40 pb-20 px-6">
+                <div class="container mx-auto max-w-5xl text-center md:text-left">
+                    <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight" x-text="data.name"></h1>
+                    <p class="text-2xl text-primary font-semibold mb-8" x-text="data.headline"></p>
+                    <p class="text-lg text-slate-400 leading-relaxed mb-10 max-w-2xl" x-text="data.summary"></p>
+                    
+                    <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                        <a :href="data.social?.linkedin" target="_blank" class="px-8 py-3 bg-primary hover:bg-indigo-500 text-white font-bold rounded-xl transition-all shadow-lg shadow-primary/20">
+                            <i class="fab fa-linkedin mr-2"></i> LinkedIn
+                        </a>
+                        <a :href="data.social?.github" target="_blank" class="px-8 py-3 bg-slate-800 hover:bg-slate-700 text-white font-bold rounded-xl transition-all">
+                            <i class="fab fa-github mr-2"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="experience" class="py-24 bg-slate-900/30">
+                <div class="container mx-auto max-w-4xl px-6">
+                    <h2 class="text-3xl font-bold text-white mb-16">Professional Experience</h2>
+                    <div class="relative pl-8 border-l border-slate-800 space-y-16">
+                        <template x-for="exp in data.experience">
+                            <div class="relative">
+                                <div class="absolute -left-[37px] top-1 w-4 h-4 rounded-full bg-dark border-2 border-primary"></div>
+                                <div class="flex flex-col md:flex-row md:justify-between mb-4">
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-white" x-text="exp.title"></h3>
+                                        <p class="text-primary font-medium" x-text="exp.company"></p>
+                                    </div>
+                                    <span class="text-slate-500 font-mono text-sm mt-1" x-text="exp.period"></span>
+                                </div>
+                                <ul class="space-y-3">
+                                    <template x-for="ach in exp.achievements">
+                                        <li class="flex items-start gap-3 text-slate-400 leading-relaxed">
+                                            <i class="fas fa-circle text-[6px] mt-2.5 text-primary opacity-50"></i>
+                                            <span x-text="ach"></span>
+                                        </li>
+                                    </template>
+                                </ul>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </section>
+
+            <section id="education" class="py-24">
+                <div class="container mx-auto max-w-5xl px-6">
+                    <h2 class="text-3xl font-bold text-white text-center mb-16">Education & Research</h2>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <template x-for="edu in data.education">
+                            <div class="card-gradient p-8 rounded-2xl border border-slate-800">
+                                <h3 class="text-xl font-bold text-white mb-2" x-text="edu.degree"></h3>
+                                <p class="text-primary text-sm font-semibold mb-1" x-text="edu.institution"></p>
+                                <p class="text-slate-500 text-xs font-bold mb-4" x-text="'Class of ' + edu.period.split('-').pop().trim().split(' ').pop()"></p>
+                                <div class="space-y-2">
+                                    <template x-for="hl in edu.highlights">
+                                        <p class="text-xs text-slate-400 flex items-center gap-2">
+                                            <span class="w-1 h-1 rounded-full bg-accent"></span>
+                                            <span x-text="hl"></span>
+                                        </p>
+                                    </template>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills" class="py-24 bg-slate-900/30">
+                <div class="container mx-auto max-w-5xl px-6 text-center">
+                    <h2 class="text-3xl font-bold text-white mb-16">Technical Stack</h2>
+                    <div class="grid md:grid-cols-3 gap-12 text-left">
+                        <template x-for="(skills, category) in data.skills">
+                            <div>
+                                <h3 class="text-xs uppercase tracking-[0.2em] text-slate-500 font-bold mb-6 border-b border-slate-800 pb-2" x-text="category"></h3>
+                                <div class="flex flex-wrap gap-2">
+                                    <template x-for="skill in skills">
+                                        <span class="px-3 py-1 bg-slate-800/50 text-slate-300 rounded border border-slate-700 text-sm" x-text="skill"></span>
+                                    </template>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="py-32">
+                <div class="container mx-auto max-w-4xl px-6 text-center">
+                    <div class="card-gradient p-12 rounded-3xl border border-slate-800 shadow-2xl">
+                        <h2 class="text-4xl font-extrabold text-white mb-6">Let's Connect</h2>
+                        <p class="text-slate-400 mb-10 leading-relaxed max-w-2xl mx-auto text-lg">
+                            I'm always open to talking tech, AI, Product Management, and Aviation. <br>
+                            For professional inquiries or collaboration opportunities, please reach out via LinkedIn.
+                        </p>
+                        
+                        <div class="flex justify-center">
+                            <a :href="data.social?.linkedin" target="_blank" class="group flex items-center gap-4 px-10 py-5 bg-[#0077b5] hover:bg-[#005c8d] text-white font-bold rounded-2xl transition-all shadow-xl hover:-translate-y-1">
+                                <i class="fab fa-linkedin-in text-2xl group-hover:scale-110 transition-transform"></i>
+                                <span class="text-xl">Connect on LinkedIn</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="py-12 text-center text-slate-600 text-xs tracking-widest uppercase">
+                <p>&copy; 2026 Amurut Mathew Koshy | Professional Portfolio</p>
+            </footer>
+
+        </main>
+    </div>
+
+    <script>
+        function app() {
+            return {
+                data: {},
+                loading: true,
+                async fetchData() {
+                    try {
+                        const response = await fetch('data.json');
+                        if (!response.ok) throw new Error('Failed to load JSON');
+                        this.data = await response.json();
+                        setTimeout(() => { this.loading = false; }, 500);
+                    } catch (error) {
+                        console.error('Error:', error);
+                        this.loading = false;
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -2,8 +2,6 @@
   "name": "Amurut Mathew Koshy",
   "headline": "Senior Product Manager",
   "summary": "Senior Product Manager with 7+ years of cross-functional experience spanning software engineering, business analytics, and product leadership. Currently driving client onboarding and M&A automation products at ADP for the US market. Dual post-graduate background in AI/ML (BITS Pilani M.Tech, 2025) and Business Strategy (IIM Nagpur MBA), with hands-on expertise in LLM integrations, RAG pipelines, and Agile product delivery. Proven track record of generating measurable revenue growth, driving adoption at scale, and translating complex technical capabilities into market-ready products.",
-  "phone": "",
-  "email": "",
   "social": {
     "linkedin": "https://linkedin.com/in/amurut",
     "github": "https://github.com/Amurut"
@@ -11,88 +9,111 @@
   "experience": [
     {
       "company": "ADP",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Automatic_Data_Processing_%28logo%29.svg",
       "title": "Senior Product Manager – II",
       "period": "April 2025 – Present",
       "achievements": [
-        "Product Leadership: Serve as Product Lead for 'Launchpad' — the Client Onboarding & Implementation module of Workforce Now, managing a cross-functional squad and full product lifecycle.",
-        "M&A Automation: Building an internal product for automated data movement for clients undergoing Mergers & Acquisitions, covering Payroll, Time & Tax domains; projected to reduce manual migration effort by over 50%.",
-        "System Integration: Sole PM for a Resource & Backlog Management module interfacing with CRM and billing systems, streamlining capacity planning across delivery teams."
+        "<b>Product Leadership:</b> Serve as Product Lead for 'Launchpad' — the Client Onboarding & Implementation module of Workforce Now, managing a cross-functional squad and full product lifecycle.",
+        "<b>M&A Automation:</b> Building an internal product for automated data movement for clients undergoing Mergers & Acquisitions, covering Payroll, Time & Tax domains; projected to reduce manual migration effort by over 50%.",
+        "<b>System Integration:</b> Sole PM for a Resource & Backlog Management module interfacing with CRM and billing systems, streamlining capacity planning across delivery teams."
       ]
     },
     {
       "company": "ADP",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Automatic_Data_Processing_%28logo%29.svg",
       "title": "Senior Product Manager",
       "period": "April 2022 – March 2025",
       "achievements": [
-        "Revenue Growth: Created a new sales channel for Open Enrollment support, generating $2M in new recurring annual revenue.",
-        "Product Adoption: Led the Employee Communications channel of the Benefits Module; implemented enhancements that drove ADP Mobile adoption up by 80%+ YoY, adding 500K+ active sessions monthly.",
-        "AI & Automation: Spearheaded a Digitization Initiative leveraging AI-based OCR & data extraction algorithms, reducing inbound support call volumes by 15%.",
-        "Strategic AI Partnership: Integrated an AI-enabled Benefits Decision Support Platform for the US market in collaboration with an external AI vendor, expanding product value proposition for 20K+ clients."
+        "<b>Revenue Growth:</b> Created a new sales channel for Open Enrollment support, generating $2M in new recurring annual revenue.",
+        "<b>Product Adoption:</b> Led the Employee Communications channel of the Benefits Module; implemented enhancements that drove ADP Mobile adoption up by 80%+ YoY, adding 500K+ active sessions monthly.",
+        "<b>AI & Automation:</b> Spearheaded a Digitization Initiative leveraging AI-based OCR & data extraction algorithms, reducing inbound support call volumes by 15%.",
+        "<b>Strategic AI Partnership:</b> Integrated an AI-enabled Benefits Decision Support Platform for the US market in collaboration with an external AI vendor, expanding product value proposition for 20K+ clients."
+      ]
+    },
+    {
+      "company": "Analytics Quad 4",
+      "logo": "",
+      "title": "Business Analyst Intern",
+      "period": "April 2021 – June 2021",
+      "achievements": [
+        "<b>Sales Optimization:</b> Evaluated and Implemented POCs on new software to help further optimize the sales pipeline.",
+        "<b>Digital Marketing:</b> Responsible for enhancements to the AQ4 website, collateral and other key marketing initiatives.",
+        "<b>Technology Research:</b> Performed research on new technologies and analysed their compatibility with AQ4 solutions.",
+        "<b>Lead Management:</b> Designed strategies to implement a Lead Qualification Process and a framework for efficient Campaign Tracking, improving lead conversion by nearly 14%."
       ]
     },
     {
       "company": "Fidelity Investments",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/7/73/FidPicture1jpg.jpg",
       "title": "Software Engineer",
       "period": "July 2017 – July 2020",
       "achievements": [
-        "Full-Stack Development: Built two Self-Service Automation frameworks and data analysis tools adopted by 8 teams, saving 20+ hours/week in manual effort.",
-        "Cloud Transformation: Core team member for migrating clients from legacy on-premise platforms to cloud-enabled architecture.",
-        "Data Engineering: Automated data pipelines, configuration loading, and validation processes, reducing pipeline errors by 30%.",
-        "Quality Assurance: Defined Benefit Squad: delivered QA coverage through Process, Batch, and Test Automation frameworks."
+        "<b>Full-Stack Development:</b> Built two Self-Service Automation frameworks and data analysis tools adopted by 8 teams, saving 20+ hours/week in manual effort.",
+        "<b>Cloud Transformation:</b> Core team member for migrating clients from legacy on-premise platforms to cloud-enabled architecture.",
+        "<b>Data Engineering:</b> Automated data pipelines, configuration loading, and validation processes, reducing pipeline errors by 30%.",
+        "<b>Quality Assurance:</b> Defined Benefit Squad: delivered QA coverage through Process, Batch, and Test Automation frameworks."
+      ]
+    },
+    {
+      "company": "Microsoft",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
+      "title": "Student Microsoft Developer",
+      "period": "June 2015 – Aug 2015",
+      "achievements": [
+        "<b>Android Development:</b> Part of the Android App Development Team for a project titled i-Witness, designed as a prototype for simpler crime reporting.",
+        "<b>Product Prototyping:</b> App was designed as a prototype for a simpler form of crime/incident reporting by a neighbourhood."
       ]
     }
   ],
   "education": [
     {
-      "institution": "Birla Institute of Technology & Science, Pilani",
+      "institution": "Birla Institute of Technology and Science (BITS), Pilani",
       "degree": "M.Tech – Artificial Intelligence & Machine Learning",
-      "period": "Oct 2023 – Oct 2025",
+      "period": "2023 – 2025",
       "highlights": [
-        "Work Integrated Learning Programme (WILP)",
-        "Dissertation: Retrieval Augmented Generation (RAG) with GPT-4 & Llama3 for Healthcare Taxation",
-        "github.com/Amurut/Healthcare-Taxation-Assistant"
+        "Dissertation: \"Retrieval Augmented Generation (RAG) with GPT-4 & Llama3 for Healthcare Taxation\"",
+        "Focused on LLM integrations, Vector Databases, and Scalable AI Architecture",
+        "Research Project Link: github.com/Amurut/Healthcare-Taxation-Assistant"
       ]
     },
     {
-      "institution": "Indian Institute of Management, Nagpur",
-      "degree": "MBA – Decision Sciences & Information Systems | Strategy",
-      "period": "July 2020 – March 2022",
+      "institution": "Indian Institute of Management (IIM), Nagpur",
+      "degree": "MBA – Decision Sciences & Strategy",
+      "period": "2020 – 2022",
       "highlights": [
-        "Positions of Responsibility: Co-ordinator E-Cell · Executive Member Indo-Japan Research Centre · Student Affairs Council Representative · Executive Member Events Committee"
+        "Positions of Responsibility: Co-ordinator E-Cell, Executive Member Indo-Japan Research Centre",
+        "Student Affairs Council Representative & Executive Member Events Committee",
+        "Specialized in Strategy and Information Systems"
       ]
     },
     {
       "institution": "Ramaiah Institute of Technology, Bangalore",
       "degree": "B.E. – Electronics & Communication Engineering",
-      "period": "Aug 2013 – June 2017",
+      "period": "2013 – 2017",
       "highlights": [
-        "Presented a research paper on Fall Detection Sensor at ICIoTCT 2017 (MNIT Jaipur) — Grant awarded by IISc Bangalore & KSCST",
+        "Presented research paper on Fall Detection Sensor at ICIoTCT 2017 (MNIT Jaipur)",
+        "Grant awarded by IISc Bangalore & KSCST",
         "1st Place, Hackatronics (IEEE-RIT): Autonomous Heat Sensing Robot 'Heat Sink'"
       ]
     }
   ],
   "skills": {
-    "Product": [
-      "Agile/Scrum",
-      "Roadmap Planning",
-      "GTM Strategy",
-      "Stakeholder Management",
-      "Business Requirements",
-      "OKRs",
-      "Product Strategy"
-    ],
-    "AI/ML": [
-      "LLM Integrations (GPT-4, Llama3)",
-      "Retrieval Augmented Generation (RAG)",
-      "Prompt Engineering"
-    ],
-    "Engineering": [
-      "AWS",
-      "Python",
-      "Java",
-      "Spring Boot",
-      "Selenium",
-      "R"
-    ]
-  }
+    "Product": ["Roadmap Planning", "GTM Strategy", "Stakeholder Management", "Product Strategy", "OKRs", "Agile/Scrum", "Technical Product Management"],
+    "AI/ML": ["LLM Integrations", "RAG Pipelines", "Prompt Engineering", "Vector Databases", "OCR & AI Validation", "Model Context Protocol(MCP)"],
+    "Engineering": ["AWS", "Python", "Java / Spring Boot", "SQL", "API Design", "SDLC Automation"]
+  },
+  "certifications": [
+    {
+      "name": "Lean Six Sigma Green Belt",
+      "issuer": "KPMG",
+      "date": "Nov 2020 – Present",
+      "status": "Active"
+    },
+    {
+      "name": "AWS Certified Developer Associate",
+      "issuer": "Amazon Web Services",
+      "date": "Sept 2019 – Sept 2022",
+      "status": "Expired"
+    }
+  ]
 }

@@ -3,7 +3,7 @@
 A high-performance, responsive portfolio designed for Senior Product Management roles. This project utilizes a decoupled architecture where the UI is driven by a standalone JSON data structure.
 
 ## Deployment Link
-The live portfolio is accessible at: [https://amurut.github.io/Resume/](https://amurut.github.io/Resume/)
+The live portfolio is accessible at: [https://amurut.github.io/](https://amurut.github.io/)
 
 ## Technical Specifications
 * **Frontend:** Tailwind CSS for modern utility-first styling and glassmorphic UI elements.

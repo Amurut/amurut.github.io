@@ -54,9 +54,12 @@
                     <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6" x-text="data.name"></h1>
                     <p class="text-2xl text-primary font-semibold mb-8" x-text="data.headline"></p>
                     <p class="text-lg text-slate-400 leading-relaxed mb-10 max-w-3xl" x-text="data.summary"></p>
-                    <div class="flex gap-4">
+                    <div class="flex flex-wrap gap-4">
                         <a :href="data.social?.linkedin" target="_blank" class="px-8 py-3 bg-primary text-white font-bold rounded-xl transition shadow-lg shadow-primary/20">LinkedIn</a>
                         <a :href="data.social?.github" target="_blank" class="px-8 py-3 bg-slate-800 text-white font-bold rounded-xl transition">GitHub</a>
+                        <a href="./Amurut_Mathew_Koshy_Resume.pdf" download class="px-8 py-3 bg-slate-800 text-white font-bold rounded-xl border border-slate-700 hover:bg-slate-700 transition flex items-center gap-2">
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
                     </div>
                 </div>
             </section>
@@ -163,12 +166,23 @@
                 <div class="container mx-auto max-w-4xl px-6 text-center">
                     <div class="card-gradient p-12 rounded-3xl border border-slate-800 shadow-2xl">
                         <h2 class="text-4xl font-extrabold text-white mb-6">Let's Connect</h2>
-                        <p class="text-slate-400 mb-10 text-lg">I'm always open to talking tech, AI, Product Management, and Aviation.<br>
-                        For professional inquiries or collaboration opportunities, please reach out via LinkedIn.</p>
-                        <a :href="data.social?.linkedin" target="_blank" class="inline-flex items-center gap-4 px-10 py-5 bg-[#0077b5] text-white font-bold rounded-2xl hover:scale-105 transition-all shadow-xl">
-                            <i class="fab fa-linkedin-in text-2xl"></i>
-                            <span class="text-xl">Connect on LinkedIn</span>
-                        </a>
+                        <p class="text-slate-400 mb-10 text-lg">
+                            I'm always open to talking tech, AI, Product Management, and Aviation.<br>
+                            For professional inquiries or collaboration opportunities, please reach out via LinkedIn or email.
+                        </p>
+                        <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                            <a :href="data.social?.linkedin" target="_blank" 
+                               class="flex items-center justify-center gap-3 w-full sm:w-64 px-6 py-4 bg-[#0077b5] text-white font-bold rounded-2xl hover:scale-105 transition-all shadow-xl">
+                                <i class="fab fa-linkedin-in text-xl"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            
+                            <a href="mailto:contact@amurut.com" 
+                               class="flex items-center justify-center gap-3 w-full sm:w-64 px-6 py-4 bg-slate-800 text-white font-bold rounded-2xl border border-slate-700 hover:scale-105 transition-all shadow-xl">
+                                <i class="fas fa-envelope text-xl"></i>
+                                <span class="truncate">contact@amurut.com</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>

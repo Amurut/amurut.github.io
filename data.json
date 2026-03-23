@@ -65,6 +65,22 @@
       ]
     }
   ],
+  "projects": [
+    {
+      "title": "TradeLearner-Sim",
+      "description": "A high-fidelity trading simulator designed to teach complex financial derivatives through gamification. Features real-time OHLC candlestick charts, a functional options chain (Calls/Puts), and live P&L tracking.",
+      "tech": ["React", "Vite", "Tailweight Charts", "Framer Motion", "Tailwind CSS"],
+      "link": "https://amurut.github.io/Learn_To_Trade/",
+      "github": "https://github.com/Amurut/Learn_To_Trade"
+    },
+    {
+      "title": "Healthcare Taxation AI Assistant",
+      "description": "An advanced RAG-based agentic system designed to interpret complex US Federal and State healthcare tax laws. Implements HyDE (Hypothetical Document Embeddings) and Query Transformations to improve retrieval accuracy for nuanced legal queries.",
+      "tech": ["LlamaIndex", "Streamlit", "LLM-Agents", "RAG", "Vector Databases"],
+      "link": "https://healthcare-taxation-assistant.streamlit.app/",
+      "github": "https://github.com/Amurut/Healthcare-Taxation-Assistant"
+    }
+  ],
   "education": [
     {
       "institution": "Birla Institute of Technology and Science (BITS), Pilani",

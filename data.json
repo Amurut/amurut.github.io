@@ -74,7 +74,7 @@
       "github": "https://github.com/Amurut/Healthcare-Taxation-Assistant"
     },
     {
-      "title": "FounderOS: Startup CEO Simulator",
+      "title": "Startup CEO - A business simulation game",
       "description": "A high-fidelity business engine simulating the complexities of scaling a multi-industry conglomerate. Features a 'Product Forge' for cross-sector innovation, localized staff management (HR), and dynamic unit economics (Burn Rate vs. ARPU). Implements a real-time corporate treasury and valuation tracking system.",
       "tech": ["React", "Zustand (State Persistence)", "Mantine UI", "Recharts", "Web Audio API"],
       "link": "https://amurut.com/startup-ceo-sim-game/",

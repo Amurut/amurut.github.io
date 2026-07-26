@@ -22,7 +22,7 @@
       "company": "ADP",
       "logo": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Automatic_Data_Processing_%28logo%29.svg",
       "title": "Senior Product Manager",
-      "period": "April 2022 – March 2025",
+      "period": "April 2022 – April 2025",
       "achievements": [
         "<b>Revenue Growth:</b> Created a new sales channel for Open Enrollment support, generating $2M in new recurring annual revenue.",
         "<b>Product Adoption:</b> Led the Employee Communications channel of the Benefits Module; implemented enhancements that drove ADP Mobile adoption up by 80%+ YoY, adding 500K+ active sessions monthly.",
@@ -65,29 +65,47 @@
       ]
     }
   ],
- "projects": [
+  "projects": [
     {
       "title": "Healthcare Taxation AI Assistant",
       "description": "An advanced RAG-based agentic system designed to interpret complex US Federal and State healthcare tax laws. Implements HyDE (Hypothetical Document Embeddings) and Query Transformations to improve retrieval accuracy for nuanced legal queries. This serves as the core implementation of my M.Tech dissertation.",
-      "tech": ["LlamaIndex", "Streamlit", "LLM-Agents", "RAG", "Vector Databases"],
+      "tech": [
+        "LlamaIndex",
+        "Streamlit",
+        "LLM-Agents",
+        "RAG",
+        "Vector Databases"
+      ],
       "link": "https://healthcare-taxation-assistant.streamlit.app/",
       "github": "https://github.com/Amurut/Healthcare-Taxation-Assistant"
     },
     {
       "title": "Startup CEO - A business simulation game",
       "description": "A high-fidelity business engine simulating the complexities of scaling a multi-industry conglomerate. Features a 'Product Forge' for cross-sector innovation, localized staff management (HR), and dynamic unit economics (Burn Rate vs. ARPU). Implements a real-time corporate treasury and valuation tracking system.",
-      "tech": ["React", "Zustand (State Persistence)", "Mantine UI", "Recharts", "Web Audio API"],
+      "tech": [
+        "React",
+        "Zustand (State Persistence)",
+        "Mantine UI",
+        "Recharts",
+        "Web Audio API"
+      ],
       "link": "https://amurut.com/startup-ceo-sim-game/",
       "github": "https://github.com/Amurut/startup-ceo-sim-game"
     },
     {
       "title": "TradeLearner-Sim",
       "description": "A high-fidelity trading simulator designed to teach complex financial derivatives through gamification. Features real-time OHLC candlestick charts, a functional options chain (Calls/Puts), and live P&L tracking.",
-      "tech": ["React", "Vite", "Tailweight Charts", "Framer Motion", "Tailwind CSS"],
+      "tech": [
+        "React",
+        "Vite",
+        "Tailweight Charts",
+        "Framer Motion",
+        "Tailwind CSS"
+      ],
       "link": "https://amurut.github.io/Learn_To_Trade/",
       "github": "https://github.com/Amurut/Learn_To_Trade"
     }
- ],
+  ],
   "education": [
     {
       "institution": "Birla Institute of Technology and Science (BITS), Pilani",
@@ -121,9 +139,31 @@
     }
   ],
   "skills": {
-    "Product": ["Roadmap Planning", "GTM Strategy", "Stakeholder Management", "Product Strategy", "OKRs", "Agile/Scrum", "Technical Product Management"],
-    "AI/ML": ["LLM Integrations", "RAG Pipelines", "Prompt Engineering", "Vector Databases", "OCR & AI Validation", "Model Context Protocol(MCP)"],
-    "Engineering": ["AWS", "Python", "Java / Spring Boot", "SQL", "API Design", "SDLC Automation"]
+    "Product": [
+      "Roadmap Planning",
+      "GTM Strategy",
+      "Stakeholder Management",
+      "Product Strategy",
+      "OKRs",
+      "Agile/Scrum",
+      "Technical Product Management"
+    ],
+    "AI/ML": [
+      "LLM Integrations",
+      "RAG Pipelines",
+      "Prompt Engineering",
+      "Vector Databases",
+      "OCR & AI Validation",
+      "Model Context Protocol(MCP)"
+    ],
+    "Engineering": [
+      "AWS",
+      "Python",
+      "Java / Spring Boot",
+      "SQL",
+      "API Design",
+      "SDLC Automation"
+    ]
   },
   "certifications": [
     {

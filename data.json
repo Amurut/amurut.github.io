@@ -68,6 +68,7 @@
   "projects": [
     {
       "title": "Healthcare Taxation AI Assistant",
+      "thumbnail": "assets/healthcare-taxation-assistant.png",
       "description": "An advanced RAG-based agentic system designed to interpret complex US Federal and State healthcare tax laws. Implements HyDE (Hypothetical Document Embeddings) and Query Transformations to improve retrieval accuracy for nuanced legal queries. This serves as the core implementation of my M.Tech dissertation.",
       "tech": [
         "LlamaIndex",
@@ -81,6 +82,7 @@
     },
     {
       "title": "Tavern & Tomb — AI Dungeon Master Web RPG",
+      "thumbnail": "assets/tavern-and-tomb.png",
       "description": "A browser-based, pass-and-play tabletop RPG game where an AI acts as the Dungeon Master. Features interactive d20 skill check resolution, multi-provider LLM support (Gemini, OpenAI, Claude), character sheet & inventory management, campaign presets, and voice narration.",
       "tech": [
         "Node.js",
@@ -95,6 +97,8 @@
     },
     {
       "title": "Startup CEO - A business simulation game",
+      "thumbnail": "assets/startup-ceo.png",
+      "hidden": true,
       "description": "A high-fidelity business engine simulating the complexities of scaling a multi-industry conglomerate. Features a 'Product Forge' for cross-sector innovation, localized staff management (HR), and dynamic unit economics (Burn Rate vs. ARPU). Implements a real-time corporate treasury and valuation tracking system.",
       "tech": [
         "React",
@@ -108,6 +112,7 @@
     },
     {
       "title": "TradeLearner-Sim",
+      "thumbnail": "assets/trade-learner.png",
       "description": "A high-fidelity trading simulator designed to teach complex financial derivatives through gamification. Features real-time OHLC candlestick charts, a functional options chain (Calls/Puts), and live P&L tracking.",
       "tech": [
         "React",

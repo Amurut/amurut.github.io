@@ -1,245 +1,987 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="scroll-smooth" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amurut Mathew Koshy | Senior Product Manager | Resume & Portfolio</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230f172a%22/><text y=%2275%22 x=%2215%22 font-size=%2280%22 font-weight=%22800%22 font-family=%22sans-serif%22 fill=%22white%22>A<tspan fill=%22%236366f1%22>.</tspan></text></svg>">
-    <meta name="description" content="Official resume and portfolio of Amurut Mathew Koshy, a Senior Product Manager specializing in AI/ML and Product Strategy.">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Amurut Mathew Koshy — Architectural Atelier &amp; Modernist Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23161513%22/><text y=%2275%22 x=%2215%22 font-size=%2280%22 font-weight=%22800%22 font-family=%22sans-serif%22 fill=%22%23faf7f2%22>A<tspan fill=%22%23c2410c%22>.</tspan></text></svg>">
+    <meta name="description" content="Official resume and portfolio of Amurut Mathew Koshy, Senior Product Manager specializing in AI/ML and Product Strategy.">
     <meta name="author" content="Amurut Mathew Koshy">
     <link rel="canonical" href="https://amurut.com" />
     <meta property="og:url" content="https://amurut.com" />
+    <meta property="og:title" content="Amurut Mathew Koshy — Senior Product Manager &amp; AI Architect">
+    <meta property="og:description" content="Enterprise AI Product Management, Scaled Systems Leadership, and Selected Architectures.">
     <meta property="og:image" content="https://amurut.com/thumbnail.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script>
+
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
         tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
-                    colors: { primary: '#6366f1', accent: '#10b981', dark: '#0f172a' }
-                }
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "canvas": "#faf7f2",
+                "canvas-alt": "#f5efe6",
+                "canvas-subtle": "#ece5da",
+                "ink": "#161513",
+                "ink-muted": "#56524d",
+                "ink-faint": "#8e8880",
+                "vermilion": "#c2410c",
+                "vermilion-vivid": "#ea580c",
+                "vermilion-light": "#ffedd5",
+                "rule": "#dfd7cc",
+                "rule-dark": "#c5bbb0"
+              },
+              fontFamily: {
+                "sans": ["'Plus Jakarta Sans'", "system-ui", "sans-serif"],
+                "mono": ["'Space Mono'", "monospace"],
+                "serif": ["'Newsreader'", "Georgia", "serif"]
+              }
             }
+          }
         }
     </script>
     <style>
-        [x-cloak] { display: none !important; }
-        .glass { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.1); }
-        .card-gradient { background: linear-gradient(145deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 1) 100%); }
-        html { scroll-behavior: smooth; }
+        ::selection {
+          background-color: #c2410c;
+          color: #ffffff;
+        }
+        html {
+          background-color: #faf7f2;
+          color: #161513;
+        }
     </style>
 </head>
-<body class="bg-dark text-slate-200 selection:bg-primary selection:text-white">
+<body class="bg-canvas text-ink font-sans antialiased min-h-screen selection:bg-vermilion selection:text-white">
 
-    <div x-data="app()" x-init="fetchData()" class="min-h-screen">
-        
-        <nav class="fixed top-0 w-full z-50 glass" x-show="!loading" x-transition>
-            <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-                <span class="text-xl font-extrabold tracking-tighter text-white">AMK<span class="text-primary">.</span></span>
-                <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest text-slate-400">
-                    <a href="#experience" class="hover:text-primary transition">Experience</a>
-                    <a href="#projects" class="hover:text-primary transition">Projects</a>
-                    <a href="#education" class="hover:text-primary transition">Education</a>
-                    <a href="#skills" class="hover:text-primary transition">Skills</a>
-                    <a href="#contact" class="hover:text-primary transition">Contact</a>
+<!-- Top Utility Ribbon / Modernist Status Bar -->
+<header class="w-full border-b border-rule bg-canvas/95 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-[1680px] mx-auto px-6 lg:px-12 h-14 flex items-center justify-between">
+        <!-- Brand / Logotype matching reference -->
+        <div class="flex items-center gap-3">
+            <a href="#" class="font-serif text-2xl font-normal tracking-tight text-ink hover:text-vermilion transition-colors">AMK.</a>
+            <span class="text-ink-faint">|</span>
+            <span class="font-mono text-xs uppercase tracking-widest text-ink-muted">PRODUCT &amp; AI</span>
+        </div>
+
+        <!-- Navigation Rail + Dispatch Button -->
+        <div class="flex items-center gap-8">
+            <nav class="hidden md:flex items-center gap-7 text-sm font-sans font-normal text-ink-muted">
+                <a href="#chapter-02" class="hover:text-vermilion transition-colors">Experience</a>
+                <a href="#chapter-03" class="hover:text-vermilion transition-colors">Projects</a>
+                <a href="#chapter-04" class="hover:text-vermilion transition-colors">Education</a>
+                <a href="#chapter-05" class="hover:text-vermilion transition-colors">Stack</a>
+                <a href="#dispatch" class="hover:text-vermilion transition-colors">Connect</a>
+            </nav>
+            <a class="inline-flex items-center gap-1.5 px-3 py-1 bg-ink text-canvas hover:bg-vermilion transition-colors rounded-none font-mono text-xs uppercase tracking-wider" href="#dispatch">
+                <span>DISPATCH</span>
+                <span class="material-symbols-outlined text-[13px]">arrow_outward</span>
+            </a>
+        </div>
+    </div>
+</header>
+
+<!-- Global Atelier Monograph Container -->
+<div class="max-w-[1680px] mx-auto px-6 lg:px-12 py-10 lg:py-16 space-y-20 lg:space-y-28">
+
+    <!-- HERO ATELIER MODULAR BLOCK: Identity + Statement + 2x2 Bento Impact Metrics -->
+    <section class="border border-rule bg-canvas-alt">
+        <!-- Top Meta Stripe -->
+        <div class="grid grid-cols-1 md:grid-cols-12 border-b border-rule font-mono text-[11px] uppercase tracking-wider text-ink-muted divide-y md:divide-y-0 md:divide-x divide-rule">
+            <div class="md:col-span-3 p-4 flex items-center gap-2">
+                <span class="w-2 h-2 bg-vermilion"></span>
+                <span class="font-bold text-vermilion">INDEX ID // 00-AMK</span>
+            </div>
+            <div class="md:col-span-5 p-4 text-ink-faint flex items-center">
+                SR. PRODUCT MANAGER • AI ARCHITECT • ADP US ENTERPRISE
+            </div>
+            <div class="md:col-span-4 p-4 text-right flex items-center justify-between md:justify-end gap-3 text-ink">
+                <span>BASE: Bangalore / Hyderabad</span>
+                <span class="text-ink-faint">|</span>
+                <span class="text-vermilion font-bold">EDITION 2026</span>
+            </div>
+        </div>
+
+        <!-- Main Hero Content Split: Title/Bio (Col 7) + 2x2 KPI Bento Box (Col 5) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-rule">
+            <!-- Left: Identity & Narrative -->
+            <div class="lg:col-span-7 p-8 sm:p-12 lg:p-14 flex flex-col justify-between space-y-10">
+                <div class="space-y-6">
+                    <h1 class="text-5xl sm:text-6xl xl:text-7xl font-black tracking-[-0.04em] leading-[0.98] text-ink uppercase">
+                        Amurut<br>Mathew<br>Koshy
+                    </h1>
+                    <p class="font-serif italic text-2xl sm:text-3xl text-ink-muted leading-snug">
+                        Enterprise AI Product Management &amp; Scaled Systems Leadership
+                    </p>
+                    <p class="text-sm sm:text-base leading-relaxed text-ink-muted font-normal max-w-2xl pt-2">
+                        Senior Product Manager with 7+ years of cross-functional leadership spanning software engineering, business analytics, and scalable product strategy. Currently driving client onboarding and M&amp;A automation products at ADP for the US enterprise market. Proven acumen in product vision, GTM execution, and AI/ML architectures with a dual post-graduate background (BITS Pilani M.Tech in AI/ML &amp; IIM Nagpur MBA in Strategy).
+                    </p>
+                </div>
+                <!-- Horizontal Chapter Navigation Rail -->
+                <div class="pt-8 border-t border-rule space-y-3">
+                    <div class="font-mono text-[10px] tracking-widest uppercase text-ink-faint">CHAPTER DIRECTORY // QUICK NAV</div>
+                    <nav class="flex flex-wrap gap-2 text-xs font-mono">
+                        <a class="px-2.5 py-1 bg-canvas border border-rule hover:border-ink hover:text-vermilion transition-colors" href="#chapter-01">01 // CORE IMPACT</a>
+                        <a class="px-2.5 py-1 bg-canvas border border-rule hover:border-ink hover:text-vermilion transition-colors" href="#chapter-02">02 // PRODUCT LEADERSHIP</a>
+                        <a class="px-2.5 py-1 bg-canvas border border-rule hover:border-ink hover:text-vermilion transition-colors" href="#chapter-03">03 // SELECTED SYSTEMS</a>
+                        <a class="px-2.5 py-1 bg-canvas border border-rule hover:border-ink hover:text-vermilion transition-colors" href="#chapter-04">04 // ACADEMIC FOUNDATIONS</a>
+                        <a class="px-2.5 py-1 bg-canvas border border-rule hover:border-ink hover:text-vermilion transition-colors" href="#chapter-05">05 // TECHNICAL MATRIX</a>
+                        <a class="px-2.5 py-1 bg-ink text-canvas hover:bg-vermilion transition-colors" href="#dispatch">06 // INITIATE DIALOGUE</a>
+                    </nav>
+                    <div class="text-[11px] font-mono text-ink-muted pt-2">
+                        Focus: Agentic Workflows, Human-in-the-Loop AI &amp; Enterprise FinTech
+                    </div>
                 </div>
             </div>
-        </nav>
 
-        <main x-show="!loading" x-transition x-cloak>
-            <section class="pt-40 pb-20 px-6">
-                <div class="container mx-auto max-w-5xl">
-                    <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6" x-text="data.name"></h1>
-                    <p class="text-2xl text-primary font-semibold mb-8" x-text="data.headline"></p>
-                    <p class="text-lg text-slate-400 leading-relaxed mb-10 max-w-3xl" x-text="data.summary"></p>
-                    <div class="flex flex-wrap gap-4">
-                        <a :href="data.social?.linkedin" target="_blank" class="px-8 py-3 bg-primary text-white font-bold rounded-xl transition shadow-lg shadow-primary/20">LinkedIn</a>
-                        <a :href="data.social?.github" target="_blank" class="px-8 py-3 bg-slate-800 text-white font-bold rounded-xl transition">GitHub</a>
-                        <a href="./Amurut_Mathew_Koshy_Resume.pdf" download class="px-8 py-3 bg-slate-800 text-white font-bold rounded-xl border border-slate-700 hover:bg-slate-700 transition flex items-center gap-2">
-                            <i class="fas fa-download"></i> Download CV
+            <!-- Right: Chapter 01 / Core Leadership Impact Bento Box -->
+            <div class="lg:col-span-5 bg-canvas flex flex-col justify-between scroll-mt-16" id="chapter-01">
+                <div class="p-6 border-b border-rule flex items-center justify-between">
+                    <div class="flex items-center gap-2 font-mono text-xs uppercase tracking-widest">
+                        <span class="text-vermilion font-bold">SEC // 01</span>
+                        <span class="font-semibold text-ink">Core Leadership Impact</span>
+                    </div>
+                    <span class="font-mono text-[10px] text-ink-faint uppercase">REF. ADP-QUANTITATIVE-INDEX</span>
+                </div>
+                <!-- Hero statement intro inside bento -->
+                <div class="p-6 bg-canvas-subtle/50 border-b border-rule">
+                    <p class="font-serif italic text-base sm:text-lg text-ink leading-relaxed">
+                        Proven track record of generating measurable revenue growth, driving adoption at scale, and translating complex technical capabilities into market-ready enterprise products.
+                    </p>
+                </div>
+                <!-- 2x2 Bento Cells -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-rule flex-1">
+                    <!-- Cell 1 -->
+                    <div class="p-6 flex flex-col justify-between border-b border-rule bg-canvas-alt hover:bg-canvas transition-colors">
+                        <div class="flex justify-between items-baseline font-mono text-[10px] uppercase tracking-wider text-ink-muted">
+                            <span>[ FIG. 01.1 ]</span>
+                            <span class="text-vermilion font-bold">CROSS-FUNCTIONAL EXP</span>
+                        </div>
+                        <div class="my-4">
+                            <div class="text-3xl sm:text-4xl font-black tracking-[-0.04em] text-ink">7+ Yrs</div>
+                            <div class="text-xs font-semibold text-ink mt-1">Software Engineering to AI Product Leadership</div>
+                        </div>
+                        <div class="font-mono text-[10px] text-ink-faint border-t border-rule/60 pt-2">
+                            CHANNEL: Engineering to Product
+                        </div>
+                    </div>
+                    <!-- Cell 2 -->
+                    <div class="p-6 flex flex-col justify-between border-b border-rule bg-canvas-alt hover:bg-canvas transition-colors">
+                        <div class="flex justify-between items-baseline font-mono text-[10px] uppercase tracking-wider text-ink-muted">
+                            <span>[ FIG. 01.2 ]</span>
+                            <span class="text-vermilion font-bold">ACADEMIC MASTERS</span>
+                        </div>
+                        <div class="my-4">
+                            <div class="text-3xl sm:text-4xl font-black tracking-[-0.04em] text-ink">Dual PG</div>
+                            <div class="text-xs font-semibold text-ink mt-1">AI/ML M.Tech + Strategy MBA</div>
+                        </div>
+                        <div class="font-mono text-[10px] text-ink-faint border-t border-rule/60 pt-2">
+                            BITS Pilani (AI) &amp; IIM Nagpur (Strategy)
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-rule flex-1">
+                    <!-- Cell 3 -->
+                    <div class="p-6 flex flex-col justify-between bg-canvas-alt hover:bg-canvas transition-colors">
+                        <div class="flex justify-between items-baseline font-mono text-[10px] uppercase tracking-wider text-ink-muted">
+                            <span>[ FIG. 01.3 ]</span>
+                            <span class="text-vermilion font-bold">PRODUCT PORTFOLIOS</span>
+                        </div>
+                        <div class="my-4">
+                            <div class="text-3xl sm:text-4xl font-black tracking-[-0.04em] text-ink">$MM+</div>
+                            <div class="text-xs font-semibold text-ink mt-1">Enterprise Scale Systems</div>
+                        </div>
+                        <div class="font-mono text-[10px] text-ink-faint border-t border-rule/60 pt-2">
+                            WFN Client Onboarding &amp; M&amp;A Automation
+                        </div>
+                    </div>
+                    <!-- Cell 4 -->
+                    <div class="p-6 flex flex-col justify-between bg-canvas-alt hover:bg-canvas transition-colors">
+                        <div class="flex justify-between items-baseline font-mono text-[10px] uppercase tracking-wider text-ink-muted">
+                            <span>[ FIG. 01.4 ]</span>
+                            <span class="text-vermilion font-bold">TECHNO-FUNCTIONAL</span>
+                        </div>
+                        <div class="my-4">
+                            <div class="text-3xl sm:text-4xl font-black tracking-[-0.04em] text-ink">Hybrid</div>
+                            <div class="text-xs font-semibold text-ink mt-1">Hands-on Architecture &amp; GTM</div>
+                        </div>
+                        <div class="font-mono text-[10px] text-ink-faint border-t border-rule/60 pt-2">
+                            RAG/LLM Architecture &amp; Executive Leadership
+                        </div>
+                    </div>
+                </div>
+                <!-- Bottom Contact Pill Strip inside Hero Block -->
+                <div class="p-4 bg-canvas border-t border-rule flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
+                    <div class="flex items-center gap-2">
+                        <a class="text-ink font-semibold hover:text-vermilion transition-colors" href="mailto:contact@amurut.com">contact@amurut.com</a>
+                        <span class="text-ink-faint">•</span>
+                        <a class="text-ink-muted hover:text-vermilion transition-colors" href="https://linkedin.com/in/amurut" rel="noopener" target="_blank">LinkedIn ↗</a>
+                        <span class="text-ink-faint">•</span>
+                        <a class="text-ink-muted hover:text-vermilion transition-colors" href="https://github.com/Amurut" rel="noopener" target="_blank">GitHub ↗</a>
+                    </div>
+                    <a class="inline-flex items-center gap-1 text-[11px] px-2 py-0.5 border border-rule-dark bg-canvas-alt text-ink hover:border-vermilion uppercase font-semibold" href="./Amurut_Mathew_Koshy_Resume.pdf" download>
+                        <span class="material-symbols-outlined text-[13px]">description</span>
+                        <span>CV</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHAPTER 02: Modular Atelier Grid - Chronological Career Trajectory -->
+    <section class="scroll-mt-20 space-y-6" id="chapter-02">
+        <!-- Section Title & Meta Header -->
+        <div class="border-b border-rule pb-3 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
+            <div class="flex items-center gap-3">
+                <span class="font-mono text-xs font-bold text-vermilion tracking-widest uppercase">SEC // 02</span>
+                <h2 class="text-base font-mono uppercase tracking-widest text-ink font-semibold">Professional Experience &amp; Product Leadership</h2>
+            </div>
+            <span class="font-mono text-[11px] text-ink-faint uppercase">TIMELINE: 2015 → PRESENT • 7+ YEARS ADVANCED PRACTICE</span>
+        </div>
+
+        <!-- Atelier Multi-Column Layout: Left Sticky Anchor + Right Staggered Dual Cards -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <!-- Left Section Descriptor Column -->
+            <div class="lg:col-span-3 space-y-4">
+                <div class="p-5 border border-rule bg-canvas-alt space-y-3">
+                    <span class="font-mono text-[10px] text-vermilion uppercase tracking-widest font-bold block">EXPERIENCE INDEX</span>
+                    <p class="font-serif italic text-base text-ink leading-snug">
+                        Progressive product execution from systems engineering to enterprise-scale AI architecture and cross-border portfolio expansion.
+                    </p>
+                    <div class="border-t border-rule pt-3 space-y-1.5 font-mono text-[11px] text-ink-muted">
+                        <div class="text-vermilion font-bold">• 2025: SPM II, ADP</div>
+                        <div>• 2022: SPM, ADP</div>
+                        <div>• 2021: BA Intern, AQ4</div>
+                        <div>• 2017: Software Eng, Fidelity</div>
+                        <div>• 2015: Dev Intern, Microsoft</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Multi-Column Career Cards Grid -->
+            <div class="lg:col-span-9 space-y-6">
+                <!-- Top Full-Width Flagship Card: SPM II -->
+                <article class="border border-rule bg-canvas-alt p-6 sm:p-8 space-y-8 hover:border-ink transition-colors relative overflow-hidden">
+                    <div class="absolute top-0 right-0 flex items-center">
+                        <span class="font-mono text-[10px] bg-canvas border-l border-b border-rule text-ink px-3 py-1 uppercase tracking-widest font-semibold hidden sm:inline-block">CAREER PROGRESSION</span>
+                        <span class="font-mono text-[10px] bg-vermilion text-white px-3 py-1 uppercase tracking-widest font-bold">CURRENT / ACTIVE APPOINTMENT</span>
+                    </div>
+                    <div class="border-b border-rule pb-5 space-y-2">
+                        <div class="flex flex-wrap items-center gap-3 pt-4 sm:pt-0">
+                            <div class="w-10 h-10 bg-white border border-rule p-1.5 flex items-center justify-center shrink-0 shadow-sm">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Automatic_Data_Processing_%28logo%29.svg" alt="ADP Logo" class="max-w-full max-h-full object-contain">
+                            </div>
+                            <div class="flex flex-wrap items-center gap-2">
+                                <span class="font-mono text-sm font-bold text-ink uppercase tracking-wider">ADP (Automatic Data Processing)</span>
+                                <span class="text-ink-faint hidden sm:inline">•</span>
+                                <span class="font-mono text-xs text-vermilion font-semibold uppercase tracking-wider">PROMOTED // 2 CONSECUTIVE ROLES</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                            <div class="text-xs font-mono text-ink-muted uppercase tracking-wider">
+                                Enterprise Human Capital Management &amp; Cloud Systems
+                            </div>
+                            <div class="font-mono text-xs text-ink-muted font-bold tracking-wide">
+                                April 2022 — Present • 4+ Years
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative pl-6 sm:pl-8 border-l-2 border-vermilion space-y-8">
+                        <div class="relative space-y-4">
+                            <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3.5 h-3.5 rounded-full bg-vermilion border-2 border-canvas"></div>
+                            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+                                <div>
+                                    <div class="flex flex-wrap items-center gap-2">
+                                        <h3 class="text-xl sm:text-2xl font-bold tracking-tight text-ink">Senior Product Manager – II</h3>
+                                        <span class="font-mono text-[10px] px-2 py-0.5 bg-vermilion/10 text-vermilion border border-vermilion/30 uppercase font-bold">ELEVATED TO SPM-II</span>
+                                    </div>
+                                    <div class="font-mono text-xs text-ink-muted tracking-wide mt-0.5">April 2025 — Present • WFN (Workforce Now) Enterprise / Launchpad</div>
+                                </div>
+                            </div>
+                            <div class="space-y-3 text-xs sm:text-sm leading-relaxed text-ink">
+                                <div class="grid grid-cols-1 sm:grid-cols-12 gap-1.5 sm:gap-4">
+                                    <div class="sm:col-span-3 font-mono text-[11px] text-vermilion uppercase tracking-wider font-bold">[PRODUCT LEADERSHIP]</div>
+                                    <div class="sm:col-span-9 text-ink">Serve as Product Lead for <strong>'Launchpad'</strong> — the Client Onboarding &amp; Implementation module of Workforce Now, managing a cross-functional squad and full product lifecycle.</div>
+                                </div>
+                                <div class="grid grid-cols-1 sm:grid-cols-12 gap-1.5 sm:gap-4">
+                                    <div class="sm:col-span-3 font-mono text-[11px] text-vermilion uppercase tracking-wider font-bold">[M&amp;A AUTOMATION]</div>
+                                    <div class="sm:col-span-9 text-ink">Building an internal product for automated data movement for clients undergoing Mergers &amp; Acquisitions, covering Payroll, Time &amp; Tax domains; projected to reduce manual migration effort by over 50%.</div>
+                                </div>
+                                <div class="grid grid-cols-1 sm:grid-cols-12 gap-1.5 sm:gap-4">
+                                    <div class="sm:col-span-3 font-mono text-[11px] text-vermilion uppercase tracking-wider font-bold">[SYSTEM INTEGRATION]</div>
+                                    <div class="sm:col-span-9 text-ink">Sole PM for a Resource &amp; Backlog Management module interfacing with CRM and billing systems, streamlining capacity planning across delivery teams.</div>
+                                </div>
+                            </div>
+                            <div class="pt-2 flex flex-wrap gap-1.5">
+                                <span class="font-mono text-[10px] px-2 py-0.5 bg-canvas border border-rule text-ink uppercase">Launchpad PM</span>
+                                <span class="font-mono text-[10px] px-2 py-0.5 bg-canvas border border-rule text-ink uppercase">Workforce Now</span>
+                                <span class="font-mono text-[10px] px-2 py-0.5 bg-canvas border border-rule text-ink uppercase">M&amp;A Migration</span>
+                                <span class="font-mono text-[10px] px-2 py-0.5 bg-canvas border border-rule text-ink uppercase">Capacity Planning</span>
+                            </div>
+                        </div>
+                        <div class="py-2">
+                            <div class="flex items-center gap-3 font-mono text-[11px] uppercase tracking-wider text-vermilion font-bold bg-canvas border border-rule p-2.5">
+                                <span class="material-symbols-outlined text-[15px]">north</span>
+                                <span>↑ PROMOTION TO SENIOR PRODUCT MANAGER – II (APRIL 2025)</span>
+                            </div>
+                        </div>
+                        <div class="relative space-y-4">
+                            <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3.5 h-3.5 rounded-full bg-rule-dark border-2 border-canvas"></div>
+                            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+                                <div>
+                                    <h3 class="text-lg sm:text-xl font-bold tracking-tight text-ink">Senior Product Manager</h3>
+                                    <div class="font-mono text-xs text-ink-muted tracking-wide mt-0.5">April 2022 — April 2025 • Enterprise Benefits Tech</div>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs leading-relaxed">
+                                <div>
+                                    <span class="font-mono text-[10px] text-vermilion uppercase tracking-wider font-bold block">[REVENUE GROWTH]</span>
+                                    <p class="text-ink mt-0.5">Created a new sales channel for Open Enrollment support, generating $2M in new recurring annual revenue.</p>
+                                </div>
+                                <div>
+                                    <span class="font-mono text-[10px] text-vermilion uppercase tracking-wider font-bold block">[PRODUCT ADOPTION]</span>
+                                    <p class="text-ink mt-0.5">Led the Employee Communications channel of the Benefits Module; implemented enhancements that drove ADP Mobile adoption up by 80%+ YoY, adding 500K+ active sessions monthly.</p>
+                                </div>
+                                <div>
+                                    <span class="font-mono text-[10px] text-vermilion uppercase tracking-wider font-bold block">[AI &amp; AUTOMATION]</span>
+                                    <p class="text-ink mt-0.5">Spearheaded a Digitization Initiative leveraging AI-based OCR &amp; data extraction algorithms, reducing inbound support call volumes by 15%.</p>
+                                </div>
+                                <div>
+                                    <span class="font-mono text-[10px] text-vermilion uppercase tracking-wider font-bold block">[STRATEGIC AI PARTNERSHIP]</span>
+                                    <p class="text-ink mt-0.5">Integrated an AI-enabled Benefits Decision Support Platform for the US market in collaboration with an external AI vendor, expanding product value proposition for 20K+ clients.</p>
+                                </div>
+                            </div>
+                            <div class="pt-2 flex flex-wrap gap-1.5">
+                                <span class="font-mono text-[9px] px-2 py-0.5 bg-canvas border border-rule text-ink uppercase">Open Enrollment</span>
+                                <span class="font-mono text-[9px] px-2 py-0.5 bg-canvas border border-rule text-ink uppercase">Revenue Growth</span>
+                                <span class="font-mono text-[9px] px-2 py-0.5 bg-canvas border border-rule text-ink uppercase">Mobile Adoption</span>
+                                <span class="font-mono text-[9px] px-2 py-0.5 bg-canvas border border-rule text-ink uppercase">AI OCR</span>
+                                <span class="font-mono text-[9px] px-2 py-0.5 bg-canvas border border-rule text-ink uppercase">Benefits Tech</span>
+                                <span class="font-mono text-[9px] px-2 py-0.5 bg-canvas border border-rule text-ink uppercase">20K+ Clients</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Transition Banner & Fidelity Card -->
+                <div class="space-y-6">
+                    <div class="my-4 py-3 px-4 sm:px-6 border-y border-dashed border-rule-dark bg-canvas-subtle/50 flex flex-col sm:flex-row sm:items-center justify-between gap-3 font-mono text-xs">
+                        <div class="flex items-center flex-wrap gap-2.5">
+                            <span class="w-2 h-2 bg-vermilion inline-block"></span>
+                            <span class="font-bold text-ink uppercase tracking-wider">2020 — 2022 // Full-time MBA (IIM Nagpur)</span>
+                            <span class="hidden sm:inline text-ink-faint">—</span>
+                            <span class="text-ink-muted text-[11px]">Career Transition: Systems Engineering → Enterprise Product Management</span>
+                        </div>
+                        <a class="inline-flex items-center gap-1.5 text-vermilion hover:underline tracking-wider font-bold uppercase text-[11px] shrink-0" href="#chapter-04">
+                            <span>View in Sec // 04</span>
+                            <span class="material-symbols-outlined text-[13px]">arrow_forward</span>
                         </a>
                     </div>
-                </div>
-            </section>
-
-            <section id="experience" class="py-24 bg-slate-900/30">
-                <div class="container mx-auto max-w-4xl px-6">
-                    <h2 class="text-3xl font-bold text-white mb-16">Professional Experience</h2>
-                    <div class="relative pl-8 border-l border-slate-800 space-y-16">
-                        <template x-for="exp in data.experience">
-                            <div class="relative">
-                                <div class="absolute -left-[37px] top-1 w-4 h-4 rounded-full bg-dark border-2 border-primary"></div>
-                                <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-4 gap-4">
-                                    <div class="flex items-center gap-4">
-                                        <template x-if="exp.logo">
-                                            <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center p-2 shrink-0 shadow-lg">
-                                                <img :src="exp.logo" :alt="exp.company" class="max-w-full max-h-full object-contain">
-                                            </div>
-                                        </template>
-                                        <div>
-                                            <h3 class="text-2xl font-bold text-white" x-text="exp.title"></h3>
-                                            <p class="text-primary font-semibold" x-text="exp.company"></p>
-                                        </div>
+                    <article class="border border-rule bg-canvas-alt p-6 sm:p-8 space-y-5 hover:border-ink transition-colors flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between border-b border-rule pb-3">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-9 h-9 bg-white border border-rule p-1 flex items-center justify-center shrink-0 shadow-sm">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/FidPicture1jpg.jpg" alt="Fidelity Investments Logo" class="max-w-full max-h-full object-contain">
                                     </div>
-                                    <span class="text-slate-500 font-mono text-sm shrink-0" x-text="exp.period"></span>
-                                </div>
-                                <ul class="space-y-3">
-                                    <template x-for="ach in exp.achievements">
-                                        <li class="flex items-start gap-3 text-slate-400 leading-relaxed">
-                                            <i class="fas fa-circle text-[6px] mt-2.5 text-primary opacity-50"></i>
-                                            <span x-html="ach"></span>
-                                        </li>
-                                    </template>
-                                </ul>
-                            </div>
-                        </template>
-                    </div>
-                </div>
-            </section>
-
-            <section id="projects" class="py-24">
-                <div class="container mx-auto max-w-6xl px-6">
-                    <h2 class="text-3xl font-bold text-white text-center mb-16">Featured Projects</h2>
-                    <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
-                        <template x-for="project in data.projects">
-                            <div class="card-gradient p-8 rounded-3xl border border-slate-800 flex flex-col h-full shadow-2xl group hover:border-primary/50 transition-all">
-                                <div class="flex justify-between items-start mb-6">
-                                    <h3 class="text-2xl font-bold text-white group-hover:text-primary transition" x-text="project.title"></h3>
-                                    <div class="flex gap-4">
-                                        <a :href="project.github" target="_blank" class="text-slate-500 hover:text-white transition"><i class="fab fa-github text-xl"></i></a>
-                                        <a :href="project.link" target="_blank" class="text-slate-500 hover:text-primary transition"><i class="fas fa-external-link-alt text-xl"></i></a>
+                                    <div>
+                                        <span class="font-mono text-xs font-bold text-ink uppercase tracking-wider">Fidelity Investments</span>
+                                        <span class="block font-mono text-[10px] text-ink-muted uppercase">Cloud &amp; Platform Eng</span>
                                     </div>
                                 </div>
-                                <p class="text-slate-400 mb-8 leading-relaxed" x-text="project.description"></p>
-                                <div class="mt-auto flex flex-wrap gap-2">
-                                    <template x-for="tag in project.tech">
-                                        <span class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-wider rounded-full border border-primary/20" x-text="tag"></span>
-                                    </template>
+                                <div class="font-mono text-[11px] text-ink-muted">July 2017 – July 2020</div>
+                            </div>
+                            <h3 class="text-xl font-bold tracking-tight text-ink">Software Engineer</h3>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs leading-relaxed">
+                                <div>
+                                    <span class="font-mono text-[10px] text-ink-muted uppercase tracking-wider font-bold block">[Full-Stack Dev]</span>
+                                    <p class="text-ink mt-0.5">Built two Self-Service Automation frameworks and data analysis tools adopted by 8 teams, saving 20+ hours/week in manual effort.</p>
+                                </div>
+                                <div>
+                                    <span class="font-mono text-[10px] text-vermilion uppercase tracking-wider font-bold block">[Cloud Transformation]</span>
+                                    <p class="text-ink mt-0.5">Core team member for migrating clients from legacy on-premise platforms to cloud-enabled architecture.</p>
+                                </div>
+                                <div>
+                                    <span class="font-mono text-[10px] text-ink-muted uppercase tracking-wider font-bold block">[Data Engineering]</span>
+                                    <p class="text-ink mt-0.5">Automated data pipelines, configuration loading, and validation processes, reducing pipeline errors by 30%.</p>
+                                </div>
+                                <div>
+                                    <span class="font-mono text-[10px] text-ink-muted uppercase tracking-wider font-bold block">[Quality Assurance]</span>
+                                    <p class="text-ink mt-0.5">Defined Benefit Squad: delivered QA coverage through Process, Batch, and Test Automation frameworks.</p>
                                 </div>
                             </div>
-                        </template>
-                    </div>
+                        </div>
+                        <div class="pt-3 border-t border-rule/60 flex flex-wrap gap-1.5">
+                            <span class="font-mono text-[9px] px-2 py-0.5 bg-canvas border border-rule text-ink uppercase">Cloud Migration</span>
+                            <span class="font-mono text-[9px] px-2 py-0.5 bg-canvas border border-rule text-ink uppercase">Automation Tools</span>
+                            <span class="font-mono text-[9px] px-2 py-0.5 bg-canvas border border-rule text-ink uppercase">Data Pipelines</span>
+                        </div>
+                    </article>
                 </div>
-            </section>
 
-            <section id="education" class="py-24">
-                <div class="container mx-auto max-w-6xl px-6">
-                    <h2 class="text-3xl font-bold text-white text-center mb-16">Education & Research</h2>
-                    <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
-                        <template x-for="edu in data.education">
-                            <div class="card-gradient p-8 rounded-3xl border border-slate-800 flex flex-col h-full shadow-2xl">
-                                <div class="mb-6">
-                                    <h3 class="text-xl font-bold text-white mb-2" x-text="edu.degree"></h3>
-                                    <p class="text-primary text-sm font-semibold" x-text="edu.institution"></p>
+                <!-- Bottom Split Cards: Analytics Quad 4 & Microsoft Developer -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Role 03: Analytics Quad 4 -->
+                    <article class="border border-rule bg-canvas-alt p-6 space-y-4 hover:border-ink transition-colors">
+                        <div class="flex items-center justify-between border-b border-rule pb-3">
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-8 h-8 bg-canvas border border-rule flex items-center justify-center shrink-0 font-mono text-[10px] font-bold text-vermilion">
+                                    AQ4
                                 </div>
-                                <div class="space-y-4 mb-8">
-                                    <template x-for="hl in edu.highlights">
-                                        <div class="flex items-start gap-3 text-xs text-slate-400">
-                                            <span class="w-1.5 h-1.5 rounded-full bg-accent mt-1 shrink-0"></span>
-                                            <span x-text="hl"></span>
-                                        </div>
-                                    </template>
-                                </div>
-                                <div class="mt-auto pt-4 border-t border-slate-800/50">
-                                    <p class="text-slate-500 text-[10px] font-bold uppercase tracking-widest" x-text="edu.period"></p>
-                                </div>
+                                <span class="font-mono text-xs font-bold text-ink uppercase tracking-wider">Analytics Quad 4</span>
                             </div>
-                        </template>
-                    </div>
-                </div>
-            </section>
-
-            <section id="skills" class="py-24 bg-slate-900/30 text-center">
-                <div class="container mx-auto max-w-5xl px-6">
-                    <h2 class="text-3xl font-bold text-white mb-16">Technical Stack</h2>
-                    <div class="grid md:grid-cols-3 gap-12 text-left">
-                        <template x-for="(skills, category) in data.skills">
+                            <span class="font-mono text-[11px] text-ink-muted">April 2021 – June 2021</span>
+                        </div>
+                        <h3 class="text-lg font-bold tracking-tight text-ink">Business Analyst Intern</h3>
+                        <div class="space-y-2 text-xs leading-relaxed">
                             <div>
-                                <h3 class="text-xs uppercase tracking-widest text-slate-500 font-bold mb-6 border-b border-slate-800 pb-2" x-text="category"></h3>
-                                <div class="flex flex-wrap gap-2">
-                                    <template x-for="skill in skills">
-                                        <span class="px-3 py-1 bg-slate-800/50 text-slate-300 rounded border border-slate-700 text-sm" x-text="skill"></span>
-                                    </template>
-                                </div>
+                                <span class="font-mono text-[10px] text-ink-muted uppercase tracking-wider font-bold block">[Sales Optimization]</span>
+                                <p class="text-ink">Evaluated and Implemented POCs on new software to help further optimize the sales pipeline.</p>
                             </div>
-                        </template>
+                            <div>
+                                <span class="font-mono text-[10px] text-ink-muted uppercase tracking-wider font-bold block">[Digital Marketing]</span>
+                                <p class="text-ink">Responsible for enhancements to the AQ4 website, collateral and other key marketing initiatives.</p>
+                            </div>
+                            <div>
+                                <span class="font-mono text-[10px] text-ink-muted uppercase tracking-wider font-bold block">[Technology Research]</span>
+                                <p class="text-ink">Performed research on new technologies and analysed their compatibility with AQ4 solutions.</p>
+                            </div>
+                            <div>
+                                <span class="font-mono text-[10px] text-ink-muted uppercase tracking-wider font-bold block">[Lead Management]</span>
+                                <p class="text-ink">Designed strategies to implement a Lead Qualification Process and a framework for efficient Campaign Tracking, improving lead conversion by nearly 14%.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Role 05: Microsoft -->
+                    <article class="border border-rule bg-canvas-alt p-6 space-y-4 hover:border-ink transition-colors">
+                        <div class="flex items-center justify-between border-b border-rule pb-3">
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-8 h-8 bg-white border border-rule p-1.5 flex items-center justify-center shrink-0 shadow-sm">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft Logo" class="max-w-full max-h-full object-contain">
+                                </div>
+                                <span class="font-mono text-xs font-bold text-ink uppercase tracking-wider">Microsoft</span>
+                            </div>
+                            <span class="font-mono text-[11px] text-ink-muted">June 2015 – Aug 2015</span>
+                        </div>
+                        <h3 class="text-lg font-bold tracking-tight text-ink">Student Microsoft Developer</h3>
+                        <div class="space-y-3 text-xs leading-relaxed">
+                            <div>
+                                <span class="font-mono text-[10px] text-ink-muted uppercase tracking-wider font-bold block">[Android Dev]</span>
+                                <p class="text-ink">Part of the Android App Development Team for a project titled i-Witness, designed as a prototype for simpler crime reporting.</p>
+                            </div>
+                            <div>
+                                <span class="font-mono text-[10px] text-ink-muted uppercase tracking-wider font-bold block">[Product Prototyping]</span>
+                                <p class="text-ink">App was designed as a prototype for a simpler form of crime/incident reporting by a neighbourhood.</p>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-rule/60 font-mono text-[10px] text-ink-faint uppercase">
+                            FOUNDATIONAL INCUBATION // CLIENT MOBILE LABS
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHAPTER 03: Selected Case Studies & AI Architectures -->
+    <section class="scroll-mt-20 space-y-8" id="chapter-03">
+        <!-- Section Title & Meta Header -->
+        <div class="border-b border-rule pb-3 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
+            <div class="flex items-center gap-3">
+                <span class="font-mono text-xs font-bold text-vermilion tracking-widest uppercase">SEC // 03</span>
+                <h2 class="text-base font-mono uppercase tracking-widest text-ink font-semibold">Selected Case Studies &amp; AI Architectures</h2>
+            </div>
+            <span class="font-mono text-[11px] text-ink-faint uppercase">3 CASE IMPLEMENTATIONS • ATELIER MONOGRAPH ARCHIVE</span>
+        </div>
+        <p class="font-serif italic text-lg text-ink-muted leading-relaxed max-w-3xl">
+            Deep technical implementations spanning retrieval-augmented generation, multi-provider LLM orchestration, and dynamic financial simulations.
+        </p>
+
+        <!-- Asymmetrical Architectural Grid with Technical Badge Rows and Project Thumbnails -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+            <!-- Case 03.1: Healthcare Taxation AI Assistant -->
+            <article class="border border-rule bg-canvas-alt flex flex-col justify-between hover:border-ink transition-colors group">
+                <div class="relative border-b border-rule aspect-video overflow-hidden bg-canvas-subtle">
+                    <img class="w-full h-full object-cover object-top filter contrast-[1.03] group-hover:scale-105 transition-transform duration-500" 
+                         alt="Healthcare Taxation Assistant user interface showing configuration sidebar and chat interface" 
+                         src="assets/healthcare-taxation-assistant.png">
+                    <div class="absolute top-3 left-3 bg-ink text-canvas font-mono text-[9px] uppercase tracking-widest px-2.5 py-1">
+                        CORE DISSERTATION // M.TECH
+                    </div>
+                    <div class="absolute top-3 right-3 bg-canvas/90 backdrop-blur text-ink font-mono text-[9px] uppercase tracking-wider px-2 py-1 border border-rule">
+                        STATUS: VALIDATED
                     </div>
                 </div>
-            </section>
-
-            <section id="certifications" class="py-24">
-                <div class="container mx-auto max-w-5xl px-6 text-center">
-                    <h2 class="text-3xl font-bold text-white mb-12">Certifications</h2>
-                    <div class="flex flex-wrap justify-center gap-6">
-                        <template x-for="cert in data.certifications">
-                            <div class="card-gradient px-6 py-4 rounded-2xl border border-slate-800 flex items-center gap-4">
-                                <i class="fas fa-certificate text-primary"></i>
-                                <div class="text-left">
-                                    <h3 class="text-white font-bold text-sm" x-text="cert.name"></h3>
-                                    <span class="text-slate-500 text-xs" x-text="cert.date"></span>
-                                    <span class="text-[10px] px-2 py-0.5 rounded-full ml-2" :class="cert.status === 'Active' ? 'bg-accent/10 text-accent' : 'bg-slate-700 text-slate-400'" x-text="cert.status"></span>
-                                </div>
-                            </div>
-                        </template>
-                    </div>
-                </div>
-            </section>
-
-            <section id="contact" class="py-32">
-                <div class="container mx-auto max-w-4xl px-6 text-center">
-                    <div class="card-gradient p-12 rounded-3xl border border-slate-800 shadow-2xl">
-                        <h2 class="text-4xl font-extrabold text-white mb-6">Let's Connect</h2>
-                        <p class="text-slate-400 mb-10 text-lg">
-                            I'm always open to talking tech, AI, Product Management, and Aviation.<br>
-                            For professional inquiries or collaboration opportunities, please reach out via LinkedIn or email.
+                <div class="p-6 sm:p-8 flex flex-col justify-between flex-1 space-y-5">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between font-mono text-[10px] tracking-widest uppercase">
+                            <span class="text-vermilion font-bold">CASE // 03.1 • RAG ENGINE</span>
+                            <span class="text-ink-faint">BITS PILANI</span>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-ink">Healthcare Taxation AI Assistant</h3>
+                        <p class="text-xs sm:text-sm text-ink-muted leading-relaxed">
+                            An advanced RAG-based agentic system designed to interpret complex US Federal and State healthcare tax laws. Implements HyDE (Hypothetical Document Embeddings) and Query Transformations to improve retrieval accuracy for nuanced legal queries. This serves as the core implementation of my M.Tech dissertation.
                         </p>
-                        <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                            <a :href="data.social?.linkedin" target="_blank" 
-                               class="flex items-center justify-center gap-3 w-full sm:w-64 px-6 py-4 bg-[#0077b5] text-white font-bold rounded-2xl hover:scale-105 transition-all shadow-xl">
-                                <i class="fab fa-linkedin-in text-xl"></i>
-                                <span>LinkedIn</span>
+                    </div>
+                    <div class="space-y-4 pt-4 border-t border-rule/60">
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="font-mono text-[10px] px-2 py-0.5 bg-canvas border border-rule text-ink">LlamaIndex</span>
+                            <span class="font-mono text-[10px] px-2 py-0.5 bg-canvas border border-rule text-ink">Streamlit</span>
+                            <span class="font-mono text-[10px] px-2 py-0.5 bg-canvas border border-rule text-ink">LLM-Agents</span>
+                            <span class="font-mono text-[10px] px-2 py-0.5 bg-canvas border border-rule text-ink">RAG</span>
+                            <span class="font-mono text-[10px] px-2 py-0.5 bg-canvas border border-rule text-ink">Vector Databases</span>
+                        </div>
+                        <div class="flex flex-wrap items-center justify-between gap-3 pt-2">
+                            <a class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-ink text-canvas hover:bg-vermilion transition-colors text-xs font-mono uppercase tracking-wider font-bold" 
+                               href="https://healthcare-taxation-assistant.streamlit.app/" rel="noopener" target="_blank">
+                                <span>Live Demo</span>
+                                <span class="material-symbols-outlined text-[13px]">arrow_outward</span>
                             </a>
-                            
-                            <a href="mailto:contact@amurut.com" 
-                               class="flex items-center justify-center gap-3 w-full sm:w-64 px-6 py-4 bg-slate-800 text-white font-bold rounded-2xl border border-slate-700 hover:scale-105 transition-all shadow-xl">
-                                <i class="fas fa-envelope text-xl"></i>
-                                <span class="truncate">contact@amurut.com</span>
+                            <a class="inline-flex items-center gap-1.5 font-mono text-xs text-vermilion hover:underline tracking-wider font-bold uppercase" 
+                               href="https://github.com/Amurut/Healthcare-Taxation-Assistant" rel="noopener" target="_blank">
+                                <span>GitHub Repository</span>
+                                <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
                             </a>
                         </div>
                     </div>
                 </div>
-            </section>
-        </main>
+            </article>
 
-        <button id="backToTop" class="fixed bottom-6 right-6 z-50 hidden p-4 rounded-full bg-primary text-white shadow-2xl hover:bg-indigo-500 transition" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" aria-label="Back to top">
-            <i class="fas fa-arrow-up"></i>
-        </button>
+            <!-- Case 03.2: Tavern & Tomb -->
+            <article class="border border-rule bg-canvas-alt flex flex-col justify-between hover:border-ink transition-colors group">
+                <div class="relative border-b border-rule aspect-video overflow-hidden bg-canvas-subtle">
+                    <img class="w-full h-full object-cover object-top filter contrast-[1.03] group-hover:scale-105 transition-transform duration-500" 
+                         alt="Tavern &amp; Tomb browser-based AI tabletop RPG party setup and theme configuration interface" 
+                         src="assets/tavern-and-tomb.png">
+                    <div class="absolute top-3 left-3 bg-ink text-canvas font-mono text-[9px] uppercase tracking-widest px-2.5 py-1">
+                        AI AGENTIC WEB RPG
+                    </div>
+                    <div class="absolute top-3 right-3 bg-canvas/90 backdrop-blur text-ink font-mono text-[9px] uppercase tracking-wider px-2 py-1 border border-rule">
+                        MULTI-AGENT
+                    </div>
+                </div>
+                <div class="p-6 sm:p-8 flex flex-col justify-between flex-1 space-y-5">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between font-mono text-[10px] tracking-widest uppercase">
+                            <span class="text-vermilion font-bold">CASE // 03.2 • AUTONOMOUS DM</span>
+                            <span class="text-ink-faint">EXPERIMENT</span>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-ink">Tavern &amp; Tomb — AI Dungeon Master Web RPG</h3>
+                        <p class="text-xs sm:text-sm text-ink-muted leading-relaxed">
+                            A browser-based, pass-and-play tabletop RPG game where an AI acts as the Dungeon Master. Features interactive d20 skill check resolution, multi-provider LLM support (Gemini, OpenAI, Claude), character sheet &amp; inventory management, campaign presets, and voice narration.
+                        </p>
+                    </div>
+                    <div class="space-y-4 pt-4 border-t border-rule/60">
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="font-mono text-[10px] px-2 py-0.5 bg-canvas border border-rule text-ink">Node.js</span>
+                            <span class="font-mono text-[10px] px-2 py-0.5 bg-canvas border border-rule text-ink">Express</span>
+                            <span class="font-mono text-[10px] px-2 py-0.5 bg-canvas border border-rule text-ink">JavaScript (ES6+)</span>
+                            <span class="font-mono text-[10px] px-2 py-0.5 bg-canvas border border-rule text-ink">Web Speech API</span>
+                            <span class="font-mono text-[10px] px-2 py-0.5 bg-canvas border border-rule text-ink">LLM Integrations</span>
+                        </div>
+                        <div class="flex flex-wrap items-center justify-between gap-3 pt-2">
+                            <a class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-ink text-canvas hover:bg-vermilion transition-colors text-xs font-mono uppercase tracking-wider font-bold" 
+                               href="https://tavern-and-tomb.onrender.com" rel="noopener" target="_blank">
+                                <span>Live Demo</span>
+                                <span class="material-symbols-outlined text-[13px]">arrow_outward</span>
+                            </a>
+                            <a class="inline-flex items-center gap-1.5 font-mono text-xs text-vermilion hover:underline tracking-wider font-bold uppercase" 
+                               href="https://github.com/Amurut/Dungeon_Master_AI" rel="noopener" target="_blank">
+                                <span>GitHub Repository</span>
+                                <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Case 03.3: TradeLearner-Sim -->
+            <article class="border border-rule bg-canvas-alt flex flex-col justify-between hover:border-ink transition-colors group lg:col-span-2">
+                <div class="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-rule">
+                    <div class="lg:col-span-7 relative aspect-video overflow-hidden bg-canvas-subtle">
+                        <img class="w-full h-full object-cover object-top filter contrast-[1.03] group-hover:scale-105 transition-transform duration-500" 
+                             alt="TradeLearner Pro market dashboard with live price cards and options chains" 
+                             src="assets/trade-learner.png">
+                        <div class="absolute top-3 left-3 bg-ink text-canvas font-mono text-[9px] uppercase tracking-widest px-2.5 py-1">
+                            DERIVATIVES FINTECH SIMULATOR
+                        </div>
+                        <div class="absolute top-3 right-3 bg-canvas/90 backdrop-blur text-ink font-mono text-[9px] uppercase tracking-wider px-2 py-1 border border-rule">
+                            HIGH PRECISION
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between space-y-5">
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between font-mono text-[10px] tracking-widest uppercase">
+                                <span class="text-vermilion font-bold">CASE // 03.3 • QUANTITATIVE FINTECH</span>
+                                <span class="text-ink-faint">DERIVATIVES</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold text-ink">TradeLearner-Sim</h3>
+                            <p class="text-xs sm:text-sm text-ink-muted leading-relaxed">
+                                A high-fidelity trading simulator designed to teach complex financial derivatives through gamification. Features real-time OHLC candlestick charts, a functional options chain (Calls/Puts), and live P&amp;L tracking.
+                            </p>
+                        </div>
+                        <div class="space-y-4 pt-4 border-t border-rule/60">
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="font-mono text-[10px] px-2 py-0.5 bg-canvas border border-rule text-ink">React</span>
+                                <span class="font-mono text-[10px] px-2 py-0.5 bg-canvas border border-rule text-ink">Vite</span>
+                                <span class="font-mono text-[10px] px-2 py-0.5 bg-canvas border border-rule text-ink">Tailweight Charts</span>
+                                <span class="font-mono text-[10px] px-2 py-0.5 bg-canvas border border-rule text-ink">Framer Motion</span>
+                                <span class="font-mono text-[10px] px-2 py-0.5 bg-canvas border border-rule text-ink">Tailwind CSS</span>
+                            </div>
+                            <div class="flex flex-wrap items-center justify-between gap-3 pt-2">
+                                <a class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-ink text-canvas hover:bg-vermilion transition-colors text-xs font-mono uppercase tracking-wider font-bold" 
+                                   href="https://amurut.github.io/Learn_To_Trade/" rel="noopener" target="_blank">
+                                    <span>Live Demo</span>
+                                    <span class="material-symbols-outlined text-[13px]">arrow_outward</span>
+                                </a>
+                                <a class="inline-flex items-center gap-1.5 font-mono text-xs text-vermilion hover:underline tracking-wider font-bold uppercase" 
+                                   href="https://github.com/Amurut/Learn_To_Trade" rel="noopener" target="_blank">
+                                    <span>GitHub Repository</span>
+                                    <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Case: Startup CEO (TEMPORARILY HIDDEN AS REQUESTED)
+            <article class="border border-rule bg-canvas-alt flex flex-col justify-between hover:border-ink transition-colors group">
+                <div class="relative border-b border-rule aspect-video overflow-hidden bg-canvas-subtle">
+                    <img class="w-full h-full object-cover object-top" src="assets/startup-ceo.png" alt="Startup CEO Game">
+                </div>
+                <div class="p-6 sm:p-8 flex flex-col justify-between flex-1 space-y-5">
+                    <h3 class="text-xl sm:text-2xl font-bold text-ink">Startup CEO - A business simulation game</h3>
+                    <p class="text-xs sm:text-sm text-ink-muted leading-relaxed">
+                        A high-fidelity business engine simulating the complexities of scaling a multi-industry conglomerate.
+                    </p>
+                    <div class="flex gap-2">
+                        <a href="https://amurut.com/startup-ceo-sim-game/" target="_blank">Live</a>
+                        <a href="https://github.com/Amurut/startup-ceo-sim-game" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </article>
+            -->
+
+        </div>
+    </section>
+
+    <!-- CHAPTER 04 & 05: Academic Pedigree & Technical Matrix Comparison Layout -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <!-- CHAPTER 04: Academic Foundations (Col 6) -->
+        <section class="lg:col-span-6 scroll-mt-20 space-y-6" id="chapter-04">
+            <div class="border-b border-rule pb-3 flex items-baseline justify-between">
+                <div class="flex items-center gap-3">
+                    <span class="font-mono text-xs font-bold text-vermilion tracking-widest uppercase">SEC // 04</span>
+                    <h2 class="text-base font-mono uppercase tracking-widest text-ink font-semibold">Academic Pedigree &amp; Strategic Foundations</h2>
+                </div>
+                <span class="font-mono text-[11px] text-ink-faint uppercase">DUAL MASTERS + B.E.</span>
+            </div>
+            <p class="font-serif italic text-base text-ink-muted leading-relaxed">
+                Rigorous post-graduate interdisciplinary pairing of advanced Machine Learning computation with quantitative strategic decision sciences.
+            </p>
+            <div class="space-y-4">
+                <!-- Degree 01 -->
+                <div class="border border-rule bg-canvas-alt p-6 space-y-4 hover:border-ink transition-colors">
+                    <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+                        <div>
+                            <div class="font-mono text-[11px] text-vermilion uppercase font-bold tracking-wider">POST-GRADUATE • COMPUTER SCIENCE</div>
+                            <h3 class="text-lg font-bold text-ink">M.Tech in Artificial Intelligence &amp; Machine Learning</h3>
+                            <div class="text-sm font-semibold text-ink-muted">BITS Pilani</div>
+                        </div>
+                        <span class="font-mono text-xs text-ink-muted">2023 – 2025</span>
+                    </div>
+                    <div class="p-4 bg-canvas border-l-2 border-vermilion space-y-1">
+                        <div class="font-mono text-[10px] text-vermilion uppercase tracking-widest font-bold">Dissertation Title</div>
+                        <div class="font-serif italic text-sm text-ink">
+                            “Retrieval Augmented Generation (RAG) with GPT-4 &amp; Llama3 for Healthcare Taxation”
+                        </div>
+                    </div>
+                    <div class="text-xs text-ink-muted">
+                        <strong class="text-ink font-semibold">Core Focus:</strong> LLM integrations, Vector Databases, and Scalable AI Architecture.
+                    </div>
+                </div>
+                <!-- Degree 02 -->
+                <div class="border border-rule bg-canvas-alt p-6 space-y-4 hover:border-ink transition-colors">
+                    <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+                        <div>
+                            <div class="font-mono text-[11px] text-vermilion uppercase font-bold tracking-wider">POST-GRADUATE • MANAGEMENT &amp; STRATEGY</div>
+                            <h3 class="text-lg font-bold text-ink">MBA in Decision Sciences &amp; Strategy</h3>
+                            <div class="text-sm font-semibold text-ink-muted">IIM Nagpur</div>
+                        </div>
+                        <span class="font-mono text-xs text-ink-muted">2020 – 2022</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-1">
+                        <span class="font-mono text-[10px] px-2.5 py-1 bg-canvas border border-rule text-ink">Co-ordinator : E-Cell</span>
+                        <span class="font-mono text-[10px] px-2.5 py-1 bg-canvas border border-rule text-ink">Executive Member : Indo-Japan Research Centre</span>
+                        <span class="font-mono text-[10px] px-2.5 py-1 bg-canvas border border-rule text-ink">Student Affairs Council Representative</span>
+                    </div>
+                </div>
+                <!-- Degree 03 -->
+                <div class="border border-rule bg-canvas-alt p-6 space-y-2 hover:border-ink transition-colors">
+                    <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+                        <div>
+                            <div class="font-mono text-[11px] text-ink-muted uppercase font-bold tracking-wider">UNDERGRADUATE • ENGINEERING</div>
+                            <h3 class="text-lg font-bold text-ink">B.E. in Electronics &amp; Communication Engineering</h3>
+                            <div class="text-sm font-semibold text-ink-muted">Ramaiah Institute of Technology, Bangalore</div>
+                        </div>
+                        <span class="font-mono text-xs text-ink-muted">2013 – 2017</span>
+                    </div>
+                    <p class="text-xs text-ink-muted leading-relaxed pt-1">
+                        Published Research at ICIoTCT 2017 • Research Grant awarded by IISc &amp; KSCST • 1st Place Hackatronics.
+                    </p>
+                </div>
+                <!-- Accreditations -->
+                <div class="border border-rule bg-canvas-subtle p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div>
+                        <div class="font-mono text-[10px] uppercase tracking-widest text-ink-muted font-bold">PROFESSIONAL ACCREDITATIONS</div>
+                        <div class="text-sm font-bold text-ink mt-0.5">Industrial Quality Assurance &amp; Cloud Credentials</div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 font-mono text-xs">
+                        <div class="bg-canvas border border-rule px-2.5 py-1 flex items-center gap-1.5">
+                            <span class="w-2 h-2 bg-emerald-600 rounded-full inline-block"></span>
+                            <span class="font-semibold text-ink">Lean Six Sigma Green Belt</span>
+                            <span class="text-[10px] text-ink-faint">(ACTIVE)</span>
+                        </div>
+                        <div class="bg-canvas border border-rule px-2.5 py-1 flex items-center gap-1.5">
+                            <span class="w-2 h-2 bg-ink-faint rounded-full inline-block"></span>
+                            <span class="font-semibold text-ink">AWS Certified Developer Associate</span>
+                            <span class="text-[10px] text-ink-faint">(EXPIRED)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHAPTER 05: Technical Domains & Competencies (Col 6) -->
+        <section class="lg:col-span-6 scroll-mt-20 space-y-6" id="chapter-05">
+            <div class="border-b border-rule pb-3 flex items-baseline justify-between">
+                <div class="flex items-center gap-3">
+                    <span class="font-mono text-xs font-bold text-vermilion tracking-widest uppercase">SEC // 05</span>
+                    <h2 class="text-base font-mono uppercase tracking-widest text-ink font-semibold">Technical Domains &amp; Competencies</h2>
+                </div>
+                <span class="font-mono text-[11px] text-ink-faint uppercase">CAPABILITIES MATRIX</span>
+            </div>
+            <p class="font-serif italic text-base text-ink-muted leading-relaxed">
+                Integrated architectural proficiencies spanning enterprise strategy, advanced neural models, and scalable distributed backends.
+            </p>
+            <!-- 3-Way Atelier Column Cards inside the col-span-6 section -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <!-- Domain 01 -->
+                <div class="border border-rule bg-canvas-alt p-5 flex flex-col justify-between hover:border-ink transition-colors">
+                    <div class="space-y-3">
+                        <div class="font-mono text-[10px] text-vermilion uppercase tracking-widest font-bold">DOMAIN // 01</div>
+                        <h3 class="text-base font-bold text-ink">Product Strategy</h3>
+                        <ul class="space-y-1.5 text-xs text-ink-muted">
+                            <li class="flex items-start gap-1.5">
+                                <span class="text-vermilion font-bold">–</span> Roadmap Planning
+                            </li>
+                            <li class="flex items-start gap-1.5">
+                                <span class="text-vermilion font-bold">–</span> GTM Strategy
+                            </li>
+                            <li class="flex items-start gap-1.5">
+                                <span class="text-vermilion font-bold">–</span> Stakeholder Management
+                            </li>
+                            <li class="flex items-start gap-1.5">
+                                <span class="text-vermilion font-bold">–</span> Product Strategy &amp; OKRs
+                            </li>
+                            <li class="flex items-start gap-1.5">
+                                <span class="text-vermilion font-bold">–</span> Agile / Scrum Lifecycle
+                            </li>
+                            <li class="flex items-start gap-1.5">
+                                <span class="text-vermilion font-bold">–</span> Technical Product Management
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 mt-4 border-t border-rule font-mono text-[9px] text-ink-faint uppercase">
+                        LEADERSHIP &amp; DELIVERY
+                    </div>
+                </div>
+                <!-- Domain 02 -->
+                <div class="border border-rule bg-canvas-alt p-5 flex flex-col justify-between hover:border-ink transition-colors">
+                    <div class="space-y-3">
+                        <div class="font-mono text-[10px] text-vermilion uppercase tracking-widest font-bold">DOMAIN // 02</div>
+                        <h3 class="text-base font-bold text-ink">AI &amp; Agentic Systems</h3>
+                        <ul class="space-y-1.5 text-xs text-ink-muted">
+                            <li class="flex items-start gap-1.5">
+                                <span class="text-vermilion font-bold">–</span> LLM Integrations (GPT-4, Llama, Claude)
+                            </li>
+                            <li class="flex items-start gap-1.5">
+                                <span class="text-vermilion font-bold">–</span> RAG Pipelines &amp; Vector DBs
+                            </li>
+                            <li class="flex items-start gap-1.5">
+                                <span class="text-vermilion font-bold">–</span> Prompt Engineering &amp; Eval
+                            </li>
+                            <li class="flex items-start gap-1.5">
+                                <span class="text-vermilion font-bold">–</span> OCR &amp; AI Data Extraction
+                            </li>
+                            <li class="flex items-start gap-1.5">
+                                <span class="text-vermilion font-bold">–</span> Model Context Protocol (MCP)
+                            </li>
+                            <li class="flex items-start gap-1.5">
+                                <span class="text-vermilion font-bold">–</span> Autonomous Multi-Agent Swarms
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 mt-4 border-t border-rule font-mono text-[9px] text-ink-faint uppercase">
+                        NEURAL &amp; COGNITIVE ARCHITECTURE
+                    </div>
+                </div>
+                <!-- Domain 03 -->
+                <div class="border border-rule bg-canvas-alt p-5 flex flex-col justify-between hover:border-ink transition-colors">
+                    <div class="space-y-3">
+                        <div class="font-mono text-[10px] text-vermilion uppercase tracking-widest font-bold">DOMAIN // 03</div>
+                        <h3 class="text-base font-bold text-ink">Core Engineering</h3>
+                        <ul class="space-y-1.5 text-xs text-ink-muted">
+                            <li class="flex items-start gap-1.5">
+                                <span class="text-vermilion font-bold">–</span> Amazon Web Services (AWS)
+                            </li>
+                            <li class="flex items-start gap-1.5">
+                                <span class="text-vermilion font-bold">–</span> Python Architecture
+                            </li>
+                            <li class="flex items-start gap-1.5">
+                                <span class="text-vermilion font-bold">–</span> Java / Spring Boot Systems
+                            </li>
+                            <li class="flex items-start gap-1.5">
+                                <span class="text-vermilion font-bold">–</span> SQL &amp; Data Pipeline Warehousing
+                            </li>
+                            <li class="flex items-start gap-1.5">
+                                <span class="text-vermilion font-bold">–</span> REST API Design &amp; Webhooks
+                            </li>
+                            <li class="flex items-start gap-1.5">
+                                <span class="text-vermilion font-bold">–</span> SDLC Automation &amp; CI/CD
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 mt-4 border-t border-rule font-mono text-[9px] text-ink-faint uppercase">
+                        ENTERPRISE INFRASTRUCTURE
+                    </div>
+                </div>
+            </div>
+            <!-- Capability Footnote Banner -->
+            <div class="p-4 border border-rule bg-canvas font-mono text-[11px] text-ink-muted flex items-center justify-between">
+                <span>STACK MATURITY: PRODUCTION ENTERPRISE GRADE</span>
+                <span class="text-vermilion font-bold">BITS AI/ML + IIM-N MBA</span>
+            </div>
+        </section>
     </div>
 
-    <script>
-        const backToTop = document.getElementById('backToTop');
-        window.addEventListener('scroll', () => {
-            if (!backToTop) return;
-            backToTop.classList.toggle('hidden', window.scrollY < 300);
-        });
+    <!-- CHAPTER 06: Transmission & Collaboration Dispatch -->
+    <section class="scroll-mt-20" id="dispatch">
+        <div class="border border-rule bg-canvas-alt">
+            <div class="border-b border-rule px-8 py-3 flex items-baseline justify-between font-mono text-xs">
+                <div class="flex items-center gap-3">
+                    <span class="font-mono text-xs font-bold text-vermilion tracking-widest uppercase">SEC // 06</span>
+                    <span class="uppercase tracking-widest text-ink font-semibold">Initiate Dialogue &amp; Dispatch</span>
+                </div>
+                <span class="text-ink-faint uppercase text-[10px]">TRANSMISSION CARD // ATELIER COMMISSIONS</span>
+            </div>
+            <div class="p-8 sm:p-12 lg:p-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-8 space-y-4">
+                    <span class="font-mono text-[11px] text-vermilion uppercase font-bold tracking-widest block">COLLABORATION • STRATEGY • PRODUCT LEADERSHIP</span>
+                    <h3 class="text-3xl sm:text-4xl lg:text-5xl font-black text-ink tracking-tight uppercase leading-tight">Let's Build Market-Defining Products.</h3>
+                    <p class="font-serif italic text-lg sm:text-xl text-ink-muted leading-relaxed max-w-3xl">
+                        I'm always open to discussing Product Management, AI Strategy, Enterprise Scale, and high-impact technology. For executive opportunities, advisory, or collaboration, please reach out via LinkedIn or email.
+                    </p>
+                </div>
+                <div class="lg:col-span-4 flex flex-col gap-3">
+                    <a class="inline-flex items-center justify-between px-6 py-4 bg-ink text-canvas hover:bg-vermilion transition-colors text-xs font-mono uppercase tracking-wider font-bold" 
+                       href="mailto:contact@amurut.com">
+                        <span class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-[16px]">mail</span>
+                            <span>contact@amurut.com</span>
+                        </span>
+                        <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+                    </a>
+                    <a class="inline-flex items-center justify-between px-6 py-4 border border-ink text-ink hover:bg-ink hover:text-canvas transition-colors text-xs font-mono uppercase tracking-wider font-semibold bg-canvas" 
+                       href="https://linkedin.com/in/amurut" rel="noopener" target="_blank">
+                        <span class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-[16px]">link</span>
+                            <span>LinkedIn Profile</span>
+                        </span>
+                        <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+                    </a>
+                    <a class="inline-flex items-center justify-between px-6 py-4 border border-rule-dark bg-canvas text-ink hover:border-vermilion hover:text-vermilion transition-colors text-xs font-mono uppercase tracking-wider font-semibold" 
+                       href="./Amurut_Mathew_Koshy_Resume.pdf" download>
+                        <span class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-[16px]">download</span>
+                            <span>Download CV (PDF)</span>
+                        </span>
+                        <span class="material-symbols-outlined text-[14px]">south</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        function app() {
-            return {
-                data: {},
-                loading: true,
-                async fetchData() {
-                    try {
-                        const response = await fetch('data.json');
-                        this.data = await response.json();
-                        this.loading = false;
-                    } catch (e) { console.error(e); this.loading = false; }
-                }
-            }
-        }
-    </script>
+</div>
+
+<!-- Architectural Editorial Footer -->
+<footer class="border-t border-rule bg-canvas-alt pt-16 pb-12">
+    <div class="max-w-[1680px] mx-auto px-6 lg:px-12 space-y-12">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-10">
+            <!-- Left Branding & Summary -->
+            <div class="md:col-span-6 lg:col-span-5 space-y-3">
+                <h3 class="font-serif text-2xl sm:text-3xl font-medium text-ink tracking-tight">Amurut Mathew Koshy</h3>
+                <p class="text-xs sm:text-sm text-ink-muted leading-relaxed max-w-sm">
+                    Senior Product Manager &amp; AI Strategist crafting structural software, agentic workflows, and high-impact digital artifacts.
+                </p>
+            </div>
+
+            <!-- Middle Navigation Index -->
+            <div class="md:col-span-3 lg:col-span-3 space-y-3">
+                <div class="font-mono text-xs uppercase tracking-widest text-ink-muted font-bold">INDEX</div>
+                <ul class="space-y-2 text-xs sm:text-sm text-ink font-normal">
+                    <li><a href="#chapter-02" class="hover:text-vermilion transition-colors">Experience</a></li>
+                    <li><a href="#chapter-03" class="hover:text-vermilion transition-colors">Projects</a></li>
+                    <li><a href="#chapter-04" class="hover:text-vermilion transition-colors">Education &amp; Credentials</a></li>
+                    <li><a href="#chapter-05" class="hover:text-vermilion transition-colors">Methodology &amp; Stack</a></li>
+                </ul>
+            </div>
+
+            <!-- Right Archive & Dispatch -->
+            <div class="md:col-span-3 lg:col-span-4 space-y-3">
+                <div class="font-mono text-xs uppercase tracking-widest text-ink-muted font-bold">ARCHIVE &amp; DISPATCH</div>
+                <div class="space-y-2 font-mono text-xs text-ink-muted">
+                    <div><span class="font-bold text-ink">01 // SYSTEM:</span> 12-Col Atelier Modular</div>
+                    <div><span class="font-bold text-ink">02 // LOCATION:</span> Bangalore / Hyderabad / Global</div>
+                    <div><span class="font-bold text-ink">03 // STATUS:</span> Advising &amp; Shipping</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Colophon Bar -->
+        <div class="pt-8 border-t border-rule/60 flex flex-col sm:flex-row justify-between items-center gap-4 font-mono text-xs text-ink-muted">
+            <div class="uppercase tracking-wider">
+                &copy; 2026 AMK. ALL RIGHTS RESERVED.
+            </div>
+            <div class="tracking-wide text-ink-muted">
+                Crafted with Architectural Precision
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Subtle Scroll-to-Top Button -->
+<button id="backToTop" class="fixed bottom-6 right-6 z-50 hidden p-3 bg-ink text-canvas hover:bg-vermilion transition-all shadow-lg border border-rule font-mono" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" aria-label="Back to top">
+    <span class="material-symbols-outlined text-[18px]">north</span>
+</button>
+
+<script>
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+        if (!backToTop) return;
+        backToTop.classList.toggle('hidden', window.scrollY < 350);
+    });
+</script>
+
 </body>
 </html>

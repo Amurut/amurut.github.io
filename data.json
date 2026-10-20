@@ -1,74 +1,198 @@
 {
   "name": "Amurut Mathew Koshy",
-  "headline": "Senior Product Manager",
-  "summary": "Senior Product Manager with 7+ years of cross-functional experience spanning software engineering, business analytics, and product leadership. Currently driving client onboarding and M&A automation products at ADP for the US market. Dual post-graduate background in AI/ML (BITS Pilani M.Tech, 2025) and Business Strategy (IIM Nagpur MBA), with hands-on expertise in LLM integrations, RAG pipelines, and Agile product delivery. Proven track record of generating measurable revenue growth, driving adoption at scale, and translating complex technical capabilities into market-ready products.",
+  "initials": "AMK.",
+  "role_tag": "PRODUCT & AI",
+  "index_id": "INDEX ID // 00-AMK",
+  "status_stripe": "SR. PRODUCT MANAGER • AI SPECIALTY • ADP US ENTERPRISE",
+  "location": "Bangalore / Hyderabad",
+  "edition": "EDITION 2026",
+  "headline": "Enterprise AI Product Management & Scaled Systems Leadership",
+  "summary": "Senior Product Manager with 7+ years of cross-functional leadership spanning software engineering, business analytics, and scalable product strategy. Currently driving client onboarding and M&A automation products at ADP for the US enterprise market. Proven acumen in product vision, GTM execution, and AI/ML architectures with a dual post-graduate background (BITS Pilani M.Tech in AI/ML & IIM Nagpur MBA in Strategy).",
+  "focus": "Focus: Agentic Workflows, Human-in-the-Loop AI & Enterprise FinTech",
   "social": {
+    "email": "contact@amurut.com",
     "linkedin": "https://linkedin.com/in/amurut",
-    "github": "https://github.com/Amurut"
+    "github": "https://github.com/Amurut",
+    "resume": "./Amurut_Mathew_Koshy_Resume.pdf"
   },
-  "experience": [
-    {
-      "company": "ADP",
+  "hero": {
+    "statement": "Proven track record of generating measurable revenue growth, driving adoption at scale, and translating complex technical capabilities into market-ready enterprise products.",
+    "metrics": [
+      {
+        "fig": "[ FIG. 01.1 ]",
+        "label": "CROSS-FUNCTIONAL EXP",
+        "value": "7+ Yrs",
+        "subtitle": "Software Engineering to AI Product Leadership",
+        "channel": "CHANNEL: Engineering to Product"
+      },
+      {
+        "fig": "[ FIG. 01.2 ]",
+        "label": "ACADEMIC MASTERS",
+        "value": "Dual PG",
+        "subtitle": "AI/ML M.Tech + Strategy MBA",
+        "channel": "BITS Pilani (AI) & IIM Nagpur (Strategy)"
+      },
+      {
+        "fig": "[ FIG. 01.3 ]",
+        "label": "PRODUCT PORTFOLIOS",
+        "value": "$MM+",
+        "subtitle": "Enterprise Scale Systems",
+        "channel": "WFN Client Onboarding & M&A Automation"
+      },
+      {
+        "fig": "[ FIG. 01.4 ]",
+        "label": "TECHNO-FUNCTIONAL",
+        "value": "Hybrid",
+        "subtitle": "Hands-on Architecture & GTM",
+        "channel": "RAG/LLM Architecture & Executive Leadership"
+      }
+    ]
+  },
+  "experience": {
+    "timeline_summary": "TIMELINE: 2015 → PRESENT • 7+ YEARS ADVANCED PRACTICE",
+    "index_nav": [
+      { "year": "2025", "role": "SPM II, ADP", "highlight": true },
+      { "year": "2022", "role": "SPM, ADP" },
+      { "year": "2021", "role": "BA Intern, AQ4" },
+      { "year": "2017", "role": "Software Eng, Fidelity" },
+      { "year": "2015", "role": "Dev Intern, Microsoft" }
+    ],
+    "adp": {
+      "company": "ADP (Automatic Data Processing)",
       "logo": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Automatic_Data_Processing_%28logo%29.svg",
-      "title": "Senior Product Manager – II",
-      "period": "April 2025 – Present",
-      "achievements": [
-        "<b>Product Leadership:</b> Serve as Product Lead for 'Launchpad' — the Client Onboarding & Implementation module of Workforce Now, managing a cross-functional squad and full product lifecycle.",
-        "<b>M&A Automation:</b> Building an internal product for automated data movement for clients undergoing Mergers & Acquisitions, covering Payroll, Time & Tax domains; projected to reduce manual migration effort by over 50%.",
-        "<b>System Integration:</b> Sole PM for a Resource & Backlog Management module interfacing with CRM and billing systems, streamlining capacity planning across delivery teams."
-      ]
+      "badge": "CURRENT / ACTIVE APPOINTMENT",
+      "sub_badge": "PROMOTED // 2 CONSECUTIVE ROLES",
+      "industry": "Enterprise Human Capital Management & Cloud Systems",
+      "tenure": "April 2022 — Present • 4+ Years",
+      "roles": [
+        {
+          "title": "Senior Product Manager – II",
+          "badge": "ELEVATED TO SPM-II",
+          "period": "April 2025 — Present • WFN (Workforce Now) Enterprise / Launchpad",
+          "achievements": [
+            {
+              "tag": "PRODUCT LEADERSHIP",
+              "text": "Serve as Product Lead for <strong>'Launchpad'</strong> — the Client Onboarding & Implementation module of Workforce Now, managing a cross-functional squad and full product lifecycle."
+            },
+            {
+              "tag": "M&A AUTOMATION",
+              "text": "Building an internal product for automated data movement for clients undergoing Mergers & Acquisitions, covering Payroll, Time & Tax domains; projected to reduce manual migration effort by over 50%."
+            },
+            {
+              "tag": "SYSTEM INTEGRATION",
+              "text": "Sole PM for a Resource & Backlog Management module interfacing with CRM and billing systems, streamlining capacity planning across delivery teams."
+            }
+          ],
+          "tags": ["Launchpad PM", "Workforce Now", "M&A Migration", "Capacity Planning"]
+        },
+        {
+          "title": "Senior Product Manager",
+          "period": "April 2022 — April 2025 • Enterprise Benefits Tech",
+          "achievements": [
+            {
+              "tag": "REVENUE GROWTH",
+              "text": "Created a new sales channel for Open Enrollment support, generating $2M in new recurring annual revenue."
+            },
+            {
+              "tag": "PRODUCT ADOPTION",
+              "text": "Led the Employee Communications channel of the Benefits Module; implemented enhancements that drove ADP Mobile adoption up by 80%+ YoY, adding 500K+ active sessions monthly."
+            },
+            {
+              "tag": "AI & AUTOMATION",
+              "text": "Spearheaded a Digitization Initiative leveraging AI-based OCR & data extraction algorithms, reducing inbound support call volumes by 15%."
+            },
+            {
+              "tag": "STRATEGIC AI PARTNERSHIP",
+              "text": "Integrated an AI-enabled Benefits Decision Support Platform for the US market in collaboration with an external AI vendor, expanding product value proposition for 20K+ clients."
+            }
+          ],
+          "tags": ["Open Enrollment", "Revenue Growth", "Mobile Adoption", "AI OCR", "Benefits Tech", "20K+ Clients"]
+        }
+      ],
+      "promotion_banner": "↑ PROMOTION TO SENIOR PRODUCT MANAGER – II (APRIL 2025)"
     },
-    {
-      "company": "ADP",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Automatic_Data_Processing_%28logo%29.svg",
-      "title": "Senior Product Manager",
-      "period": "April 2022 – April 2025",
-      "achievements": [
-        "<b>Revenue Growth:</b> Created a new sales channel for Open Enrollment support, generating $2M in new recurring annual revenue.",
-        "<b>Product Adoption:</b> Led the Employee Communications channel of the Benefits Module; implemented enhancements that drove ADP Mobile adoption up by 80%+ YoY, adding 500K+ active sessions monthly.",
-        "<b>AI & Automation:</b> Spearheaded a Digitization Initiative leveraging AI-based OCR & data extraction algorithms, reducing inbound support call volumes by 15%.",
-        "<b>Strategic AI Partnership:</b> Integrated an AI-enabled Benefits Decision Support Platform for the US market in collaboration with an external AI vendor, expanding product value proposition for 20K+ clients."
-      ]
+    "transition": {
+      "period": "2020 — 2022 // Full-time MBA (IIM Nagpur)",
+      "description": "Career Transition: Systems Engineering → Enterprise Product Management",
+      "link": "#chapter-04"
     },
-    {
-      "company": "Analytics Quad 4",
-      "logo": "",
-      "title": "Business Analyst Intern",
-      "period": "April 2021 – June 2021",
-      "achievements": [
-        "<b>Sales Optimization:</b> Evaluated and Implemented POCs on new software to help further optimize the sales pipeline.",
-        "<b>Digital Marketing:</b> Responsible for enhancements to the AQ4 website, collateral and other key marketing initiatives.",
-        "<b>Technology Research:</b> Performed research on new technologies and analysed their compatibility with AQ4 solutions.",
-        "<b>Lead Management:</b> Designed strategies to implement a Lead Qualification Process and a framework for efficient Campaign Tracking, improving lead conversion by nearly 14%."
-      ]
-    },
-    {
+    "fidelity": {
       "company": "Fidelity Investments",
       "logo": "https://upload.wikimedia.org/wikipedia/commons/7/73/FidPicture1jpg.jpg",
-      "title": "Software Engineer",
+      "subtitle": "Cloud & Platform Eng",
       "period": "July 2017 – July 2020",
+      "title": "Software Engineer",
       "achievements": [
-        "<b>Full-Stack Development:</b> Built two Self-Service Automation frameworks and data analysis tools adopted by 8 teams, saving 20+ hours/week in manual effort.",
-        "<b>Cloud Transformation:</b> Core team member for migrating clients from legacy on-premise platforms to cloud-enabled architecture.",
-        "<b>Data Engineering:</b> Automated data pipelines, configuration loading, and validation processes, reducing pipeline errors by 30%.",
-        "<b>Quality Assurance:</b> Defined Benefit Squad: delivered QA coverage through Process, Batch, and Test Automation frameworks."
+        {
+          "tag": "Full-Stack Dev",
+          "text": "Built two Self-Service Automation frameworks and data analysis tools adopted by 8 teams, saving 20+ hours/week in manual effort."
+        },
+        {
+          "tag": "Cloud Transformation",
+          "text": "Core team member for migrating clients from legacy on-premise platforms to cloud-enabled architecture."
+        },
+        {
+          "tag": "Data Engineering",
+          "text": "Automated data pipelines, configuration loading, and validation processes, reducing pipeline errors by 30%."
+        },
+        {
+          "tag": "Quality Assurance",
+          "text": "Defined Benefit Squad: delivered QA coverage through Process, Batch, and Test Automation frameworks."
+        }
+      ],
+      "tags": ["Cloud Migration", "Automation Tools", "Data Pipelines"]
+    },
+    "aq4": {
+      "company": "Analytics Quad 4",
+      "short_name": "AQ4",
+      "period": "April 2021 – June 2021",
+      "title": "Business Analyst Intern",
+      "achievements": [
+        {
+          "tag": "Sales Optimization",
+          "text": "Evaluated and Implemented POCs on new software to help further optimize the sales pipeline."
+        },
+        {
+          "tag": "Digital Marketing",
+          "text": "Responsible for enhancements to the AQ4 website, collateral and other key marketing initiatives."
+        },
+        {
+          "tag": "Technology Research",
+          "text": "Performed research on new technologies and analysed their compatibility with AQ4 solutions."
+        },
+        {
+          "tag": "Lead Management",
+          "text": "Designed strategies to implement a Lead Qualification Process and a framework for efficient Campaign Tracking, improving lead conversion by nearly 14%."
+        }
       ]
     },
-    {
+    "microsoft": {
       "company": "Microsoft",
       "logo": "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
-      "title": "Student Microsoft Developer",
       "period": "June 2015 – Aug 2015",
+      "title": "Student Microsoft Developer",
       "achievements": [
-        "<b>Android Development:</b> Part of the Android App Development Team for a project titled i-Witness, designed as a prototype for simpler crime reporting.",
-        "<b>Product Prototyping:</b> App was designed as a prototype for a simpler form of crime/incident reporting by a neighbourhood."
-      ]
+        {
+          "tag": "Android Dev",
+          "text": "Part of the Android App Development Team for a project titled i-Witness, designed as a prototype for simpler crime reporting."
+        },
+        {
+          "tag": "Product Prototyping",
+          "text": "App was designed as a prototype for a simpler form of crime/incident reporting by a neighbourhood."
+        }
+      ],
+      "footnote": "FOUNDATIONAL INCUBATION // CLIENT MOBILE LABS"
     }
-  ],
+  },
   "projects": [
     {
+      "case_id": "CASE // 03.1 • AVIONICS EFB",
+      "category": "SIMULATION",
+      "badge_left": "FLIGHT OPERATIONS // EFB",
+      "badge_right": "MSFS 2024 READY",
       "title": "SkyRouter — MSFS Flight Operations & EFB Planner",
       "thumbnail": "assets/SkyRouter.png",
+      "alt": "SkyRouter MSFS flight operations planner with interactive map and vertical situation display",
       "description": "A modern, responsive Electronic Flight Bag (EFB) and IFR flight planner designed for Microsoft Flight Simulator 2024 and 2020. Features an interactive Leaflet moving map with satellite layers, live SID/STAR procedure and runway ILS approach selectors, a dynamic Vertical Situation Display (VSD) with waypoint elevations, beginner-friendly aviation tooltips, and one-click native MSFS AceXML (.pln) export.",
       "tech": [
         "React",
@@ -76,15 +200,20 @@
         "Vite",
         "Tailwind CSS",
         "Leaflet.js",
-        "MSFS 2024 / 2020 AceXML",
-        "SimBrief / AIRAC NavData"
+        "MSFS AceXML"
       ],
       "link": "https://amurut.com/Skyroute_Planner/",
+      "link_text": "Live App",
       "github": "https://github.com/Amurut/Skyroute_Planner"
     },
     {
+      "case_id": "CASE // 03.2 • RAG ENGINE",
+      "category": "BITS PILANI",
+      "badge_left": "CORE DISSERTATION // M.TECH",
+      "badge_right": "STATUS: VALIDATED",
       "title": "Healthcare Taxation AI Assistant",
       "thumbnail": "assets/healthcare-taxation-assistant.png",
+      "alt": "Healthcare Taxation Assistant user interface showing configuration sidebar and chat interface",
       "description": "An advanced RAG-based agentic system designed to interpret complex US Federal and State healthcare tax laws. Implements HyDE (Hypothetical Document Embeddings) and Query Transformations to improve retrieval accuracy for nuanced legal queries. This serves as the core implementation of my M.Tech dissertation.",
       "tech": [
         "LlamaIndex",
@@ -94,11 +223,17 @@
         "Vector Databases"
       ],
       "link": "https://healthcare-taxation-assistant.streamlit.app/",
+      "link_text": "Live Demo",
       "github": "https://github.com/Amurut/Healthcare-Taxation-Assistant"
     },
     {
+      "case_id": "CASE // 03.3 • AUTONOMOUS DM",
+      "category": "EXPERIMENT",
+      "badge_left": "AI AGENTIC WEB RPG",
+      "badge_right": "MULTI-AGENT",
       "title": "Tavern & Tomb — AI Dungeon Master Web RPG",
       "thumbnail": "assets/tavern-and-tomb.png",
+      "alt": "Tavern & Tomb browser-based AI tabletop RPG party setup and theme configuration interface",
       "description": "A browser-based, pass-and-play tabletop RPG game where an AI acts as the Dungeon Master. Features interactive d20 skill check resolution, multi-provider LLM support (Gemini, OpenAI, Claude), character sheet & inventory management, campaign presets, and voice narration.",
       "tech": [
         "Node.js",
@@ -109,7 +244,28 @@
         "LLM Integrations"
       ],
       "link": "https://tavern-and-tomb.onrender.com",
+      "link_text": "Live Demo",
       "github": "https://github.com/Amurut/Dungeon_Master_AI"
+    },
+    {
+      "case_id": "CASE // 03.4 • QUANTITATIVE FINTECH",
+      "category": "DERIVATIVES",
+      "badge_left": "DERIVATIVES FINTECH SIMULATOR",
+      "badge_right": "HIGH PRECISION",
+      "title": "TradeLearner-Sim",
+      "thumbnail": "assets/trade-learner.png",
+      "alt": "TradeLearner Pro market dashboard with live price cards and options chains",
+      "description": "A high-fidelity trading simulator designed to teach complex financial derivatives through gamification. Features real-time OHLC candlestick charts, a functional options chain (Calls/Puts), and live P&L tracking.",
+      "tech": [
+        "React",
+        "Vite",
+        "Tailweight Charts",
+        "Framer Motion",
+        "Tailwind CSS"
+      ],
+      "link": "https://amurut.github.io/Learn_To_Trade/",
+      "link_text": "Live Demo",
+      "github": "https://github.com/Amurut/Learn_To_Trade"
     },
     {
       "title": "Startup CEO - A business simulation game",
@@ -125,93 +281,111 @@
       ],
       "link": "https://amurut.com/startup-ceo-sim-game/",
       "github": "https://github.com/Amurut/startup-ceo-sim-game"
-    },
-    {
-      "title": "TradeLearner-Sim",
-      "thumbnail": "assets/trade-learner.png",
-      "description": "A high-fidelity trading simulator designed to teach complex financial derivatives through gamification. Features real-time OHLC candlestick charts, a functional options chain (Calls/Puts), and live P&L tracking.",
-      "tech": [
-        "React",
-        "Vite",
-        "Tailweight Charts",
-        "Framer Motion",
-        "Tailwind CSS"
-      ],
-      "link": "https://amurut.github.io/Learn_To_Trade/",
-      "github": "https://github.com/Amurut/Learn_To_Trade"
     }
   ],
   "education": [
     {
+      "level": "POST-GRADUATE • COMPUTER SCIENCE",
       "institution": "Birla Institute of Technology and Science (BITS), Pilani",
-      "degree": "M.Tech – Artificial Intelligence & Machine Learning",
+      "short_institution": "BITS Pilani",
+      "degree": "M.Tech in Artificial Intelligence & Machine Learning",
       "period": "2023 – 2025",
-      "highlights": [
-        "Dissertation: \"Retrieval Augmented Generation (RAG) with GPT-4 & Llama3 for Healthcare Taxation\"",
-        "Focused on LLM integrations, Vector Databases, and Scalable AI Architecture",
-        "Research Project Link: github.com/Amurut/Healthcare-Taxation-Assistant"
-      ]
+      "dissertation_title": "“Retrieval Augmented Generation (RAG) with GPT-4 & Llama3 for Healthcare Taxation”",
+      "focus": "Core Focus: LLM integrations, Vector Databases, and Scalable AI Architecture."
     },
     {
+      "level": "POST-GRADUATE • MANAGEMENT & STRATEGY",
       "institution": "Indian Institute of Management (IIM), Nagpur",
-      "degree": "MBA – Decision Sciences & Strategy",
+      "short_institution": "IIM Nagpur",
+      "degree": "MBA in Decision Sciences & Strategy",
       "period": "2020 – 2022",
       "highlights": [
-        "Positions of Responsibility: Co-ordinator : E-Cell, Executive Member : Indo-Japan Research Centre",
-        "Student Affairs Council Representative & Executive Member : Events Committee",
-        "Specialized in Strategy and Information Systems"
+        "Co-ordinator : E-Cell",
+        "Executive Member : Indo-Japan Research Centre",
+        "Student Affairs Council Representative"
       ]
     },
     {
+      "level": "UNDERGRADUATE • ENGINEERING",
       "institution": "Ramaiah Institute of Technology, Bangalore",
-      "degree": "B.E. – Electronics & Communication Engineering",
+      "degree": "B.E. in Electronics & Communication Engineering",
       "period": "2013 – 2017",
-      "highlights": [
-        "Presented research paper on Fall Detection Sensor at ICIoTCT 2017 (MNIT Jaipur)",
-        "Grant awarded by IISc Bangalore & KSCST",
-        "1st Place, Hackatronics (IEEE-RIT): Autonomous Heat Sensing Robot 'Heat Sink'"
-      ]
+      "highlights_text": "Published Research at ICIoTCT 2017 • Research Grant awarded by IISc & KSCST • 1st Place Hackatronics."
     }
   ],
-  "skills": {
-    "Product": [
-      "Roadmap Planning",
-      "GTM Strategy",
-      "Stakeholder Management",
-      "Product Strategy",
-      "OKRs",
-      "Agile/Scrum",
-      "Technical Product Management"
-    ],
-    "AI/ML": [
-      "LLM Integrations",
-      "RAG Pipelines",
-      "Prompt Engineering",
-      "Vector Databases",
-      "OCR & AI Validation",
-      "Model Context Protocol(MCP)"
-    ],
-    "Engineering": [
-      "AWS",
-      "Python",
-      "Java / Spring Boot",
-      "SQL",
-      "API Design",
-      "SDLC Automation"
-    ]
-  },
   "certifications": [
     {
       "name": "Lean Six Sigma Green Belt",
       "issuer": "KPMG",
-      "date": "Nov 2020 – Present",
-      "status": "Active"
+      "status": "ACTIVE",
+      "status_color": "emerald"
     },
     {
       "name": "AWS Certified Developer Associate",
       "issuer": "Amazon Web Services",
-      "date": "Sept 2019 – Sept 2022",
-      "status": "Expired"
+      "status": "EXPIRED",
+      "status_color": "faint"
     }
-  ]
+  ],
+  "skills": [
+    {
+      "domain_id": "DOMAIN // 01",
+      "title": "Product Strategy",
+      "category": "LEADERSHIP & DELIVERY",
+      "items": [
+        "Roadmap Planning",
+        "GTM Strategy",
+        "Stakeholder Management",
+        "Product Strategy & OKRs",
+        "Agile / Scrum Lifecycle",
+        "Technical Product Management"
+      ]
+    },
+    {
+      "domain_id": "DOMAIN // 02",
+      "title": "AI & Agentic Systems",
+      "category": "NEURAL & COGNITIVE ARCHITECTURE",
+      "items": [
+        "LLM Integrations (GPT-4, Llama, Claude)",
+        "RAG Pipelines & Vector DBs",
+        "Prompt Engineering & Eval",
+        "OCR & AI Data Extraction",
+        "Model Context Protocol (MCP)",
+        "Autonomous Multi-Agent Swarms"
+      ]
+    },
+    {
+      "domain_id": "DOMAIN // 03",
+      "title": "Core Engineering",
+      "category": "ENTERPRISE INFRASTRUCTURE",
+      "items": [
+        "Amazon Web Services (AWS)",
+        "Python Architecture",
+        "Java / Spring Boot Systems",
+        "SQL & Data Pipeline Warehousing",
+        "REST API Design & Webhooks",
+        "SDLC Automation & CI/CD"
+      ]
+    }
+  ],
+  "dispatch": {
+    "section_id": "SEC // 06",
+    "subtitle": "COLLABORATION • STRATEGY • PRODUCT LEADERSHIP",
+    "heading": "Let's Build Market-Defining Products.",
+    "description": "I'm always open to discussing Product Management, AI Strategy, Enterprise Scale, and high-impact technology. For executive opportunities, advisory, or collaboration, please reach out via LinkedIn or email.",
+    "email": "contact@amurut.com",
+    "linkedin": "https://linkedin.com/in/amurut",
+    "resume": "./Amurut_Mathew_Koshy_Resume.pdf"
+  },
+  "footer": {
+    "name": "Amurut Mathew Koshy",
+    "summary": "Senior Product Manager & AI Strategist crafting structural software, agentic workflows, and high-impact digital artifacts.",
+    "archive": [
+      { "key": "01 // SYSTEM:", "val": "12-Col Atelier Modular" },
+      { "key": "02 // LOCATION:", "val": "Bangalore / Hyderabad / Global" },
+      { "key": "03 // STATUS:", "val": "Advising & Shipping" }
+    ],
+    "copyright": "© 2026 AMK. ALL RIGHTS RESERVED.",
+    "tagline": "Crafted with Architectural Precision"
+  }
 }

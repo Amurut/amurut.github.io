@@ -67,6 +67,22 @@
   ],
   "projects": [
     {
+      "title": "SkyRouter — MSFS Flight Operations & EFB Planner",
+      "thumbnail": "assets/SkyRouter.png",
+      "description": "A modern, responsive Electronic Flight Bag (EFB) and IFR flight planner designed for Microsoft Flight Simulator 2024 and 2020. Features an interactive Leaflet moving map with satellite layers, live SID/STAR procedure and runway ILS approach selectors, a dynamic Vertical Situation Display (VSD) with waypoint elevations, beginner-friendly aviation tooltips, and one-click native MSFS AceXML (.pln) export.",
+      "tech": [
+        "React",
+        "TypeScript",
+        "Vite",
+        "Tailwind CSS",
+        "Leaflet.js",
+        "MSFS 2024 / 2020 AceXML",
+        "SimBrief / AIRAC NavData"
+      ],
+      "link": "https://amurut.com/Skyroute_Planner/",
+      "github": "https://github.com/Amurut/Skyroute_Planner"
+    },
+    {
       "title": "Healthcare Taxation AI Assistant",
       "thumbnail": "assets/healthcare-taxation-assistant.png",
       "description": "An advanced RAG-based agentic system designed to interpret complex US Federal and State healthcare tax laws. Implements HyDE (Hypothetical Document Embeddings) and Query Transformations to improve retrieval accuracy for nuanced legal queries. This serves as the core implementation of my M.Tech dissertation.",

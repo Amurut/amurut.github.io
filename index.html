@@ -2035,11 +2035,21 @@
             function formatBotText(rawText) {
                 let text = rawText || '';
 
+                // Replace any stray <contact_email> placeholders before HTML escaping
+                text = text.replace(/<contact_email>|&lt;contact_email&gt;/gi, 'contact@amurut.com');
+                text = text.replace(/<email>|&lt;email&gt;/gi, 'contact@amurut.com');
+
                 // Escape HTML entities first to prevent XSS
                 text = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
-                // Linkify URLs
-                text = text.replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener" class="text-vermilion underline hover:text-ink font-semibold break-all">$1</a>');
+                // Markdown links: [Anchor Text](https://...)
+                text = text.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noopener" class="text-vermilion underline hover:text-ink font-semibold">$1</a>');
+
+                // Raw standalone URLs (not already part of an <a href=...>)
+                text = text.replace(/(^|[^"'])(https?:\/\/[^\s<)]+)/g, '$1<a href="$2" target="_blank" rel="noopener" class="text-vermilion underline hover:text-ink font-semibold break-all">$2</a>');
+
+                // Email mailto links
+                text = text.replace(/([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g, '<a href="mailto:$1" class="text-vermilion underline hover:text-ink font-semibold">$1</a>');
 
                 // Bold text
                 text = text.replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold text-ink">$1</strong>');

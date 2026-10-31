@@ -51,11 +51,27 @@
   "experience": {
     "timeline_summary": "TIMELINE: 2015 → PRESENT • 7+ YEARS ADVANCED PRACTICE",
     "index_nav": [
-      { "year": "2025", "role": "SPM II, ADP", "highlight": true },
-      { "year": "2022", "role": "SPM, ADP" },
-      { "year": "2021", "role": "BA Intern, AQ4" },
-      { "year": "2017", "role": "Software Eng, Fidelity" },
-      { "year": "2015", "role": "Dev Intern, Microsoft" }
+      {
+        "year": "2025",
+        "role": "SPM II, ADP",
+        "highlight": true
+      },
+      {
+        "year": "2022",
+        "role": "SPM, ADP"
+      },
+      {
+        "year": "2021",
+        "role": "BA Intern, AQ4"
+      },
+      {
+        "year": "2017",
+        "role": "Software Eng, Fidelity"
+      },
+      {
+        "year": "2015",
+        "role": "Dev Intern, Microsoft"
+      }
     ],
     "adp": {
       "company": "ADP (Automatic Data Processing)",
@@ -68,7 +84,7 @@
         {
           "title": "Senior Product Manager – II",
           "badge": "ELEVATED TO SPM-II",
-          "period": "April 2025 — Present • WFN (Workforce Now) Enterprise / Launchpad",
+          "period": "April 2025 — Present • Workforce Now (WFN) Launchpad • Client Onboarding",
           "achievements": [
             {
               "tag": "PRODUCT LEADERSHIP",
@@ -83,7 +99,12 @@
               "text": "Sole PM for a Resource & Backlog Management module interfacing with CRM and billing systems, streamlining capacity planning across delivery teams."
             }
           ],
-          "tags": ["Launchpad PM", "Workforce Now", "M&A Migration", "Capacity Planning"]
+          "tags": [
+            "Launchpad PM",
+            "Workforce Now",
+            "M&A Migration",
+            "Capacity Planning"
+          ]
         },
         {
           "title": "Senior Product Manager",
@@ -106,7 +127,14 @@
               "text": "Integrated an AI-enabled Benefits Decision Support Platform for the US market in collaboration with an external AI vendor, expanding product value proposition for 20K+ clients."
             }
           ],
-          "tags": ["Open Enrollment", "Revenue Growth", "Mobile Adoption", "AI OCR", "Benefits Tech", "20K+ Clients"]
+          "tags": [
+            "Open Enrollment",
+            "Revenue Growth",
+            "Mobile Adoption",
+            "AI OCR",
+            "Benefits Tech",
+            "20K+ Clients"
+          ]
         }
       ],
       "promotion_banner": "↑ PROMOTION TO SENIOR PRODUCT MANAGER – II (APRIL 2025)"
@@ -140,7 +168,11 @@
           "text": "Defined Benefit Squad: delivered QA coverage through Process, Batch, and Test Automation frameworks."
         }
       ],
-      "tags": ["Cloud Migration", "Automation Tools", "Data Pipelines"]
+      "tags": [
+        "Cloud Migration",
+        "Automation Tools",
+        "Data Pipelines"
+      ]
     },
     "aq4": {
       "company": "Analytics Quad 4",
@@ -381,9 +413,18 @@
     "name": "Amurut Mathew Koshy",
     "summary": "Senior Product Manager & AI Strategist crafting structural software, agentic workflows, and high-impact digital artifacts.",
     "archive": [
-      { "key": "01 // SYSTEM:", "val": "12-Col Atelier Modular" },
-      { "key": "02 // LOCATION:", "val": "Bangalore / Hyderabad / Global" },
-      { "key": "03 // STATUS:", "val": "Advising & Shipping" }
+      {
+        "key": "01 // SYSTEM:",
+        "val": "12-Col Atelier Modular"
+      },
+      {
+        "key": "02 // LOCATION:",
+        "val": "Bangalore / Hyderabad / Global"
+      },
+      {
+        "key": "03 // STATUS:",
+        "val": "Advising & Shipping"
+      }
     ],
     "copyright": "© 2026 AMK. ALL RIGHTS RESERVED.",
     "tagline": "Crafted with Architectural Precision"

@@ -224,7 +224,7 @@
       "thumbnail": "assets/gameshub.png",
       "alt": "Gameshub homepage showing the room-code join form and game catalogue.",
       "badge_left": "ROOM CODES + QR INVITES",
-      "badge_right": "50 PER HOUSIE ROOM",
+      "badge_right": "REALTIME MULTIPLAYER SUPPORT",
       "description": "A browser arcade for Bingo, Housie, Phrase Shuffle, and Brow Beat. Players enter a six-character room code on the home page to reach the right game, or join from a shared link or QR code. Phrase Shuffle restores a player’s seat after a connection drop, and Housie supports up to 50 players per room.",
       "tech": [
         "React",

@@ -2093,20 +2093,17 @@
                 try {
                     await loadTurnstile();
                     if (!contactDialog.open || widgetId !== undefined) return;
-                    window.turnstile.ready(() => {
-                        if (!contactDialog.open || widgetId !== undefined) return;
-                        widgetId = window.turnstile.render('#contactChallenge', {
-                            sitekey: '0x4AAAAAAGNqM9wxNda6HA1u',
-                            action: 'contact',
-                            size: 'flexible',
-                            appearance: 'interaction-only',
-                            callback: setContactToken,
-                            'expired-callback': () => setContactToken(''),
-                            'error-callback': () => {
-                                setContactToken('');
-                                contactStatus.textContent = 'The spam check could not load. You can email Amurut directly.';
-                            },
-                        });
+                    widgetId = window.turnstile.render('#contactChallenge', {
+                        sitekey: '0x4AAAAAAGNqM9wxNda6HA1u',
+                        action: 'contact',
+                        size: 'flexible',
+                        appearance: 'interaction-only',
+                        callback: setContactToken,
+                        'expired-callback': () => setContactToken(''),
+                        'error-callback': () => {
+                            setContactToken('');
+                            contactStatus.textContent = 'The spam check could not load. You can email Amurut directly.';
+                        },
                     });
                 } catch {
                     contactStatus.textContent = 'The spam check could not load. You can email Amurut directly.';

@@ -1316,6 +1316,14 @@
                             </span>
                             <span class="material-symbols-outlined text-[14px]">south</span>
                         </a>
+                        <a class="inline-flex items-center justify-between px-6 py-4 border border-rule-dark bg-canvas text-ink hover:border-vermilion hover:text-vermilion transition-colors text-xs font-mono uppercase tracking-wider font-semibold"
+                            href="./Amurut_Mathew_Koshy_Resume.docx" download>
+                            <span class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-[16px]">download</span>
+                                <span>Download CV (Word)</span>
+                            </span>
+                            <span class="material-symbols-outlined text-[14px]">south</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1434,8 +1442,8 @@
                         AI
                     </div>
                     <div class="bg-canvas-alt border border-rule p-3 text-ink space-y-2 max-w-[85%]">
-                        <p>Greetings! I am Amurut's personal Ambassador running directly at the Cloudflare edge.</p>
-                        <p class="text-ink-muted">Feel free to ask about his <strong>Launchpad &amp; M&amp;A leadership at ADP</strong>, <strong>SkyRouter avionics app</strong>, <strong>dual Masters (BITS &amp; IIM)</strong>, or request links to download his resume.</p>
+                        <p>I’m Amurut’s portfolio assistant. Ask about his experience, projects, or fit for a role.</p>
+                        <p class="text-ink-muted">For hiring inquiries, use Send a message below, <a class="underline" href="mailto:contact@amurut.com">email Amurut directly</a> or connect on <a class="underline" href="https://linkedin.com/in/amurut" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>
                     </div>
                 </div>
 
@@ -1450,9 +1458,8 @@
                     <button class="chat-chip font-mono text-[10px] px-2.5 py-1 bg-canvas border border-rule hover:border-vermilion hover:text-vermilion text-ink transition-colors cursor-pointer" data-msg="Tell me about the SkyRouter aviation project.">
                         ✈️ SkyRouter App
                     </button>
-                    <button class="chat-chip font-mono text-[10px] px-2.5 py-1 bg-canvas border border-rule hover:border-vermilion hover:text-vermilion text-ink transition-colors cursor-pointer" data-msg="I would like to get in touch with Amurut.">
-                        📬 Get in Touch
-                    </button>
+                    <a class="chat-chip font-mono text-[10px] px-2.5 py-1 bg-canvas border border-rule hover:border-vermilion hover:text-vermilion text-ink transition-colors"
+                        href="./Amurut_Mathew_Koshy_Resume.docx" download>Download CV (Word)</a>
                 </div>
             </div>
 
@@ -1468,10 +1475,35 @@
                     </button>
                 </form>
                 <div class="flex items-center justify-between font-mono text-[9px] text-ink-faint px-0.5">
-                    <span>Cloudflare Edge AI • Gemma 4</span>
+                    <button id="openContactForm" type="button" class="text-vermilion underline">Send a message</button>
                     <span id="chatCharCounter">0/350</span>
                 </div>
             </div>
+            <dialog id="contactDialog" aria-labelledby="contactTitle"
+                class="w-[min(25rem,calc(100vw-2rem))] border border-rule bg-canvas text-ink p-5 shadow-2xl backdrop:bg-ink/40">
+                <form id="contactForm" class="space-y-3">
+                    <div class="flex items-center justify-between gap-4">
+                        <h2 id="contactTitle" class="font-bold">Send a message to Amurut</h2>
+                        <button id="closeContactForm" type="button" class="text-xs underline">Close</button>
+                    </div>
+                    <p class="text-xs text-ink-muted">Your reply email and message will be emailed to Amurut.</p>
+                    <label class="block text-xs font-semibold">Your reply email
+                        <input id="contactEmail" type="email" required maxlength="254" autocomplete="email"
+                            class="mt-1 w-full border border-rule bg-canvas px-2 py-1.5 text-sm">
+                    </label>
+                    <label class="block text-xs font-semibold">Brief message
+                        <textarea id="contactMessage" rows="3" required maxlength="1000"
+                            class="mt-1 w-full border border-rule bg-canvas px-2 py-1.5 text-sm"></textarea>
+                    </label>
+                    <div id="contactChallenge"></div>
+                    <p id="contactStatus" role="status" class="text-xs text-ink-muted"></p>
+                    <div class="flex items-center justify-between gap-2">
+                        <a class="text-xs underline" href="mailto:contact@amurut.com">Email directly</a>
+                        <button id="submitContactForm" type="submit" disabled
+                            class="bg-ink px-3 py-1.5 text-xs font-semibold text-canvas disabled:opacity-40">Send message</button>
+                    </div>
+                </form>
+            </dialog>
         </div>
     </div>
 
@@ -1495,6 +1527,38 @@
             }
         }
 
+        function escapeHtml(value) {
+            const entities = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
+            return String(value ?? '').replace(/[&<>"']/g, character => entities[character]);
+        }
+
+        function escapeAchievement(value) {
+            return escapeHtml(value).replace(/&lt;strong&gt;([^<>]*?)&lt;\/strong&gt;/g, '<strong>$1</strong>');
+        }
+
+        function portfolioUrl(value) {
+            if (typeof value !== 'string' || !value.trim()) return 'about:blank';
+            try {
+                const url = new URL(value, window.location.href);
+                if (!url.username && !url.password &&
+                    (url.protocol === 'https:' || url.protocol === window.location.protocol && url.origin === window.location.origin)) {
+                    return url.href;
+                }
+            } catch {
+                // Leave invalid destinations inert.
+            }
+            return 'about:blank';
+        }
+
+        function escapePortfolioUrl(value) {
+            return escapeHtml(portfolioUrl(value));
+        }
+
+        function publicEmailUrl(value) {
+            return typeof value === 'string' && /^[\w.+-]+@[\w.-]+\.[a-z]{2,}$/i.test(value)
+                ? 'mailto:' + value : 'mailto:contact@amurut.com';
+        }
+
         function renderPortfolio(data) {
             if (!data) return;
 
@@ -1514,7 +1578,7 @@
             setText('hero-edition', data.edition);
 
             if (data.name) {
-                setHTML('hero-name', data.name.split(' ').join('<br>'));
+                setHTML('hero-name', escapeHtml(data.name).split(' ').join('<br>'));
             }
             setText('hero-headline', data.headline);
             setText('hero-summary', data.summary);
@@ -1528,56 +1592,56 @@
                         <div class="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-rule flex-1">
                             <div class="p-6 flex flex-col justify-between border-b border-rule bg-canvas-alt hover:bg-canvas transition-colors">
                                 <div class="flex justify-between items-baseline font-mono text-[10px] uppercase tracking-wider text-ink-muted">
-                                    <span>${m[0].fig}</span>
-                                    <span class="text-vermilion font-bold">${m[0].label}</span>
+                                    <span>${escapeHtml(m[0].fig)}</span>
+                                    <span class="text-vermilion font-bold">${escapeHtml(m[0].label)}</span>
                                 </div>
                                 <div class="my-4">
-                                    <div class="text-3xl sm:text-4xl font-black tracking-[-0.04em] text-ink">${m[0].value}</div>
-                                    <div class="text-xs font-semibold text-ink mt-1">${m[0].subtitle}</div>
+                                    <div class="text-3xl sm:text-4xl font-black tracking-[-0.04em] text-ink">${escapeHtml(m[0].value)}</div>
+                                    <div class="text-xs font-semibold text-ink mt-1">${escapeHtml(m[0].subtitle)}</div>
                                 </div>
                                 <div class="font-mono text-[10px] text-ink-faint border-t border-rule/60 pt-2">
-                                    ${m[0].channel}
+                                    ${escapeHtml(m[0].channel)}
                                 </div>
                             </div>
                             <div class="p-6 flex flex-col justify-between border-b border-rule bg-canvas-alt hover:bg-canvas transition-colors">
                                 <div class="flex justify-between items-baseline font-mono text-[10px] uppercase tracking-wider text-ink-muted">
-                                    <span>${m[1].fig}</span>
-                                    <span class="text-vermilion font-bold">${m[1].label}</span>
+                                    <span>${escapeHtml(m[1].fig)}</span>
+                                    <span class="text-vermilion font-bold">${escapeHtml(m[1].label)}</span>
                                 </div>
                                 <div class="my-4">
-                                    <div class="text-3xl sm:text-4xl font-black tracking-[-0.04em] text-ink">${m[1].value}</div>
-                                    <div class="text-xs font-semibold text-ink mt-1">${m[1].subtitle}</div>
+                                    <div class="text-3xl sm:text-4xl font-black tracking-[-0.04em] text-ink">${escapeHtml(m[1].value)}</div>
+                                    <div class="text-xs font-semibold text-ink mt-1">${escapeHtml(m[1].subtitle)}</div>
                                 </div>
                                 <div class="font-mono text-[10px] text-ink-faint border-t border-rule/60 pt-2">
-                                    ${m[1].channel}
+                                    ${escapeHtml(m[1].channel)}
                                 </div>
                             </div>
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-rule flex-1">
                             <div class="p-6 flex flex-col justify-between bg-canvas-alt hover:bg-canvas transition-colors">
                                 <div class="flex justify-between items-baseline font-mono text-[10px] uppercase tracking-wider text-ink-muted">
-                                    <span>${m[2].fig}</span>
-                                    <span class="text-vermilion font-bold">${m[2].label}</span>
+                                    <span>${escapeHtml(m[2].fig)}</span>
+                                    <span class="text-vermilion font-bold">${escapeHtml(m[2].label)}</span>
                                 </div>
                                 <div class="my-4">
-                                    <div class="text-3xl sm:text-4xl font-black tracking-[-0.04em] text-ink">${m[2].value}</div>
-                                    <div class="text-xs font-semibold text-ink mt-1">${m[2].subtitle}</div>
+                                    <div class="text-3xl sm:text-4xl font-black tracking-[-0.04em] text-ink">${escapeHtml(m[2].value)}</div>
+                                    <div class="text-xs font-semibold text-ink mt-1">${escapeHtml(m[2].subtitle)}</div>
                                 </div>
                                 <div class="font-mono text-[10px] text-ink-faint border-t border-rule/60 pt-2">
-                                    ${m[2].channel}
+                                    ${escapeHtml(m[2].channel)}
                                 </div>
                             </div>
                             <div class="p-6 flex flex-col justify-between bg-canvas-alt hover:bg-canvas transition-colors">
                                 <div class="flex justify-between items-baseline font-mono text-[10px] uppercase tracking-wider text-ink-muted">
-                                    <span>${m[3].fig}</span>
-                                    <span class="text-vermilion font-bold">${m[3].label}</span>
+                                    <span>${escapeHtml(m[3].fig)}</span>
+                                    <span class="text-vermilion font-bold">${escapeHtml(m[3].label)}</span>
                                 </div>
                                 <div class="my-4">
-                                    <div class="text-3xl sm:text-4xl font-black tracking-[-0.04em] text-ink">${m[3].value}</div>
-                                    <div class="text-xs font-semibold text-ink mt-1">${m[3].subtitle}</div>
+                                    <div class="text-3xl sm:text-4xl font-black tracking-[-0.04em] text-ink">${escapeHtml(m[3].value)}</div>
+                                    <div class="text-xs font-semibold text-ink mt-1">${escapeHtml(m[3].subtitle)}</div>
                                 </div>
                                 <div class="font-mono text-[10px] text-ink-faint border-t border-rule/60 pt-2">
-                                    ${m[3].channel}
+                                    ${escapeHtml(m[3].channel)}
                                 </div>
                             </div>
                         </div>
@@ -1589,16 +1653,16 @@
                 setHTML('hero-contact-links', `
                     <div class="flex items-center gap-2">
                         <a class="text-ink font-semibold hover:text-vermilion transition-colors"
-                            href="mailto:${data.social.email || 'contact@amurut.com'}">${data.social.email || 'contact@amurut.com'}</a>
+                            href="${publicEmailUrl(data.social.email)}">${escapeHtml(data.social.email || 'contact@amurut.com')}</a>
                         <span class="text-ink-faint">•</span>
                         <a class="text-ink-muted hover:text-vermilion transition-colors"
-                            href="${data.social.linkedin || 'https://linkedin.com/in/amurut'}" rel="noopener" target="_blank">LinkedIn ↗</a>
+                            href="${escapePortfolioUrl(data.social.linkedin || 'https://linkedin.com/in/amurut')}" rel="noopener" target="_blank">LinkedIn ↗</a>
                         <span class="text-ink-faint">•</span>
                         <a class="text-ink-muted hover:text-vermilion transition-colors"
-                            href="${data.social.github || 'https://github.com/Amurut'}" rel="noopener" target="_blank">GitHub ↗</a>
+                            href="${escapePortfolioUrl(data.social.github || 'https://github.com/Amurut')}" rel="noopener" target="_blank">GitHub ↗</a>
                     </div>
                     <a class="inline-flex items-center gap-1 text-[11px] px-2 py-0.5 border border-rule-dark bg-canvas-alt text-ink hover:border-vermilion uppercase font-semibold"
-                        href="${data.social.resume || './Amurut_Mathew_Koshy_Resume.pdf'}" download>
+                        href="${escapePortfolioUrl(data.social.resume || './Amurut_Mathew_Koshy_Resume.pdf')}" download>
                         <span class="material-symbols-outlined text-[13px]">description</span>
                         <span>CV</span>
                     </a>
@@ -1612,7 +1676,7 @@
 
                 if (Array.isArray(exp.index_nav)) {
                     setHTML('exp-index-nav', exp.index_nav.map(item => `
-                        <div class="${item.highlight ? 'text-vermilion font-bold' : ''}">• ${item.year}: ${item.role}</div>
+                        <div class="${escapeHtml(item.highlight ? 'text-vermilion font-bold' : '')}">• ${escapeHtml(item.year)}: ${escapeHtml(item.role)}</div>
                     `).join(''));
                 }
 
@@ -1631,25 +1695,25 @@
                         <article class="border border-rule bg-canvas-alt p-6 sm:p-8 space-y-8 hover:border-ink transition-colors relative overflow-hidden">
                             <div class="absolute top-0 right-0 flex items-center">
                                 <span class="font-mono text-[10px] bg-canvas border-l border-b border-rule text-ink px-3 py-1 uppercase tracking-widest font-semibold hidden sm:inline-block">CAREER PROGRESSION</span>
-                                <span class="font-mono text-[10px] bg-vermilion text-white px-3 py-1 uppercase tracking-widest font-bold">${adp.badge || 'CURRENT / ACTIVE APPOINTMENT'}</span>
+                                <span class="font-mono text-[10px] bg-vermilion text-white px-3 py-1 uppercase tracking-widest font-bold">${escapeHtml(adp.badge || 'CURRENT / ACTIVE APPOINTMENT')}</span>
                             </div>
                             <div class="border-b border-rule pb-5 space-y-2">
                                 <div class="flex flex-wrap items-center gap-3 pt-4 sm:pt-0">
                                     <div class="w-10 h-10 bg-white border border-rule p-1.5 flex items-center justify-center shrink-0 shadow-sm">
-                                        <img src="${adp.logo}" alt="ADP Logo" class="max-w-full max-h-full object-contain">
+                                        <img src="${escapePortfolioUrl(adp.logo)}" alt="ADP Logo" class="max-w-full max-h-full object-contain">
                                     </div>
                                     <div class="flex flex-wrap items-center gap-2">
-                                        <span class="font-mono text-sm font-bold text-ink uppercase tracking-wider">${adp.company}</span>
+                                        <span class="font-mono text-sm font-bold text-ink uppercase tracking-wider">${escapeHtml(adp.company)}</span>
                                         <span class="text-ink-faint hidden sm:inline">•</span>
-                                        <span class="font-mono text-xs text-vermilion font-semibold uppercase tracking-wider">${adp.sub_badge || ''}</span>
+                                        <span class="font-mono text-xs text-vermilion font-semibold uppercase tracking-wider">${escapeHtml(adp.sub_badge || '')}</span>
                                     </div>
                                 </div>
                                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
                                     <div class="text-xs font-mono text-ink-muted uppercase tracking-wider">
-                                        ${adp.industry}
+                                        ${escapeHtml(adp.industry)}
                                     </div>
                                     <div class="font-mono text-xs text-ink-muted font-bold tracking-wide">
-                                        ${adp.tenure}
+                                        ${escapeHtml(adp.tenure)}
                                     </div>
                                 </div>
                             </div>
@@ -1659,48 +1723,48 @@
                                     <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
                                         <div>
                                             <div class="flex flex-wrap items-center gap-2">
-                                                <h3 class="text-xl sm:text-2xl font-bold tracking-tight text-ink">${r1.title}</h3>
-                                                <span class="font-mono text-[10px] px-2 py-0.5 bg-vermilion/10 text-vermilion border border-vermilion/30 uppercase font-bold">${r1.badge || 'ELEVATED TO SPM-II'}</span>
+                                                <h3 class="text-xl sm:text-2xl font-bold tracking-tight text-ink">${escapeHtml(r1.title)}</h3>
+                                                <span class="font-mono text-[10px] px-2 py-0.5 bg-vermilion/10 text-vermilion border border-vermilion/30 uppercase font-bold">${escapeHtml(r1.badge || 'ELEVATED TO SPM-II')}</span>
                                             </div>
-                                            <div class="font-mono text-xs text-ink-muted tracking-wide mt-0.5">${r1.period}</div>
+                                            <div class="font-mono text-xs text-ink-muted tracking-wide mt-0.5">${escapeHtml(r1.period)}</div>
                                         </div>
                                     </div>
                                     <div class="space-y-3 text-xs sm:text-sm leading-relaxed text-ink">
                                         ${r1.achievements.map(a => `
                                             <div class="grid grid-cols-1 sm:grid-cols-12 gap-1.5 sm:gap-4">
-                                                <div class="sm:col-span-3 font-mono text-[11px] text-vermilion uppercase tracking-wider font-bold">[${a.tag}]</div>
-                                                <div class="sm:col-span-9 text-ink">${a.text}</div>
+                                                <div class="sm:col-span-3 font-mono text-[11px] text-vermilion uppercase tracking-wider font-bold">[${escapeHtml(a.tag)}]</div>
+                                                <div class="sm:col-span-9 text-ink">${escapeAchievement(a.text)}</div>
                                             </div>
                                         `).join('')}
                                     </div>
                                     <div class="pt-2 flex flex-wrap gap-1.5">
-                                        ${r1.tags.map(t => `<span class="font-mono text-[10px] px-2 py-0.5 bg-canvas border border-rule text-ink uppercase">${t}</span>`).join('')}
+                                        ${r1.tags.map(t => `<span class="font-mono text-[10px] px-2 py-0.5 bg-canvas border border-rule text-ink uppercase">${escapeHtml(t)}</span>`).join('')}
                                     </div>
                                 </div>
                                 <div class="py-2">
                                     <div class="flex items-center gap-3 font-mono text-[11px] uppercase tracking-wider text-vermilion font-bold bg-canvas border border-rule p-2.5">
                                         <span class="material-symbols-outlined text-[15px]">north</span>
-                                        <span>${adp.promotion_banner}</span>
+                                        <span>${escapeHtml(adp.promotion_banner)}</span>
                                     </div>
                                 </div>
                                 <div class="relative space-y-4">
                                     <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3.5 h-3.5 rounded-full bg-rule-dark border-2 border-canvas"></div>
                                     <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
                                         <div>
-                                            <h3 class="text-lg sm:text-xl font-bold tracking-tight text-ink">${r2.title}</h3>
-                                            <div class="font-mono text-xs text-ink-muted tracking-wide mt-0.5">${r2.period}</div>
+                                            <h3 class="text-lg sm:text-xl font-bold tracking-tight text-ink">${escapeHtml(r2.title)}</h3>
+                                            <div class="font-mono text-xs text-ink-muted tracking-wide mt-0.5">${escapeHtml(r2.period)}</div>
                                         </div>
                                     </div>
                                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs leading-relaxed">
                                         ${r2.achievements.map(a => `
                                             <div>
-                                                <span class="font-mono text-[10px] text-vermilion uppercase tracking-wider font-bold block">[${a.tag}]</span>
-                                                <p class="text-ink mt-0.5">${a.text}</p>
+                                                <span class="font-mono text-[10px] text-vermilion uppercase tracking-wider font-bold block">[${escapeHtml(a.tag)}]</span>
+                                                <p class="text-ink mt-0.5">${escapeAchievement(a.text)}</p>
                                             </div>
                                         `).join('')}
                                     </div>
                                     <div class="pt-2 flex flex-wrap gap-1.5">
-                                        ${r2.tags.map(t => `<span class="font-mono text-[9px] px-2 py-0.5 bg-canvas border border-rule text-ink uppercase">${t}</span>`).join('')}
+                                        ${r2.tags.map(t => `<span class="font-mono text-[9px] px-2 py-0.5 bg-canvas border border-rule text-ink uppercase">${escapeHtml(t)}</span>`).join('')}
                                     </div>
                                 </div>
                             </div>
@@ -1711,12 +1775,12 @@
                             <div class="my-4 py-3 px-4 sm:px-6 border-y border-dashed border-rule-dark bg-canvas-subtle/50 flex flex-col sm:flex-row sm:items-center justify-between gap-3 font-mono text-xs">
                                 <div class="flex items-center flex-wrap gap-2.5">
                                     <span class="w-2 h-2 bg-vermilion inline-block"></span>
-                                    <span class="font-bold text-ink uppercase tracking-wider">${trans.period || '2020 — 2022 // Full-time MBA (IIM Nagpur)'}</span>
+                                    <span class="font-bold text-ink uppercase tracking-wider">${escapeHtml(trans.period || '2020 — 2022 // Full-time MBA (IIM Nagpur)')}</span>
                                     <span class="hidden sm:inline text-ink-faint">—</span>
-                                    <span class="text-ink-muted text-[11px]">${trans.description || 'Career Transition: Systems Engineering → Enterprise Product Management'}</span>
+                                    <span class="text-ink-muted text-[11px]">${escapeHtml(trans.description || 'Career Transition: Systems Engineering → Enterprise Product Management')}</span>
                                 </div>
                                 <a class="inline-flex items-center gap-1.5 text-vermilion hover:underline tracking-wider font-bold uppercase text-[11px] shrink-0"
-                                    href="${trans.link || '#chapter-04'}">
+                                    href="${escapePortfolioUrl(trans.link || '#chapter-04')}">
                                     <span>View in Sec // 04</span>
                                     <span class="material-symbols-outlined text-[13px]">arrow_forward</span>
                                 </a>
@@ -1726,27 +1790,27 @@
                                     <div class="flex items-center justify-between border-b border-rule pb-3">
                                         <div class="flex items-center gap-3">
                                             <div class="w-9 h-9 bg-white border border-rule p-1 flex items-center justify-center shrink-0 shadow-sm">
-                                                <img src="${fid.logo}" alt="Fidelity Investments Logo" class="max-w-full max-h-full object-contain">
+                                                <img src="${escapePortfolioUrl(fid.logo)}" alt="Fidelity Investments Logo" class="max-w-full max-h-full object-contain">
                                             </div>
                                             <div>
-                                                <span class="font-mono text-xs font-bold text-ink uppercase tracking-wider">${fid.company}</span>
-                                                <span class="block font-mono text-[10px] text-ink-muted uppercase">${fid.subtitle}</span>
+                                                <span class="font-mono text-xs font-bold text-ink uppercase tracking-wider">${escapeHtml(fid.company)}</span>
+                                                <span class="block font-mono text-[10px] text-ink-muted uppercase">${escapeHtml(fid.subtitle)}</span>
                                             </div>
                                         </div>
-                                        <div class="font-mono text-[11px] text-ink-muted">${fid.period}</div>
+                                        <div class="font-mono text-[11px] text-ink-muted">${escapeHtml(fid.period)}</div>
                                     </div>
-                                    <h3 class="text-xl font-bold tracking-tight text-ink">${fid.title}</h3>
+                                    <h3 class="text-xl font-bold tracking-tight text-ink">${escapeHtml(fid.title)}</h3>
                                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs leading-relaxed">
                                         ${fid.achievements.map((a, idx) => `
                                             <div>
-                                                <span class="font-mono text-[10px] ${idx === 1 ? 'text-vermilion' : 'text-ink-muted'} uppercase tracking-wider font-bold block">[${a.tag}]</span>
-                                                <p class="text-ink mt-0.5">${a.text}</p>
+                                                <span class="font-mono text-[10px] ${escapeHtml(idx === 1 ? 'text-vermilion' : 'text-ink-muted')} uppercase tracking-wider font-bold block">[${escapeHtml(a.tag)}]</span>
+                                                <p class="text-ink mt-0.5">${escapeAchievement(a.text)}</p>
                                             </div>
                                         `).join('')}
                                     </div>
                                 </div>
                                 <div class="pt-3 border-t border-rule/60 flex flex-wrap gap-1.5">
-                                    ${fid.tags.map(t => `<span class="font-mono text-[9px] px-2 py-0.5 bg-canvas border border-rule text-ink uppercase">${t}</span>`).join('')}
+                                    ${fid.tags.map(t => `<span class="font-mono text-[9px] px-2 py-0.5 bg-canvas border border-rule text-ink uppercase">${escapeHtml(t)}</span>`).join('')}
                                 </div>
                             </article>
                         </div>
@@ -1758,18 +1822,18 @@
                                 <div class="flex items-center justify-between border-b border-rule pb-3">
                                     <div class="flex items-center gap-2.5">
                                         <div class="w-8 h-8 bg-canvas border border-rule flex items-center justify-center shrink-0 font-mono text-[10px] font-bold text-vermilion">
-                                            ${aq4.short_name || 'AQ4'}
+                                            ${escapeHtml(aq4.short_name || 'AQ4')}
                                         </div>
-                                        <span class="font-mono text-xs font-bold text-ink uppercase tracking-wider">${aq4.company}</span>
+                                        <span class="font-mono text-xs font-bold text-ink uppercase tracking-wider">${escapeHtml(aq4.company)}</span>
                                     </div>
-                                    <span class="font-mono text-[11px] text-ink-muted">${aq4.period}</span>
+                                    <span class="font-mono text-[11px] text-ink-muted">${escapeHtml(aq4.period)}</span>
                                 </div>
-                                <h3 class="text-lg font-bold tracking-tight text-ink">${aq4.title}</h3>
+                                <h3 class="text-lg font-bold tracking-tight text-ink">${escapeHtml(aq4.title)}</h3>
                                 <div class="space-y-2 text-xs leading-relaxed">
                                     ${aq4.achievements.map(a => `
                                         <div>
-                                            <span class="font-mono text-[10px] text-ink-muted uppercase tracking-wider font-bold block">[${a.tag}]</span>
-                                            <p class="text-ink">${a.text}</p>
+                                            <span class="font-mono text-[10px] text-ink-muted uppercase tracking-wider font-bold block">[${escapeHtml(a.tag)}]</span>
+                                            <p class="text-ink">${escapeAchievement(a.text)}</p>
                                         </div>
                                     `).join('')}
                                 </div>
@@ -1780,23 +1844,23 @@
                                 <div class="flex items-center justify-between border-b border-rule pb-3">
                                     <div class="flex items-center gap-2.5">
                                         <div class="w-8 h-8 bg-white border border-rule p-1.5 flex items-center justify-center shrink-0 shadow-sm">
-                                            <img src="${ms.logo}" alt="Microsoft Logo" class="max-w-full max-h-full object-contain">
+                                            <img src="${escapePortfolioUrl(ms.logo)}" alt="Microsoft Logo" class="max-w-full max-h-full object-contain">
                                         </div>
-                                        <span class="font-mono text-xs font-bold text-ink uppercase tracking-wider">${ms.company}</span>
+                                        <span class="font-mono text-xs font-bold text-ink uppercase tracking-wider">${escapeHtml(ms.company)}</span>
                                     </div>
-                                    <span class="font-mono text-[11px] text-ink-muted">${ms.period}</span>
+                                    <span class="font-mono text-[11px] text-ink-muted">${escapeHtml(ms.period)}</span>
                                 </div>
-                                <h3 class="text-lg font-bold tracking-tight text-ink">${ms.title}</h3>
+                                <h3 class="text-lg font-bold tracking-tight text-ink">${escapeHtml(ms.title)}</h3>
                                 <div class="space-y-3 text-xs leading-relaxed">
                                     ${ms.achievements.map(a => `
                                         <div>
-                                            <span class="font-mono text-[10px] text-ink-muted uppercase tracking-wider font-bold block">[${a.tag}]</span>
-                                            <p class="text-ink">${a.text}</p>
+                                            <span class="font-mono text-[10px] text-ink-muted uppercase tracking-wider font-bold block">[${escapeHtml(a.tag)}]</span>
+                                            <p class="text-ink">${escapeAchievement(a.text)}</p>
                                         </div>
                                     `).join('')}
                                 </div>
                                 <div class="pt-4 border-t border-rule/60 font-mono text-[10px] text-ink-faint uppercase">
-                                    ${ms.footnote || 'FOUNDATIONAL INCUBATION // CLIENT MOBILE LABS'}
+                                    ${escapeHtml(ms.footnote || 'FOUNDATIONAL INCUBATION // CLIENT MOBILE LABS')}
                                 </div>
                             </article>
                         </div>
@@ -1811,40 +1875,40 @@
                     <article class="border border-rule bg-canvas-alt flex flex-col justify-between hover:border-ink transition-colors group">
                         <div class="relative border-b border-rule aspect-video overflow-hidden bg-canvas-subtle">
                             <img class="w-full h-full object-cover object-top filter contrast-[1.03] group-hover:scale-105 transition-transform duration-500"
-                                alt="${p.alt || p.title}"
-                                src="${p.thumbnail}">
+                                alt="${escapeHtml(p.alt || p.title)}"
+                                src="${escapePortfolioUrl(p.thumbnail)}">
                             <div class="absolute top-3 left-3 bg-ink text-canvas font-mono text-[9px] uppercase tracking-widest px-2.5 py-1">
-                                ${p.badge_left || 'PROJECT'}
+                                ${escapeHtml(p.badge_left || 'PROJECT')}
                             </div>
                             <div class="absolute top-3 right-3 bg-canvas/90 backdrop-blur text-ink font-mono text-[9px] uppercase tracking-wider px-2 py-1 border border-rule">
-                                ${p.badge_right || 'ACTIVE'}
+                                ${escapeHtml(p.badge_right || 'ACTIVE')}
                             </div>
                         </div>
                         <div class="p-6 sm:p-8 flex flex-col justify-between flex-1 space-y-5">
                             <div class="space-y-3">
                                 <div class="flex items-center justify-between font-mono text-[10px] tracking-widest uppercase">
-                                    <span class="text-vermilion font-bold">${p.case_id || 'CASE'}</span>
-                                    <span class="text-ink-faint">${p.category || ''}</span>
+                                    <span class="text-vermilion font-bold">${escapeHtml(p.case_id || 'CASE')}</span>
+                                    <span class="text-ink-faint">${escapeHtml(p.category || '')}</span>
                                 </div>
-                                <h3 class="text-xl sm:text-2xl font-bold text-ink">${p.title}</h3>
+                                <h3 class="text-xl sm:text-2xl font-bold text-ink">${escapeHtml(p.title)}</h3>
                                 <p class="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                                    ${p.description}
+                                    ${escapeHtml(p.description)}
                                 </p>
                             </div>
                             <div class="space-y-4 pt-4 border-t border-rule/60">
                                 <div class="flex flex-wrap gap-1.5">
-                                    ${(p.tech || []).map(t => `<span class="font-mono text-[10px] px-2 py-0.5 bg-canvas border border-rule text-ink">${t}</span>`).join('')}
+                                    ${(p.tech || []).map(t => `<span class="font-mono text-[10px] px-2 py-0.5 bg-canvas border border-rule text-ink">${escapeHtml(t)}</span>`).join('')}
                                 </div>
                                 <div class="flex flex-wrap items-center justify-between gap-3 pt-2">
                                     ${p.link ? `
                                     <a class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-ink text-canvas hover:bg-vermilion transition-colors text-xs font-mono uppercase tracking-wider font-bold"
-                                        href="${p.link}" rel="noopener" target="_blank">
-                                        <span>${p.link_text || 'Live Demo'}</span>
+                                        href="${escapePortfolioUrl(p.link)}" rel="noopener" target="_blank">
+                                        <span>${escapeHtml(p.link_text || 'Live Demo')}</span>
                                         <span class="material-symbols-outlined text-[13px]">arrow_outward</span>
                                     </a>` : ''}
                                     ${p.github ? `
                                     <a class="inline-flex items-center gap-1.5 font-mono text-xs text-vermilion hover:underline tracking-wider font-bold uppercase"
-                                        href="${p.github}" rel="noopener" target="_blank">
+                                        href="${escapePortfolioUrl(p.github)}" rel="noopener" target="_blank">
                                         <span>GitHub Repository</span>
                                         <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
                                     </a>` : ''}
@@ -1858,34 +1922,34 @@
             // 4. Chapter 04: Education & Certifications
             if (Array.isArray(data.education)) {
                 setHTML('education-list', data.education.map(e => `
-                    <div class="border border-rule bg-canvas-alt p-6 space-y-${e.dissertation_title ? '4' : (e.highlights ? '4' : '2')} hover:border-ink transition-colors">
+                    <div class="border border-rule bg-canvas-alt p-6 space-y-${escapeHtml(e.dissertation_title ? '4' : (e.highlights ? '4' : '2'))} hover:border-ink transition-colors">
                         <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
                             <div>
-                                <div class="font-mono text-[11px] ${e.dissertation_title || e.highlights ? 'text-vermilion font-bold' : 'text-ink-muted font-bold'} uppercase tracking-wider">
-                                    ${e.level}
+                                <div class="font-mono text-[11px] ${escapeHtml(e.dissertation_title || e.highlights ? 'text-vermilion font-bold' : 'text-ink-muted font-bold')} uppercase tracking-wider">
+                                    ${escapeHtml(e.level)}
                                 </div>
-                                <h3 class="text-lg font-bold text-ink">${e.degree}</h3>
-                                <div class="text-sm font-semibold text-ink-muted">${e.short_institution || e.institution}</div>
+                                <h3 class="text-lg font-bold text-ink">${escapeHtml(e.degree)}</h3>
+                                <div class="text-sm font-semibold text-ink-muted">${escapeHtml(e.short_institution || e.institution)}</div>
                             </div>
-                            <span class="font-mono text-xs text-ink-muted">${e.period}</span>
+                            <span class="font-mono text-xs text-ink-muted">${escapeHtml(e.period)}</span>
                         </div>
                         ${e.dissertation_title ? `
                             <div class="p-4 bg-canvas border-l-2 border-vermilion space-y-1">
                                 <div class="font-mono text-[10px] text-vermilion uppercase tracking-widest font-bold">Dissertation Title</div>
-                                <div class="font-serif italic text-sm text-ink">${e.dissertation_title}</div>
+                                <div class="font-serif italic text-sm text-ink">${escapeHtml(e.dissertation_title)}</div>
                             </div>
                             <div class="text-xs text-ink-muted">
-                                <strong class="text-ink font-semibold">Core Focus:</strong> ${e.focus ? e.focus.replace('Core Focus: ', '') : ''}
+                                <strong class="text-ink font-semibold">Core Focus:</strong> ${escapeHtml(e.focus ? e.focus.replace('Core Focus: ', '') : '')}
                             </div>
                         ` : ''}
                         ${e.highlights ? `
                             <div class="flex flex-wrap gap-2 pt-1">
-                                ${e.highlights.map(h => `<span class="font-mono text-[10px] px-2.5 py-1 bg-canvas border border-rule text-ink">${h}</span>`).join('')}
+                                ${e.highlights.map(h => `<span class="font-mono text-[10px] px-2.5 py-1 bg-canvas border border-rule text-ink">${escapeHtml(h)}</span>`).join('')}
                             </div>
                         ` : ''}
                         ${e.highlights_text ? `
                             <p class="text-xs text-ink-muted leading-relaxed pt-1">
-                                ${e.highlights_text}
+                                ${escapeHtml(e.highlights_text)}
                             </p>
                         ` : ''}
                     </div>
@@ -1895,9 +1959,9 @@
             if (Array.isArray(data.certifications)) {
                 setHTML('certifications-list', data.certifications.map(c => `
                     <div class="bg-canvas border border-rule px-2.5 py-1 flex items-center gap-1.5">
-                        <span class="w-2 h-2 ${c.status_color === 'emerald' ? 'bg-emerald-600' : 'bg-ink-faint'} rounded-full inline-block"></span>
-                        <span class="font-semibold text-ink">${c.name}</span>
-                        <span class="text-[10px] text-ink-faint">(${c.status})</span>
+                        <span class="w-2 h-2 ${escapeHtml(c.status_color === 'emerald' ? 'bg-emerald-600' : 'bg-ink-faint')} rounded-full inline-block"></span>
+                        <span class="font-semibold text-ink">${escapeHtml(c.name)}</span>
+                        <span class="text-[10px] text-ink-faint">(${escapeHtml(c.status)})</span>
                     </div>
                 `).join(''));
             }
@@ -1907,18 +1971,18 @@
                 setHTML('skills-grid', data.skills.map(s => `
                     <div class="border border-rule bg-canvas-alt p-5 flex flex-col justify-between hover:border-ink transition-colors">
                         <div class="space-y-3">
-                            <div class="font-mono text-[10px] text-vermilion uppercase tracking-widest font-bold">${s.domain_id}</div>
-                            <h3 class="text-base font-bold text-ink">${s.title}</h3>
+                            <div class="font-mono text-[10px] text-vermilion uppercase tracking-widest font-bold">${escapeHtml(s.domain_id)}</div>
+                            <h3 class="text-base font-bold text-ink">${escapeHtml(s.title)}</h3>
                             <ul class="space-y-1.5 text-xs text-ink-muted">
                                 ${s.items.map(item => `
                                     <li class="flex items-start gap-1.5">
-                                        <span class="text-vermilion font-bold">–</span> ${item}
+                                        <span class="text-vermilion font-bold">–</span> ${escapeHtml(item)}
                                     </li>
                                 `).join('')}
                             </ul>
                         </div>
                         <div class="pt-4 mt-4 border-t border-rule font-mono text-[9px] text-ink-faint uppercase">
-                            ${s.category}
+                            ${escapeHtml(s.category)}
                         </div>
                     </div>
                 `).join(''));
@@ -1930,14 +1994,14 @@
                 setText('dispatch-description', data.dispatch.description);
                 const emailLink = document.getElementById('dispatch-email-link');
                 if (emailLink && data.dispatch.email) {
-                    emailLink.href = `mailto:${data.dispatch.email}`;
+                    emailLink.href = `mailto:${escapeHtml(data.dispatch.email)}`;
                     const span = emailLink.querySelector('span:last-child');
                     if (span) span.textContent = data.dispatch.email;
                 }
                 const linkedinLink = document.getElementById('dispatch-linkedin-link');
-                if (linkedinLink && data.dispatch.linkedin) linkedinLink.href = data.dispatch.linkedin;
+                if (linkedinLink && data.dispatch.linkedin) linkedinLink.href = portfolioUrl(data.dispatch.linkedin);
                 const resumeLink = document.getElementById('dispatch-resume-link');
-                if (resumeLink && data.dispatch.resume) resumeLink.href = data.dispatch.resume;
+                if (resumeLink && data.dispatch.resume) resumeLink.href = portfolioUrl(data.dispatch.resume);
             }
 
             // 7. Footer
@@ -1945,7 +2009,7 @@
                 setText('footer-summary', data.footer.summary);
                 if (Array.isArray(data.footer.archive)) {
                     setHTML('footer-archive', data.footer.archive.map(a => `
-                        <div><span class="font-bold text-ink">${a.key}</span> ${a.val}</div>
+                        <div><span class="font-bold text-ink">${escapeHtml(a.key)}</span> ${escapeHtml(a.val)}</div>
                     `).join(''));
                 }
                 setText('footer-copyright', data.footer.copyright);
@@ -1981,9 +2045,103 @@
             let isSending = false;
 
             // Target endpoint: relative on amurut.com, absolute on local/preview
-            const chatEndpoint = window.location.origin.includes('amurut.com')
+            const chatEndpoint = ['https://amurut.com', 'https://www.amurut.com'].includes(window.location.origin)
                 ? '/bot-api/chat'
                 : 'https://amurut.com/bot-api/chat';
+
+            const contactDialog = document.getElementById('contactDialog');
+            const contactForm = document.getElementById('contactForm');
+            const contactStatus = document.getElementById('contactStatus');
+            const contactSubmit = document.getElementById('submitContactForm');
+            let widgetId;
+            let widgetScript;
+            let contactToken = '';
+            let contactSending = false;
+
+            function setContactToken(token) {
+                contactToken = token;
+                contactSubmit.disabled = !token || contactSending;
+            }
+
+            function loadTurnstile() {
+                if (!widgetScript) {
+                    widgetScript = new Promise((resolve, reject) => {
+                        const script = document.createElement('script');
+                        script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+                        script.onload = resolve;
+                        script.onerror = () => {
+                            script.remove();
+                            reject(new Error('Turnstile failed to load'));
+                        };
+                        document.head.append(script);
+                    }).catch(error => {
+                        widgetScript = undefined;
+                        throw error;
+                    });
+                }
+                return widgetScript;
+            }
+
+            document.getElementById('openContactForm').addEventListener('click', async () => {
+                contactDialog.showModal();
+                if (contactSending) return;
+                if (!['https://amurut.com', 'https://www.amurut.com'].includes(window.location.origin)) {
+                    contactStatus.textContent = 'Open amurut.com to send a message from the chat.';
+                    return;
+                }
+                contactStatus.textContent = '';
+                try {
+                    await loadTurnstile();
+                    if (!contactDialog.open || widgetId !== undefined) return;
+                    window.turnstile.ready(() => {
+                        if (!contactDialog.open || widgetId !== undefined) return;
+                        widgetId = window.turnstile.render('#contactChallenge', {
+                            sitekey: '0x4AAAAAAGNqM9wxNda6HA1u',
+                            action: 'contact',
+                            size: 'flexible',
+                            appearance: 'interaction-only',
+                            callback: setContactToken,
+                            'expired-callback': () => setContactToken(''),
+                            'error-callback': () => {
+                                setContactToken('');
+                                contactStatus.textContent = 'The spam check could not load. You can email Amurut directly.';
+                            },
+                        });
+                    });
+                } catch {
+                    contactStatus.textContent = 'The spam check could not load. You can email Amurut directly.';
+                }
+            });
+
+            document.getElementById('closeContactForm').addEventListener('click', () => contactDialog.close());
+
+            contactForm.addEventListener('submit', async event => {
+                event.preventDefault();
+                if (!contactToken || contactSending) return;
+                contactSending = true;
+                contactSubmit.disabled = true;
+                contactStatus.textContent = 'Sending…';
+                try {
+                    const response = await fetch('/bot-api/contact', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            email: document.getElementById('contactEmail').value,
+                            message: document.getElementById('contactMessage').value,
+                            token: contactToken,
+                        }),
+                    });
+                    const result = await response.json();
+                    contactStatus.textContent = result.message;
+                    if (response.ok) contactForm.reset();
+                } catch {
+                    contactStatus.textContent = 'The send status is unknown. You can email Amurut directly.';
+                } finally {
+                    contactSending = false;
+                    setContactToken('');
+                    window.turnstile.reset(widgetId);
+                }
+            });
 
             // Toggle window visibility
             function toggleChat(show) {
@@ -2031,65 +2189,119 @@
                 }
             });
 
-            // Format bot markdown text (safe HTML conversion + clickable links)
-            function formatBotText(rawText) {
-                let text = rawText || '';
+            const approvedChatLinks = new Set([
+                'https://amurut.com/',
+                'https://amurut.com/Amurut_Mathew_Koshy_Resume.pdf',
+                'https://amurut.com/Amurut_Mathew_Koshy_Resume.docx',
+                'https://linkedin.com/in/amurut',
+                'https://github.com/Amurut',
+                'https://amurut.com/Skyroute_Planner/',
+                'https://github.com/Amurut/Skyroute_Planner',
+                'https://healthcare-taxation-assistant.streamlit.app/',
+                'https://github.com/Amurut/Healthcare-Taxation-Assistant',
+                'https://tavern-and-tomb.onrender.com/',
+                'https://github.com/Amurut/Dungeon_Master_AI',
+                'https://amurut.github.io/Learn_To_Trade/',
+                'https://github.com/Amurut/Learn_To_Trade',
+                'https://amurut.com/startup-ceo-sim-game/',
+                'https://github.com/Amurut/startup-ceo-sim-game',
+            ]);
 
-                // Replace any stray <contact_email> placeholders before HTML escaping
-                text = text.replace(/<contact_email>|&lt;contact_email&gt;/gi, 'contact@amurut.com');
-                text = text.replace(/<email>|&lt;email&gt;/gi, 'contact@amurut.com');
-
-                // Escape HTML entities first to prevent XSS
-                text = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-
-                // Markdown links: [Anchor Text](https://...)
-                text = text.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noopener" class="text-vermilion underline hover:text-ink font-semibold">$1</a>');
-
-                // Raw standalone URLs (not already part of an <a href=...>)
-                text = text.replace(/(^|[^"'])(https?:\/\/[^\s<)]+)/g, '$1<a href="$2" target="_blank" rel="noopener" class="text-vermilion underline hover:text-ink font-semibold break-all">$2</a>');
-
-                // Email mailto links
-                text = text.replace(/([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g, '<a href="mailto:$1" class="text-vermilion underline hover:text-ink font-semibold">$1</a>');
-
-                // Bold text
-                text = text.replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold text-ink">$1</strong>');
-
-                // Markdown bullet points
-                text = text.replace(/^\s*[-•]\s+(.*)$/gm, '<li class="ml-3 list-disc text-ink">$1</li>');
-
-                // Convert double linebreaks to paragraphs
-                const paragraphs = text.split(/\n\n+/);
-                return paragraphs.map(p => {
-                    if (p.includes('<li')) {
-                        return `<ul class="space-y-1 my-1.5">${p}</ul>`;
+            function appendChatLink(parent, label, destination, fallback = label) {
+                let href;
+                if (destination === 'mailto:contact@amurut.com') {
+                    href = destination;
+                } else {
+                    try {
+                        const url = new URL(destination);
+                        if (approvedChatLinks.has(url.href)) href = url.href;
+                    } catch {
+                        // Render invalid destinations as text.
                     }
-                    return `<p class="leading-relaxed">${p.replace(/\n/g, '<br>')}</p>`;
-                }).join('');
+                }
+                if (!href) {
+                    parent.append(fallback);
+                    return;
+                }
+
+                const link = document.createElement('a');
+                link.href = href;
+                link.textContent = label;
+                link.className = 'text-vermilion underline hover:text-ink font-semibold break-all';
+                if (href.startsWith('https:')) {
+                    link.target = '_blank';
+                    link.rel = 'noopener noreferrer';
+                }
+                parent.append(link);
+            }
+
+            function appendChatInline(parent, text) {
+                const tokens = /\[([^\]\n]+)\]\((https?:\/\/[^\s)]+)\)|\*\*(.+?)\*\*|(https?:\/\/[^\s<>"')]+)|\b(contact@amurut\.com)\b/gi;
+                let offset = 0;
+                for (const match of text.matchAll(tokens)) {
+                    parent.append(text.slice(offset, match.index));
+                    if (match[1]) {
+                        appendChatLink(parent, match[1], match[2], match[0]);
+                    } else if (match[3]) {
+                        const bold = document.createElement('strong');
+                        bold.textContent = match[3];
+                        parent.append(bold);
+                    } else if (match[4]) {
+                        const url = match[4].replace(/[.,!?;:]+$/, '');
+                        appendChatLink(parent, url, url);
+                        parent.append(match[4].slice(url.length));
+                    } else {
+                        appendChatLink(parent, match[5], 'mailto:contact@amurut.com');
+                    }
+                    offset = match.index + match[0].length;
+                }
+                parent.append(text.slice(offset));
+            }
+
+            function renderBotText(container, text) {
+                let list;
+                for (const line of text.split(/\r?\n/)) {
+                    const bullet = line.match(/^\s*[-•]\s+(.*)$/);
+                    if (bullet) {
+                        if (!list) {
+                            list = document.createElement('ul');
+                            list.className = 'space-y-1 my-1.5 ml-3 list-disc';
+                            container.append(list);
+                        }
+                        const item = document.createElement('li');
+                        appendChatInline(item, bullet[1]);
+                        list.append(item);
+                    } else {
+                        list = undefined;
+                        if (!line.trim()) continue;
+                        const paragraph = document.createElement('p');
+                        paragraph.className = 'leading-relaxed';
+                        appendChatInline(paragraph, line);
+                        container.append(paragraph);
+                    }
+                }
             }
 
             function appendMessage(role, text) {
                 const msgWrapper = document.createElement('div');
                 msgWrapper.className = 'flex items-start gap-2.5 animate-fadeIn';
+                const avatar = document.createElement('div');
+                avatar.className = 'w-7 h-7 font-mono font-bold text-[10px] flex items-center justify-center shrink-0 border border-rule';
+                const bubble = document.createElement('div');
 
                 if (role === 'user') {
                     msgWrapper.classList.add('justify-end');
-                    msgWrapper.innerHTML = `
-                        <div class="bg-ink text-canvas p-3 max-w-[85%] text-xs leading-relaxed font-sans shadow-sm">
-                            <p>${text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br>')}</p>
-                        </div>
-                        <div class="w-7 h-7 bg-vermilion text-white font-mono font-bold text-[10px] flex items-center justify-center shrink-0 border border-rule">
-                            YOU
-                        </div>
-                    `;
+                    avatar.classList.add('bg-vermilion', 'text-white');
+                    avatar.textContent = 'YOU';
+                    bubble.className = 'bg-ink text-canvas p-3 max-w-[85%] text-xs leading-relaxed font-sans shadow-sm whitespace-pre-wrap break-words';
+                    bubble.textContent = text;
+                    msgWrapper.append(bubble, avatar);
                 } else {
-                    msgWrapper.innerHTML = `
-                        <div class="w-7 h-7 bg-ink text-canvas font-mono font-bold text-[10px] flex items-center justify-center shrink-0 border border-rule">
-                            AI
-                        </div>
-                        <div class="bg-canvas-alt border border-rule p-3 text-ink space-y-1.5 max-w-[85%] shadow-sm">
-                            ${formatBotText(text)}
-                        </div>
-                    `;
+                    avatar.classList.add('bg-ink', 'text-canvas');
+                    avatar.textContent = 'AI';
+                    bubble.className = 'bg-canvas-alt border border-rule p-3 text-ink space-y-1.5 max-w-[85%] shadow-sm break-words';
+                    renderBotText(bubble, text);
+                    msgWrapper.append(avatar, bubble);
                 }
 
                 messagesContainer.appendChild(msgWrapper);
@@ -2149,28 +2361,28 @@
                     const response = await fetch(chatEndpoint, {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ messages: conversationHistory })
+                        body: JSON.stringify({ messages: conversationHistory.slice(-3) })
                     });
 
                     hideThinking();
 
                     if (!response.ok) {
                         if (response.status === 429) {
-                            appendMessage('assistant', "I've hit my daily free edge quota for today! Please reach out to Amurut directly at <a href='mailto:contact@amurut.com' class='text-vermilion underline'>contact@amurut.com</a> or via <a href='https://linkedin.com/in/amurut' target='_blank' class='text-vermilion underline'>LinkedIn</a>.");
+                            appendMessage('assistant', "Chat is temporarily limited. Try again shortly or contact Amurut at contact@amurut.com or on [LinkedIn](https://linkedin.com/in/amurut).");
                             return;
                         }
                         throw new Error(`HTTP ${response.status}`);
                     }
 
                     const data = await response.json();
-                    const reply = data.reply || "I didn't receive a response. Please try again.";
+                    const reply = typeof data.reply === 'string' && data.reply || "I didn't receive a response. Please try again.";
                     appendMessage('assistant', reply);
                     conversationHistory.push({ role: 'assistant', content: reply });
 
                 } catch (err) {
                     hideThinking();
                     console.error('AI ambassador edge error:', err);
-                    appendMessage('assistant', "Sorry, I ran into a temporary network issue communicating with the Cloudflare edge. Please feel free to retry or contact Amurut directly at <a href='mailto:contact@amurut.com' class='text-vermilion underline'>contact@amurut.com</a>.");
+                    appendMessage('assistant', "Chat is temporarily unavailable. Try again or contact Amurut at contact@amurut.com.");
                 } finally {
                     isSending = false;
                     sendBtn.disabled = false;
@@ -2185,7 +2397,7 @@
             });
 
             // Quick chip clicks
-            document.querySelectorAll('.chat-chip').forEach(chip => {
+            document.querySelectorAll('button.chat-chip').forEach(chip => {
                 chip.addEventListener('click', () => {
                     const msg = chip.getAttribute('data-msg');
                     if (msg) handleSendMessage(msg);
@@ -2201,8 +2413,8 @@
                             AI
                         </div>
                         <div class="bg-canvas-alt border border-rule p-3 text-ink space-y-2 max-w-[85%]">
-                            <p>Greetings! I am Amurut's personal Ambassador running directly at the Cloudflare edge.</p>
-                            <p class="text-ink-muted">Feel free to ask about his <strong>Launchpad &amp; M&amp;A leadership at ADP</strong>, <strong>SkyRouter avionics app</strong>, <strong>dual Masters (BITS &amp; IIM)</strong>, or request links to download his resume.</p>
+                            <p>I’m Amurut’s portfolio assistant. Ask about his experience, projects, or fit for a role.</p>
+                            <p class="text-ink-muted">For hiring inquiries, use Send a message below, <a class="underline" href="mailto:contact@amurut.com">email Amurut directly</a> or connect on <a class="underline" href="https://linkedin.com/in/amurut" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>
                         </div>
                     </div>
                 `;

@@ -218,7 +218,27 @@
   },
   "projects": [
     {
-      "case_id": "CASE // 03.1 • AVIONICS EFB",
+      "case_id": "CASE // 03.1 • MULTIPLAYER GAMING",
+      "category": "GAMING",
+      "title": "Gameshub — Multiplayer Browser Arcade",
+      "thumbnail": "assets/gameshub.png",
+      "alt": "Gameshub homepage showing the room-code join form and game catalogue.",
+      "badge_left": "ROOM CODES + QR INVITES",
+      "badge_right": "UP TO 50 PLAYERS",
+      "description": "A browser arcade for Bingo, Housie, Phrase Shuffle, and Brow Beat. Players enter a six-character room code on the home page to reach the right game, or join from a shared link or QR code. Phrase Shuffle restores a player’s seat after a connection drop, and Housie supports up to 50 players per room.",
+      "tech": [
+        "React",
+        "TypeScript",
+        "Cloudflare Pages",
+        "AWS Lambda",
+        "DynamoDB",
+        "WebSockets"
+      ],
+      "link": "https://gameshub.amurut.com/",
+      "link_text": "Live App"
+    },
+    {
+      "case_id": "CASE // 03.2 • AVIONICS EFB",
       "category": "SIMULATION",
       "badge_left": "FLIGHT OPERATIONS // EFB",
       "badge_right": "MSFS 2024 READY",
@@ -239,7 +259,7 @@
       "github": "https://github.com/Amurut/Skyroute_Planner"
     },
     {
-      "case_id": "CASE // 03.2 • RAG ENGINE",
+      "case_id": "CASE // 03.3 • RAG ENGINE",
       "category": "BITS PILANI",
       "badge_left": "CORE DISSERTATION // M.TECH",
       "badge_right": "STATUS: VALIDATED",
@@ -259,7 +279,7 @@
       "github": "https://github.com/Amurut/Healthcare-Taxation-Assistant"
     },
     {
-      "case_id": "CASE // 03.3 • AUTONOMOUS DM",
+      "case_id": "CASE // 03.4 • AUTONOMOUS DM",
       "category": "EXPERIMENT",
       "badge_left": "AI AGENTIC WEB RPG",
       "badge_right": "MULTI-AGENT",
@@ -280,7 +300,7 @@
       "github": "https://github.com/Amurut/Dungeon_Master_AI"
     },
     {
-      "case_id": "CASE // 03.4 • QUANTITATIVE FINTECH",
+      "case_id": "CASE // 03.5 • QUANTITATIVE FINTECH",
       "category": "DERIVATIVES",
       "badge_left": "DERIVATIVES FINTECH SIMULATOR",
       "badge_right": "HIGH PRECISION",

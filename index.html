@@ -327,8 +327,8 @@
                     </div>
                     <!-- Bottom Contact Pill Strip inside Hero Block -->
                     <div
-                        id="hero-contact-links" class="p-4 bg-canvas border-t border-rule flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
-                        <div class="flex items-center gap-2">
+                        class="p-4 bg-canvas border-t border-rule flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
+                        <div id="hero-contact-links" class="flex items-center gap-2">
                             <a class="text-ink font-semibold hover:text-vermilion transition-colors"
                                 href="mailto:contact@amurut.com">contact@amurut.com</a>
                             <span class="text-ink-faint">•</span>
@@ -338,11 +338,19 @@
                             <a class="text-ink-muted hover:text-vermilion transition-colors"
                                 href="https://github.com/Amurut" rel="noopener" target="_blank">GitHub ↗</a>
                         </div>
-                        <a class="inline-flex items-center gap-1 text-[11px] px-2 py-0.5 border border-rule-dark bg-canvas-alt text-ink hover:border-vermilion uppercase font-semibold"
-                            href="./Amurut_Mathew_Koshy_Resume.pdf" download>
-                            <span class="material-symbols-outlined text-[13px]">description</span>
-                            <span>CV</span>
-                        </a>
+                        <details class="relative group">
+                            <summary class="inline-flex items-center gap-1 px-2 py-0.5 text-[11px] cursor-pointer list-none border border-rule-dark bg-canvas text-ink hover:border-vermilion uppercase font-mono font-semibold [&::-webkit-details-marker]:hidden">
+                                <span class="inline-flex items-center gap-2">
+                                    <span aria-hidden="true" class="material-symbols-outlined text-[16px]">download</span>
+                                    <span>CV</span>
+                                </span>
+                                <span aria-hidden="true" class="material-symbols-outlined text-[15px] group-open:rotate-180">expand_more</span>
+                            </summary>
+                            <div class="absolute right-0 min-w-28 top-full mt-1 z-30 border border-rule-dark bg-canvas shadow-lg font-mono text-xs">
+                                <a id="hero-resume-link" class="block px-4 py-2 hover:bg-canvas-alt hover:text-vermilion" href="./Amurut_Mathew_Koshy_Resume.pdf" download>PDF</a>
+                                <a class="block px-4 py-2 hover:bg-canvas-alt hover:text-vermilion" href="./Amurut_Mathew_Koshy_Resume.docx" download>Word (DOCX)</a>
+                            </div>
+                        </details>
                     </div>
                 </div>
             </div>
@@ -745,18 +753,61 @@
                     <h2 class="text-base font-mono uppercase tracking-widest text-ink font-semibold">Selected Case
                         Studies &amp; AI Architectures</h2>
                 </div>
-                <span class="font-mono text-[11px] text-ink-faint uppercase">4 CASE IMPLEMENTATIONS • ATELIER MONOGRAPH
+                <span class="font-mono text-[11px] text-ink-faint uppercase">5 CASE IMPLEMENTATIONS • ATELIER MONOGRAPH
                     ARCHIVE</span>
             </div>
             <p class="font-serif italic text-lg text-ink-muted leading-relaxed max-w-3xl">
-                Deep technical implementations spanning avionics flight planning, retrieval-augmented generation, multi-provider LLM
-                orchestration, and dynamic financial simulations.
+                Deep technical implementations spanning multiplayer browser games, avionics flight planning, retrieval-augmented generation,
+                multi-provider LLM orchestration, and dynamic financial simulations.
             </p>
 
             <!-- Asymmetrical Architectural Grid with Technical Badge Rows and Project Thumbnails -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8" id="projects-grid">
 
-                                <!-- Case 03.1: SkyRouter -->
+                <!-- Case 03.1: Gameshub -->
+                <article class="border border-rule bg-canvas-alt flex flex-col justify-between hover:border-ink transition-colors group">
+                    <div class="relative border-b border-rule aspect-video overflow-hidden bg-canvas-subtle">
+                        <img class="w-full h-full object-cover object-top filter contrast-[1.03] group-hover:scale-105 transition-transform duration-500"
+                            alt="Gameshub homepage showing the room-code join form and game catalogue." src="assets/gameshub.png">
+                        <div class="absolute top-3 left-3 bg-ink text-canvas font-mono text-[9px] uppercase tracking-widest px-2.5 py-1">
+                            ROOM CODES + QR INVITES
+                        </div>
+                        <div class="absolute top-3 right-3 bg-canvas/90 backdrop-blur text-ink font-mono text-[9px] uppercase tracking-wider px-2 py-1 border border-rule">
+                            UP TO 50 PLAYERS
+                        </div>
+                    </div>
+                    <div class="p-6 sm:p-8 flex flex-col justify-between flex-1 space-y-5">
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between font-mono text-[10px] tracking-widest uppercase">
+                                <span class="text-vermilion font-bold">CASE // 03.1 • MULTIPLAYER GAMING</span>
+                                <span class="text-ink-faint">GAMING</span>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold text-ink">Gameshub — Multiplayer Browser Arcade</h3>
+                            <p class="text-xs sm:text-sm text-ink-muted leading-relaxed">
+                                A browser arcade for Bingo, Housie, Phrase Shuffle, and Brow Beat. Players enter a six-character room code on the home page to reach the right game, or join from a shared link or QR code. Phrase Shuffle restores a player’s seat after a connection drop, and Housie supports up to 50 players per room.
+                            </p>
+                        </div>
+                        <div class="space-y-4 pt-4 border-t border-rule/60">
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="font-mono text-[10px] px-2 py-0.5 bg-canvas border border-rule text-ink">React</span>
+                                <span class="font-mono text-[10px] px-2 py-0.5 bg-canvas border border-rule text-ink">TypeScript</span>
+                                <span class="font-mono text-[10px] px-2 py-0.5 bg-canvas border border-rule text-ink">Cloudflare Pages</span>
+                                <span class="font-mono text-[10px] px-2 py-0.5 bg-canvas border border-rule text-ink">AWS Lambda</span>
+                                <span class="font-mono text-[10px] px-2 py-0.5 bg-canvas border border-rule text-ink">DynamoDB</span>
+                                <span class="font-mono text-[10px] px-2 py-0.5 bg-canvas border border-rule text-ink">WebSockets</span>
+                            </div>
+                            <div class="flex flex-wrap items-center justify-between gap-3 pt-2">
+                                <a class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-ink text-canvas hover:bg-vermilion transition-colors text-xs font-mono uppercase tracking-wider font-bold"
+                                    href="https://gameshub.amurut.com/" rel="noopener" target="_blank">
+                                    <span>Live App</span>
+                                    <span class="material-symbols-outlined text-[13px]">arrow_outward</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Case 03.2: SkyRouter -->
                 <article
                     class="border border-rule bg-canvas-alt flex flex-col justify-between hover:border-ink transition-colors group">
                     <div class="relative border-b border-rule aspect-video overflow-hidden bg-canvas-subtle">
@@ -776,7 +827,7 @@
                         <div class="space-y-3">
                             <div
                                 class="flex items-center justify-between font-mono text-[10px] tracking-widest uppercase">
-                                <span class="text-vermilion font-bold">CASE // 03.1 • AVIONICS EFB</span>
+                                <span class="text-vermilion font-bold">CASE // 03.2 • AVIONICS EFB</span>
                                 <span class="text-ink-faint">SIMULATION</span>
                             </div>
                             <h3 class="text-xl sm:text-2xl font-bold text-ink">SkyRouter — MSFS Flight Operations &amp; EFB Planner</h3>
@@ -823,7 +874,7 @@
                     </div>
                 </article>
 
-<!-- Case 03.2: Healthcare Taxation AI Assistant -->
+<!-- Case 03.3: Healthcare Taxation AI Assistant -->
                 <article
                     class="border border-rule bg-canvas-alt flex flex-col justify-between hover:border-ink transition-colors group">
                     <div class="relative border-b border-rule aspect-video overflow-hidden bg-canvas-subtle">
@@ -843,7 +894,7 @@
                         <div class="space-y-3">
                             <div
                                 class="flex items-center justify-between font-mono text-[10px] tracking-widest uppercase">
-                                <span class="text-vermilion font-bold">CASE // 03.2 • RAG ENGINE</span>
+                                <span class="text-vermilion font-bold">CASE // 03.3 • RAG ENGINE</span>
                                 <span class="text-ink-faint">BITS PILANI</span>
                             </div>
                             <h3 class="text-xl sm:text-2xl font-bold text-ink">Healthcare Taxation AI Assistant</h3>
@@ -886,7 +937,7 @@
                     </div>
                 </article>
 
-                <!-- Case 03.3: Tavern & Tomb -->
+                <!-- Case 03.4: Tavern & Tomb -->
                 <article
                     class="border border-rule bg-canvas-alt flex flex-col justify-between hover:border-ink transition-colors group">
                     <div class="relative border-b border-rule aspect-video overflow-hidden bg-canvas-subtle">
@@ -906,7 +957,7 @@
                         <div class="space-y-3">
                             <div
                                 class="flex items-center justify-between font-mono text-[10px] tracking-widest uppercase">
-                                <span class="text-vermilion font-bold">CASE // 03.3 • AUTONOMOUS DM</span>
+                                <span class="text-vermilion font-bold">CASE // 03.4 • AUTONOMOUS DM</span>
                                 <span class="text-ink-faint">EXPERIMENT</span>
                             </div>
                             <h3 class="text-xl sm:text-2xl font-bold text-ink">Tavern &amp; Tomb — AI Dungeon Master Web
@@ -950,7 +1001,7 @@
                     </div>
                 </article>
 
-                <!-- Case 03.4: TradeLearner-Sim -->
+                <!-- Case 03.5: TradeLearner-Sim -->
                 <article
                     class="border border-rule bg-canvas-alt flex flex-col justify-between hover:border-ink transition-colors group">
                     <div class="relative border-b border-rule aspect-video overflow-hidden bg-canvas-subtle">
@@ -970,7 +1021,7 @@
                         <div class="space-y-3">
                             <div
                                 class="flex items-center justify-between font-mono text-[10px] tracking-widest uppercase">
-                                <span class="text-vermilion font-bold">CASE // 03.4 • QUANTITATIVE FINTECH</span>
+                                <span class="text-vermilion font-bold">CASE // 03.5 • QUANTITATIVE FINTECH</span>
                                 <span class="text-ink-faint">DERIVATIVES</span>
                             </div>
                             <h3 class="text-xl sm:text-2xl font-bold text-ink">TradeLearner-Sim</h3>
@@ -1308,22 +1359,27 @@
                             </span>
                             <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
                         </a>
-                        <a class="inline-flex items-center justify-between px-6 py-4 border border-rule-dark bg-canvas text-ink hover:border-vermilion hover:text-vermilion transition-colors text-xs font-mono uppercase tracking-wider font-semibold"
-                            id="dispatch-resume-link" href="./Amurut_Mathew_Koshy_Resume.pdf" download>
-                            <span class="flex items-center gap-2">
-                                <span class="material-symbols-outlined text-[16px]">download</span>
-                                <span>Download CV (PDF)</span>
+                        <button type="button" data-open-contact aria-haspopup="dialog"
+                            class="inline-flex items-center justify-between px-6 py-4 border border-ink text-ink hover:bg-ink hover:text-canvas transition-colors text-xs font-mono uppercase tracking-wider font-semibold bg-canvas">
+                            <span class="inline-flex items-center gap-2">
+                                <span aria-hidden="true" class="material-symbols-outlined text-[16px]">chat</span>
+                                Send a message
                             </span>
-                            <span class="material-symbols-outlined text-[14px]">south</span>
-                        </a>
-                        <a class="inline-flex items-center justify-between px-6 py-4 border border-rule-dark bg-canvas text-ink hover:border-vermilion hover:text-vermilion transition-colors text-xs font-mono uppercase tracking-wider font-semibold"
-                            href="./Amurut_Mathew_Koshy_Resume.docx" download>
-                            <span class="flex items-center gap-2">
-                                <span class="material-symbols-outlined text-[16px]">download</span>
-                                <span>Download CV (Word)</span>
-                            </span>
-                            <span class="material-symbols-outlined text-[14px]">south</span>
-                        </a>
+                            <span aria-hidden="true" class="material-symbols-outlined text-[14px]">arrow_outward</span>
+                        </button>
+                        <details class="relative group">
+                            <summary class="flex items-center justify-between px-6 py-4 text-xs tracking-wider cursor-pointer list-none border border-rule-dark bg-canvas text-ink hover:border-vermilion uppercase font-mono font-semibold [&::-webkit-details-marker]:hidden">
+                                <span class="inline-flex items-center gap-2">
+                                    <span aria-hidden="true" class="material-symbols-outlined text-[16px]">download</span>
+                                    <span>Download résumé</span>
+                                </span>
+                                <span aria-hidden="true" class="material-symbols-outlined text-[15px] group-open:rotate-180">expand_more</span>
+                            </summary>
+                            <div class="absolute inset-x-0 top-full mt-1 z-30 border border-rule-dark bg-canvas shadow-lg font-mono text-xs">
+                                <a id="dispatch-resume-link" class="block px-4 py-2 hover:bg-canvas-alt hover:text-vermilion" href="./Amurut_Mathew_Koshy_Resume.pdf" download>PDF</a>
+                                <a class="block px-4 py-2 hover:bg-canvas-alt hover:text-vermilion" href="./Amurut_Mathew_Koshy_Resume.docx" download>Word (DOCX)</a>
+                            </div>
+                        </details>
                     </div>
                 </div>
             </div>
@@ -1452,14 +1508,19 @@
                     <button class="chat-chip font-mono text-[10px] px-2.5 py-1 bg-canvas border border-rule hover:border-vermilion hover:text-vermilion text-ink transition-colors cursor-pointer" data-msg="What are Amurut's key achievements at ADP?">
                         💼 Work at ADP
                     </button>
-                    <button class="chat-chip font-mono text-[10px] px-2.5 py-1 bg-canvas border border-rule hover:border-vermilion hover:text-vermilion text-ink transition-colors cursor-pointer" data-msg="Can I download Amurut's resume?">
-                        📄 Download Resume
-                    </button>
+                    <details class="group text-[10px] font-mono">
+                        <summary class="inline-flex items-center gap-1 cursor-pointer list-none border border-rule bg-canvas px-2.5 py-1 hover:border-vermilion [&::-webkit-details-marker]:hidden">
+                            Download résumé
+                            <span aria-hidden="true" class="material-symbols-outlined text-[13px] group-open:rotate-180">expand_more</span>
+                        </summary>
+                        <div class="flex gap-2 border border-rule border-t-0 px-2.5 py-1">
+                            <a class="underline" href="./Amurut_Mathew_Koshy_Resume.pdf" download>PDF</a>
+                            <a class="underline" href="./Amurut_Mathew_Koshy_Resume.docx" download>Word (DOCX)</a>
+                        </div>
+                    </details>
                     <button class="chat-chip font-mono text-[10px] px-2.5 py-1 bg-canvas border border-rule hover:border-vermilion hover:text-vermilion text-ink transition-colors cursor-pointer" data-msg="Tell me about the SkyRouter aviation project.">
                         ✈️ SkyRouter App
                     </button>
-                    <a class="chat-chip font-mono text-[10px] px-2.5 py-1 bg-canvas border border-rule hover:border-vermilion hover:text-vermilion text-ink transition-colors"
-                        href="./Amurut_Mathew_Koshy_Resume.docx" download>Download CV (Word)</a>
                 </div>
             </div>
 
@@ -1475,37 +1536,42 @@
                     </button>
                 </form>
                 <div class="flex items-center justify-between font-mono text-[9px] text-ink-faint px-0.5">
-                    <button id="openContactForm" type="button" class="text-vermilion underline">Send a message</button>
+                    <button type="button" data-open-contact aria-haspopup="dialog"
+                        class="inline-flex items-center gap-1.5 border border-vermilion px-3 py-1.5 text-[11px] font-bold text-vermilion hover:bg-vermilion hover:text-white transition-colors">
+                        <span aria-hidden="true" class="material-symbols-outlined text-[15px]">chat</span>
+                        Send a message
+                    </button>
                     <span id="chatCharCounter">0/350</span>
                 </div>
             </div>
-            <dialog id="contactDialog" aria-labelledby="contactTitle"
-                class="w-[min(25rem,calc(100vw-2rem))] border border-rule bg-canvas text-ink p-5 shadow-2xl backdrop:bg-ink/40">
-                <form id="contactForm" class="space-y-3">
-                    <div class="flex items-center justify-between gap-4">
-                        <h2 id="contactTitle" class="font-bold">Send a message to Amurut</h2>
-                        <button id="closeContactForm" type="button" class="text-xs underline">Close</button>
-                    </div>
-                    <p class="text-xs text-ink-muted">Your reply email and message will be emailed to Amurut.</p>
-                    <label class="block text-xs font-semibold">Your reply email
-                        <input id="contactEmail" type="email" required maxlength="254" autocomplete="email"
-                            class="mt-1 w-full border border-rule bg-canvas px-2 py-1.5 text-sm">
-                    </label>
-                    <label class="block text-xs font-semibold">Brief message
-                        <textarea id="contactMessage" rows="3" required maxlength="1000"
-                            class="mt-1 w-full border border-rule bg-canvas px-2 py-1.5 text-sm"></textarea>
-                    </label>
-                    <div id="contactChallenge"></div>
-                    <p id="contactStatus" role="status" class="text-xs text-ink-muted"></p>
-                    <div class="flex items-center justify-between gap-2">
-                        <a class="text-xs underline" href="mailto:contact@amurut.com">Email directly</a>
-                        <button id="submitContactForm" type="submit" disabled
-                            class="bg-ink px-3 py-1.5 text-xs font-semibold text-canvas disabled:opacity-40">Send message</button>
-                    </div>
-                </form>
-            </dialog>
         </div>
     </div>
+
+    <dialog id="contactDialog" aria-labelledby="contactTitle"
+        class="w-[min(25rem,calc(100vw-2rem))] border border-rule bg-canvas text-ink p-5 shadow-2xl backdrop:bg-ink/40">
+        <form id="contactForm" class="space-y-3">
+            <div class="flex items-center justify-between gap-4">
+                <h2 id="contactTitle" class="font-bold">Send a message to Amurut</h2>
+                <button id="closeContactForm" type="button" class="text-xs underline">Close</button>
+            </div>
+            <p class="text-xs text-ink-muted">Your reply email and message will be emailed to Amurut.</p>
+            <label class="block text-xs font-semibold">Your reply email
+                <input id="contactEmail" type="email" required maxlength="254" autocomplete="email"
+                    class="mt-1 w-full border border-rule bg-canvas px-2 py-1.5 text-sm">
+            </label>
+            <label class="block text-xs font-semibold">Brief message
+                <textarea id="contactMessage" rows="3" required maxlength="1000"
+                    class="mt-1 w-full border border-rule bg-canvas px-2 py-1.5 text-sm"></textarea>
+            </label>
+            <div id="contactChallenge"></div>
+            <p id="contactStatus" role="status" class="text-xs text-ink-muted"></p>
+            <div class="flex items-center justify-between gap-2">
+                <a class="text-xs underline" href="mailto:contact@amurut.com">Email directly</a>
+                <button id="submitContactForm" type="submit" disabled
+                    class="bg-ink px-3 py-1.5 text-xs font-semibold text-canvas disabled:opacity-40">Send message</button>
+            </div>
+        </form>
+    </dialog>
 
     <script>
         // Subtle Scroll-to-Top Button
@@ -1651,22 +1717,17 @@
 
             if (data.social) {
                 setHTML('hero-contact-links', `
-                    <div class="flex items-center gap-2">
-                        <a class="text-ink font-semibold hover:text-vermilion transition-colors"
-                            href="${publicEmailUrl(data.social.email)}">${escapeHtml(data.social.email || 'contact@amurut.com')}</a>
-                        <span class="text-ink-faint">•</span>
-                        <a class="text-ink-muted hover:text-vermilion transition-colors"
-                            href="${escapePortfolioUrl(data.social.linkedin || 'https://linkedin.com/in/amurut')}" rel="noopener" target="_blank">LinkedIn ↗</a>
-                        <span class="text-ink-faint">•</span>
-                        <a class="text-ink-muted hover:text-vermilion transition-colors"
-                            href="${escapePortfolioUrl(data.social.github || 'https://github.com/Amurut')}" rel="noopener" target="_blank">GitHub ↗</a>
-                    </div>
-                    <a class="inline-flex items-center gap-1 text-[11px] px-2 py-0.5 border border-rule-dark bg-canvas-alt text-ink hover:border-vermilion uppercase font-semibold"
-                        href="${escapePortfolioUrl(data.social.resume || './Amurut_Mathew_Koshy_Resume.pdf')}" download>
-                        <span class="material-symbols-outlined text-[13px]">description</span>
-                        <span>CV</span>
-                    </a>
+                    <a class="text-ink font-semibold hover:text-vermilion transition-colors"
+                        href="${publicEmailUrl(data.social.email)}">${escapeHtml(data.social.email || 'contact@amurut.com')}</a>
+                    <span class="text-ink-faint">•</span>
+                    <a class="text-ink-muted hover:text-vermilion transition-colors"
+                        href="${escapePortfolioUrl(data.social.linkedin || 'https://linkedin.com/in/amurut')}" rel="noopener" target="_blank">LinkedIn ↗</a>
+                    <span class="text-ink-faint">•</span>
+                    <a class="text-ink-muted hover:text-vermilion transition-colors"
+                        href="${escapePortfolioUrl(data.social.github || 'https://github.com/Amurut')}" rel="noopener" target="_blank">GitHub ↗</a>
                 `);
+                const resumeLink = document.getElementById('hero-resume-link');
+                if (resumeLink && data.social.resume) resumeLink.href = portfolioUrl(data.social.resume);
             }
 
             // 2. Chapter 02: Experience
@@ -2082,11 +2143,11 @@
                 return widgetScript;
             }
 
-            document.getElementById('openContactForm').addEventListener('click', async () => {
+            async function openContactForm() {
                 contactDialog.showModal();
                 if (contactSending) return;
                 if (!['https://amurut.com', 'https://www.amurut.com'].includes(window.location.origin)) {
-                    contactStatus.textContent = 'Open amurut.com to send a message from the chat.';
+                    contactStatus.textContent = 'Open amurut.com to send a message.';
                     return;
                 }
                 contactStatus.textContent = '';
@@ -2108,8 +2169,11 @@
                 } catch {
                     contactStatus.textContent = 'The spam check could not load. You can email Amurut directly.';
                 }
-            });
+            }
 
+            document.querySelectorAll('[data-open-contact]').forEach(button => {
+                button.addEventListener('click', openContactForm);
+            });
             document.getElementById('closeContactForm').addEventListener('click', () => contactDialog.close());
 
             contactForm.addEventListener('submit', async event => {
@@ -2169,7 +2233,7 @@
             // Close when clicking outside on mobile
             document.addEventListener('click', (e) => {
                 if (window.innerWidth < 640 && !chatWindow.classList.contains('hidden')) {
-                    if (!chatWindow.contains(e.target) && !toggleBtn.contains(e.target)) {
+                    if (!chatWindow.contains(e.target) && !toggleBtn.contains(e.target) && !contactDialog.contains(e.target)) {
                         toggleChat(false);
                     }
                 }
@@ -2192,6 +2256,7 @@
                 'https://amurut.com/Amurut_Mathew_Koshy_Resume.docx',
                 'https://linkedin.com/in/amurut',
                 'https://github.com/Amurut',
+                'https://gameshub.amurut.com/',
                 'https://amurut.com/Skyroute_Planner/',
                 'https://github.com/Amurut/Skyroute_Planner',
                 'https://healthcare-taxation-assistant.streamlit.app/',
